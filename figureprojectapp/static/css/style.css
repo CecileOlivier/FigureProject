@@ -1,0 +1,1542 @@
+/* *************************
+			MOBILE
+			320*480 				
+************************** */ 
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1em;
+}
+
+/* *************************
+			FONTS 					
+************************** */   
+
+@font-face {
+    font-family: 'Bebas';
+    src: url('../fonts/BebasNeue.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Univers';
+    src: url('../fonts/univers/UniversLTPro-55Roman.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UniversOblique';
+    src: url('../fonts/univers/UniversLTPro-55Oblique.otf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'UniversLight';
+    src: url('../fonts/univers/UniversLTPro-45Light.otf');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UniversBold';
+    src: url('../fonts/univers/UniversLTPro-65Bold.otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* *************************
+			MENU	 					
+************************** */ 
+
+nav {
+	width:100%;
+}
+
+ul.sous-menu-oeuvres {
+	display:none;
+}
+
+div.menu a {
+	position: absolute;
+	background-image: url('../icones/menu-ouv.png');
+	background-repeat: no-repeat;
+	width:50px;
+	height: 50px;
+	top:0;
+	right: 0;
+	margin-top: 1em;
+	padding-right: 0em;
+}
+
+div.menu a:hover {
+	background-image: url('../icones/menu-fer.png');
+	background-repeat: no-repeat;
+}
+
+img.logo {
+	width: 35%;
+	padding: 1em;
+	float: left;
+}
+
+nav a {
+	color: #3E3D3F;
+	font-family: "Univers";
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size:1.2em;
+	float:right;
+	clear:both;
+}
+
+nav a:hover {
+	color: #E1001A;
+}
+
+nav a.retour {
+	float:left;
+}
+
+nav li {
+	margin-bottom: 2.5em;
+	padding-right: 5em;
+}
+
+nav a li:after{
+    position: absolute; 
+    display: block; 
+    content: '';
+    border-bottom: 2px solid #B3B3B3;
+    width: 30%;
+    right:0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+
+nav li.langues:after {
+	display: none;
+}
+
+nav a:hover li:after{
+    position: absolute; 
+    display: block; 
+    content: '';
+    border-bottom: 2px solid #E1001A;
+    width: 30%;
+    right:0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+
+nav a.langues {
+	font-size: 0.9em;
+	text-transform: capitalize;
+}
+
+nav li a.langues:after {
+	display: none;
+}
+
+/* *************************
+			COMMUN	 					
+************************** */ 
+
+img.oeuvre-max {
+	width:94%;
+	padding-bottom: 1em;
+}
+
+img.oeuvre-mini {
+	width:94%;
+}
+
+main {
+	padding-left:1em;
+	padding-right: 1em;
+}
+
+.tablette {
+	display:none;
+}
+
+a {
+	text-decoration: none;
+}
+
+main.oeuvre a h2:after, main.liens a h2:after {
+	content:'▼';
+	border-bottom: 1px solid #3E3D3F;
+	padding-left: 19em;
+	position:absolute;
+	display: block; 
+	color : #3E3D3F;
+	margin-top:-31px;
+}
+
+section .hide {
+	padding-top:1em;
+	padding-bottom: 1em;
+}
+
+/* *************************
+			OEUVRES	 					
+************************** */ 
+
+img.oeuvres-max {
+	width:82%;
+	margin:-1px;
+}
+
+ul.oeuvres-typo {
+	display: none;
+}
+
+/* *************************
+			OEUVRE	 					
+************************** */ 
+
+h1 {
+	display: inline-block;
+	font-family: "Bebas";
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 3.1em;
+	color:#E1001A;
+	line-height: 1em;
+	padding-bottom: 1.2em;
+}
+
+h1:after {
+    position: absolute; 
+    display: block; 
+    content: '_';
+    margin-top: 0em;
+    color:#E1001A ;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+
+.prec-suiv >a{
+	font-size: 3em;
+	color: #B3B3B3;
+	text-decoration: none;
+}
+
+.prec-suiv {
+	display: inline-block;
+	padding-left: 3.5em;
+}
+
+h2 {
+	color: #3D3D3F;
+	font-family: "Univers";
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	line-height: 2em;
+}
+
+/* ******** note ******** */
+
+.note p {
+	color: #DF051C;
+	font-family: "Univers";
+	font-style: normal;
+	font-size: 1.25em;
+	line-height: 1.25em;
+}
+
+/* ******** distri ******** */
+
+.distribution .fonction {
+	font-family: "UniversOblique";
+	font-style: italic;
+	font-size: 1.25em;
+	line-height: 1.25em;
+}
+
+.distribution .nom {
+	font-family: "UniversBold";
+	font-style: bold;
+	color:#E1001A;
+	font-size: 1.25em;
+	line-height: 1.25em;
+}
+
+/* ******** mentions ******** */
+
+.mentions .fonction {
+	font-family: "UniversOblique";
+	font-style: italic;
+	font-size: 1.25em;
+	line-height: 1.25em;
+}
+
+.mentions .nom {
+	font-family: "UniversBold";
+	font-style: bold;
+	color:#E1001A;
+	font-size: 1.25em;
+	line-height: 1.25em;
+}
+
+/* ******** diff ******** */
+
+.date {
+	font-family: "Bebas";
+	font-style: bold;
+	text-transform: uppercase;
+	color: #3E3D3F;
+	font-size: 1.35em;
+	line-height: 1.35em;
+}
+
+.lieu {
+	font-family: "UniversBold";
+	font-style: bold;	
+	color : #DF051C;
+	font-size: 1.30em;
+	line-height: 1.30em;
+}
+
+.evenement {
+	font-family: "Univers";
+	font-style: normal;
+	color: #3E3D3F;
+	font-size: 1.25em;
+	line-height: 1.25em;
+	margin-bottom:1em;
+}
+
+/* *************************
+		CALENDRIER	 					
+************************** */
+
+main.calendrier {
+	clear:both;
+}
+
+ul.sous-menu-annee {
+	display: block;
+	padding-bottom:3%;
+	overflow: hidden;
+}
+
+ul.sous-menu-annee li {
+	display: inline-block;
+	margin-bottom: 0;
+	padding-right: 0;
+}
+
+ul.sous-menu-annee li a {
+	font-family:"Bebas";
+	font-size: 2em;
+	font-style: normal;
+	line-height: 2em;
+	text-transform: uppercase;
+	color: #3E3D3F;
+}
+
+ul.sous-menu-annee li a:hover {
+	color: #DF051C;
+}
+
+ul.sous-menu-mois {
+	display:none;
+}
+
+ul.dates {
+	clear:both;
+}
+
+ul.dates li {
+	height:22em;
+}
+
+ul.dates div.img-oeuvre, div.description {
+	display: inline-block;
+}
+
+div.img-oeuvre img{
+	vertical-align: top;
+}
+
+div.img-oeuvre:before {
+	content:'';
+	display: inline-block;
+	border-left:1px solid #3D3D3F;
+	height:20em;
+}
+
+div.img-oeuvre:after {
+	content:'';
+	display: inline-block;
+	border-right:1px solid #3D3D3F;
+	height:20em;
+}
+
+div.description {
+	width:80%;
+	vertical-align: top;
+}
+
+.date {
+	color: #DF051C;
+}
+
+main.calendrier .date {
+	padding-top: 1em;
+	padding-bottom: 2em;
+}
+
+p.heure {
+	font-family: "UniversBold";
+	font-size: 1.4em;
+	text-decoration: underline;
+	color: #DF051C;
+}
+
+span.jour {
+	font-size: 4em;
+}
+
+span.mois {
+	font-size: 1.5em;
+}
+
+main.calendrier p.lieu, p.evenement {
+	display: inline;
+}
+
+p.lien {
+	font-family: "Univers";
+	font-size: 1.2em;
+	color: #3D3D3F;	
+}
+
+p.lien:before {
+	content:'_';
+	display: block;
+	color: #3D3D3F;	
+	margin-bottom: 1em;
+}
+
+
+/* *************************
+			BIO	 					
+************************** */
+
+main.bio p {
+	font-family: "Univers";
+	font-style: normal;
+	color: #DF051C;
+	font-size: 1.20em;
+	line-height: 1.20em;
+	margin-top:1em;
+	margin-bottom:3em;
+	/*text-align: justify;*/
+	/*word-break: break-word;
+	 -webkit-hyphens: auto;
+	 -moz-hyphens: auto;
+	 -ms-hyphens: auto;
+	 -o-hyphens: auto;
+	hyphens: auto;*/
+}
+
+main.bio {
+	width:100%;
+	clear:both;
+}
+
+main.bio section article {
+	padding-top:8em;
+}
+
+main.bio section.intro article {
+	padding-top:0em;
+}
+
+section.intro article p:before {
+	position: absolute; 
+    display: block; 
+    content: '';
+    margin-top: -2em;
+    border-top:5px solid #E1001A;
+    width: 2em;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+
+section.formation article:before {
+	content:'formation / déformation';
+	position: absolute;
+	font-family: "Bebas";
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-top:-2em;
+	padding-bottom:5em;
+	color: #E1001A;
+	line-height: 1em;
+	font-size: 3.5em;
+}
+
+section.formation article p:before {
+	position: absolute; 
+    display: block; 
+    content: '';
+    margin-top: -2em;
+    border-top:5px solid #E1001A;
+    width: 2em;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+
+section.defigurer article:before {
+	content:'défigurer';
+	position: absolute;
+	font-family: "Bebas";
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-top:-2em;
+	color: #E1001A;
+	line-height: 1em;
+	font-size: 3.5em;
+}
+
+section.defigurer article p:before {
+	position: absolute; 
+    display: block; 
+    content: '';
+    margin-top: -2em;
+    border-top:5px solid #E1001A;
+    width: 2em;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
+}
+
+section.detourner article:before {
+	content:'détourner';
+	position: absolute;
+	font-family: "Bebas";
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-top:-2em;
+	color: #E1001A;
+	line-height: 1em;
+	font-size: 3.5em;
+}
+
+section.detourner article p:before {
+	position: absolute; 
+    display: block; 
+    content: '';
+    margin-top: -2em;
+    border-top:5px solid #E1001A;
+    width: 2em;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
+}
+
+section.deplacer article:before {
+	content:'déplacer';
+	position: absolute;
+	font-family: "Bebas";
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-top:-2em;
+	color: #E1001A;
+	line-height: 1em;
+	font-size: 3.5em;
+}
+
+section.deplacer article p:before {
+	position: absolute; 
+    display: block; 
+    content: '';
+    margin-top: -2em;
+    border-top:5px solid #E1001A;
+    width: 2em;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
+}
+
+
+/* *************************
+			EXTENSION
+			SAUVAGE	 					
+************************** */ 
+
+.desk {
+	display:none;
+}
+
+p.info {
+	font-size: 1.25em;
+	line-height: 1.25em;
+	padding-top:2em;
+	padding-bottom: 10em;
+}
+
+p.info:after {
+    position: absolute; 
+    display: block; 
+    content: '';
+    border: 2px solid #E1001A;
+    width: 20%;
+    margin-top: 3em;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+
+/* *************************
+			CONTACT	 					
+************************** */ 
+
+main.contact {
+	clear:both;
+}
+
+main.contact h2 {
+	text-transform: capitalize;
+	font-size: 1.30em;
+	line-height: 1.30em;
+	font-family: "UniversBold";
+	font-style: bold;	
+	padding-bottom: 0.5em;
+	padding-top:0.5em;
+}
+
+section.production {
+	padding-bottom: 3em;
+}
+
+section.production:after {
+	position: absolute; 
+    display: block; 
+    content: '_';
+    color : #3D3D3F;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+
+section.developpement {
+	padding-bottom: 2em;
+}
+
+section.developpement:after {
+	position: absolute; 
+    display: block; 
+    content: '_';
+    color : #3D3D3F;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+
+main.contact p {
+	font-size: 1.30em;
+	line-height: 1.30em;
+	font-family: "Univers";
+	font-style: normal;
+	color : #3D3D3F;
+}
+
+em.nom {
+	color:#DF051C;
+	font-family: "Univers";
+	font-style: normal;
+}
+
+main.contact .mail {
+	font-family: "UniversBold";
+	font-style: bold;	
+	color : #3D3D3F;
+}
+
+main.contact .tel {
+	font-family: "UniversBold";
+	font-style: bold;	
+	color : #3D3D3F;
+}
+
+main.contact p small {
+	font-size: 0.8em;
+	line-height: 0.7em;
+	font-family: "UniversOblique";
+	font-style: italic;
+}
+
+/* *************************
+			LIENS	 					
+************************** */ 
+
+main.liens {
+	clear:both;
+}
+
+main.liens p {
+	color : #3E3D3F;
+	font-family: "Univers";
+	font-size: 1.25em;
+	line-height: 1.25em;
+}
+
+main.liens p.site {
+	font-family: "UniversBold";
+	font-style: bold;	
+	color : #DF051C;
+	padding-bottom: 2em;
+}
+
+p.site:after {
+	content:"_";
+	position:absolute;
+	display: block; 
+	font-family: "Univers";
+	font-style: bold;	
+	color : #3E3D3F;
+}
+
+main.liens p.contact {
+	font-family: "UniversBold";
+	font-style: bold;	
+	color : #3E3D3F;
+}
+
+/* *************************
+			TABLETTE
+			768*1024 				
+************************** */ 
+
+@media screen and (min-width:768px) {
+
+	body {
+    	font-size: 1.1em;
+	}
+
+	.tablette {
+		display:inline;
+	}
+
+	main.oeuvre a h2:after {
+		content:'▼';
+		border-bottom: 1px solid #3E3D3F;
+		padding-left: 75%;
+		position:absolute;
+		display: block; 
+		color : #3E3D3F;
+		margin-top:-38px;
+	}
+
+	main.liens a h2:after {
+		content:'▼';
+		border-bottom: 1px solid #3E3D3F;
+		padding-left: 63%;
+		position:absolute;
+		display: block; 
+		color : #3E3D3F;
+		margin-top:-38px;
+	}
+
+	/*main.oeuvre a:hover h2:after, main.liens a h2:after {
+		content:'▼';
+		border-bottom: 1px solid #DF051C;
+		padding-left: 35em;
+		position:absolute;
+		display: block; 
+		color : #DF051C;
+		margin-top:-38px;
+	}*/
+
+	/* *************************
+				MENU	 					
+	************************** */
+
+	img.logo {
+		width: 100%;
+		padding-top: 0em;
+		padding-left:1em;
+	}
+
+	ul.sous-menu-oeuvres, div.menu {
+		display:none;
+	}
+
+	nav {
+		margin-bottom:8em;
+		margin-top:5em;
+	}
+
+	nav a {
+		clear:none;
+		float:left;
+	}
+
+	nav ul {
+		width:55%;
+		display: inline-block;
+		padding-left: 20%;
+	}
+
+	nav li {
+		display: block;
+		list-style-type: none;
+		float: left;
+		vertical-align: middle;
+		width: 13em;
+		margin-left: 1.5em;
+		margin-bottom: 0.5em;
+		padding-right: 0em;
+	}
+
+	nav li:after {
+		display: none;
+	}
+
+	nav a li:after {
+		display: none;
+	    position: relative; 
+	    display: block; 
+	    content: '';
+	    border-bottom: 1px solid black;
+	    width: 100%;
+	    margin-top: 0.7em;
+	    margin-bottom: 0.7em;
+	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+	}
+
+	nav a:hover li:after {
+		display: none;
+	    position: relative; 
+	    display: block; 
+	    content: '';
+	    border-bottom: 1px solid #E1001A;
+	    width: 100%;
+	    margin-top: 0.7em;
+	    margin-bottom: 0.7em;
+	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+	}
+
+	/* *************************
+			CALENDRIER	 					
+	************************** */ 
+
+	ul.sous-menu-annee {
+    	position:absolute;
+    	left:8%;
+	}
+
+	ul.sous-menu-annee li {
+		padding-bottom: 0;
+		display: block;
+		text-decoration: underline;
+	}
+
+	ul.sous-menu-annee li a {
+		float:right;
+		text-decoration: underline;
+		clear:both;
+		line-height: 1.5em;
+	}
+
+	ul.dates {
+		margin-left:30%;
+	}
+
+	ul.sous-menu-mois{
+		display: block;
+	}
+
+	ul.sous-menu-mois li a {
+		font-family: "Univers";
+		font-style: normal;
+		font-size: 1.15em;
+		float:right;
+		text-decoration: none;
+	}
+
+	ul.dates div.img-oeuvre {
+		width: 20%;
+	}
+
+	ul.dates div.img-oeuvre > img {
+		width: 80%;
+	}
+
+	ul.dates div.description {
+		width: 60%;
+	}
+
+
+	/* *************************
+			CONTACT	 					
+	************************** */ 
+
+	main.contact {
+		width:41%;
+		padding-left:19em;
+	}
+
+	/* *************************
+			LIENS	 					
+	************************** */ 
+
+	main.liens {
+		width:41%;
+		padding-left:19em;
+	}
+
+	/* *************************
+			OEUVRE	 					
+	************************** */ 
+
+	.prec-suiv {
+		padding-left: 33em;
+	}
+
+	/* ******** note ******** */
+
+	#note {
+		width:75%;
+	}
+
+	.note p {
+		column-gap:2.5em;
+		-moz-column-gap:2.5em;
+		-webkit-column-gap:2.5em;
+		-o-column-gap:2.5em;
+    	column-width: 18em;
+    	-webkit-column-width: 18em; 
+   		-moz-column-width: 18em; 
+	}
+
+	.distribution, .mentions, .diffusion {
+		width:85%;
+	}
+
+	/* *************************
+			EXTENSION
+			SAUVAGE	 					
+	************************** */ 
+
+	main.extension section.note {
+		column-count: 2;
+		 -moz-column-count: 2;
+	}
+
+	p.info:after {
+	    display: none;
+	}
+
+	main.extension .oeuvre-mini {
+		width:30%;
+		padding-right:1em;
+	}
+
+	/* *************************
+			BIO	 					
+	************************** */
+
+	main.bio {
+		width:60%;
+		padding-left:25%;
+	}
+
+	main.bio section article {
+		padding-top:10em;
+	}
+
+}
+
+/* *************************
+			TABLETTE
+			PAYSAGE
+			1024*768			
+************************** */ 
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+}
+
+/* *************************
+			DESKTOP
+			1024*768			
+************************** */ 
+
+@media only screen and (min-width : 1024px) {
+
+	body {
+    	font-size: 1.10em;
+    	display:inline-block;
+    	height:100%;
+	}
+
+	.mobile {
+		display:none;
+	}
+
+	.desk {
+		display:block;
+	}
+
+	/* *************************
+			MENU	 					
+	************************** */ 
+
+	nav {
+		width:100%;
+	}
+
+	img.logo {
+		width: auto;
+		padding: 1em;
+	}
+
+	nav {
+		position: absolute;
+		top:25%;
+		/*margin-bottom:1em;
+		margin-top:1em;*/
+	}
+
+	nav a {
+		clear:none;
+		float:none;
+		font-size:1em;
+	}
+
+	nav ul {
+		width:auto;
+		display: block;
+		padding-left: 0em;
+	}
+
+	ul.sous-menu-oeuvres {
+   		display: block;
+   	}
+
+	nav ul.menu-principal li {
+		display: block;
+		float: none;
+		/*width: auto;*/
+		height: auto;
+		margin-left: 1em;
+		margin-bottom: 0em;
+		margin-top:0.5em;
+	}
+
+	nav ul.menu-principal li:after {
+		display: none;
+	}
+
+	nav ul.menu-principal a:after {
+		position: absolute; 
+	    display: block; 
+	    content: '';
+	    border-bottom: 1px solid #3E3D3F;
+	    width: 5%;
+	    margin-top: 0em;
+	    margin-bottom: 1em;
+	    left:0;
+	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+	}
+
+	nav ul.menu-principal a.langues:after {
+	    display: none; 
+	}
+
+	nav ul.sous-menu-oeuvres a:after {
+	    display: none; 
+	}
+
+	nav ul.menu-principal a:hover:after {
+		position: absolute; 
+	    display: block; 
+	    content: '';
+	    border-bottom: 1px solid #E1001A;
+	    width: 5%;
+	    margin-top: 0em;
+	    margin-bottom: 1em;
+	    left:0;
+	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+	}
+
+	nav ul.menu-principal a.langues:hover:after {
+	    display: none; 
+	}
+
+	nav ul.sous-menu-oeuvres a:hover:after {
+	    display: none; 
+	}
+
+	nav ul ul.sous-menu-oeuvres li a{
+		color: #3E3D3F;
+		font-family: "Univers";
+		text-transform: none;
+		text-decoration: none;
+		font-size:1em;
+		clear:both;
+	}
+
+	nav ul ul.sous-menu-oeuvres li a em {
+		text-decoration:  line-through;
+		font-style: normal;
+	}
+
+	nav ul ul.sous-menu-oeuvres li a:hover {
+		color: #E1001A;
+	}
+
+	nav ul.sous-menu-oeuvres li:after {
+		display: none;
+	}
+
+	nav ul.sous-menu-oeuvres .hide {
+		padding-top:0;
+		padding-bottom: 0;
+	}
+
+	/* *************************
+			OEUVRES	 					
+	************************** */ 
+
+	img.oeuvres-max {
+		width:auto;
+		margin:-1px;
+	}
+
+	ul.oeuvres-photo {
+		display:none;
+	}
+
+	ul.oeuvres-typo {
+		display:block;
+		height:100%;
+	}
+
+	ul.oeuvres-typo li {
+		display: inline-block;
+		padding:1em;
+		height:50%;
+	}
+
+	ul.oeuvres-typo img {
+		margin-top: 2.5em;
+		margin-bottom: 2.5em;
+		vertical-align: middle;
+	}
+
+	ul.oeuvres-typo a:after {
+		content:'';
+		display: block;
+		position: absolute;
+		border-right: 1px solid #3D3D3F;
+		top:0;
+		padding-right: 2em;
+		height:55%;
+		width:5%;
+	}
+
+	ul.oeuvres-typo li:nth-child(1):before {
+		content:'';
+		display: block;
+		position: absolute;
+		border-left: 1px solid #3D3D3F;
+		top:0;
+		margin-left: -1.5em;
+		height:55%;
+		width:5%;
+	}
+
+	main.oeuvres {
+		position: absolute;
+		margin:auto;
+		top:25%;
+		left:25%;
+		bottom:0;
+	}
+
+	/* *************************
+			OEUVRE	 					
+	************************** */ 
+
+	h2.note, .prec-suiv{
+		display:none;
+	}
+
+	#note {
+		width:100%;
+		background-color: #999666;
+		height: 60%;
+		/*overflow:scroll; inutile avec le plugin */ 
+	}
+
+	section.note {
+		height:100%;
+	}
+
+	section.note:after {
+		content:'';
+		border-bottom: 3px solid #E1001A;
+		width:5em;
+		display: block;
+	}
+
+	main.oeuvre {
+		position: absolute;
+		height:100%;
+		margin-top:-1em;
+		left: 25em;
+		width:2000px;
+	}
+
+	main.oeuvre img.oeuvre-max {
+		display: inline-block;
+		width:auto;
+		height: 100%;
+		padding-bottom: 0;
+		vertical-align: middle;
+	}
+
+	main.oeuvre .presentation {
+		display: inline-block;
+		top: 12em;
+		width:35em;
+		height:55%;
+		vertical-align: middle;
+		padding-left:3em;
+		padding-bottom: 15em;
+		/*overflow:scroll;*/
+	}
+
+	main.oeuvre .sous-menu {
+		display: inline-block;
+		vertical-align: middle;
+		top: 12em;		
+		padding-left:3em;
+		/*padding-top:5%;*/
+		height:55%;
+	}
+
+	main.oeuvre .sous-menu section {
+		vertical-align: middle;
+	}
+
+	main.oeuvre section.mentions, section.diffusion, section.distribution {
+    	width: 30em;
+	}
+
+	#distribution, #mentions, #diffusion {
+		width: 30em;
+	}
+
+	main.oeuvre a h2:after{
+		content:'▼';
+		border-bottom: 1px solid #3E3D3F;
+		padding-left: 20em;
+		position:absolute;
+		display: block; 
+		color : #3E3D3F;
+		margin-top:-38px;
+	}
+
+	.galerie {
+		display: inline-block;
+		padding-left:3em;
+		vertical-align: middle;
+		height:55%;
+	}
+
+	.galerie img {
+		/*width: 35%;*/
+		vertical-align: middle;
+	}
+
+	img.oeuvre-mini {
+		height: 100%;
+		width: auto;
+	}
+
+	section.mentions, section.diffusion, section.distribution {
+		width:25em;
+	}
+
+	/* *************************
+			CALENDRIER 					
+	************************** */ 
+
+	main.calendrier {
+		position: absolute;
+		height: 100%;
+		width:2000px;
+		padding-left: 0px;
+		padding-bottom: 0;
+		padding-top: 0;
+		left: 27em;
+	}
+
+	ul.dates {
+		height:100%;
+		margin-left: 0;
+	}
+
+	ul.dates li {
+		display: inline-block;
+		width: 10%;
+		height: auto;
+	}
+
+	ul.dates div.img-oeuvre {
+		line-height:350px;
+	  	text-align:center;
+		height:350px;
+		width: auto;
+	}
+
+	ul.dates div.img-oeuvre > img {
+		height:auto;
+		width: 100%;
+		vertical-align: middle;
+	}
+
+	ul.dates div.description {
+		padding-top: 2em;
+		width: auto;
+	}
+
+	ul.dates li:nth-child(1):before {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		margin-left: -0.5em;
+		border-left: 1px solid #3D3D3F;
+		height: 350px;
+	}	
+
+	div.img-oeuvre:after {
+	    display: none;
+	}
+
+	div.img-oeuvre:before {
+	    display: none;
+	}
+
+	/* *************************
+			EXTENSION
+			SAUVAGE	 					
+	************************** */ 
+
+	main.extension {
+		position: absolute;
+		width:2000px;
+		height:100%;
+		margin-top:-1em;
+		left: 25em;
+	}
+
+	img.mobile {
+		display: none;
+	}
+
+	main.extension img.desk{
+		display: inline-block;
+		width:auto;
+		height: 100%;
+		padding-bottom: 0;
+		vertical-align: middle;
+	}
+
+	main.extension section.note{
+		column-count: 1;
+		 -moz-column-count: 1;
+		display: inline-block;
+		width:35em;
+		vertical-align: middle;
+		padding-left:3em;
+	}
+
+	main.extension .oeuvre-mini {
+		width: auto;
+		display: inline-block;
+	}
+
+	.note p {
+	    -moz-column-gap: 2em;
+	    -moz-column-width: 35em;
+	}
+
+	.galerie img {
+		vertical-align: middle;
+	}
+
+	img.oeuvre-mini {
+		height: 100%;
+		width: auto;
+	}
+
+	/* *************************
+			LIENS	 					
+	************************** */ 
+
+	main.liens {
+		position: absolute;
+		top: 12em;
+		left: 7em;
+	}
+
+	main.liens a h2:after {
+		content:'▼';
+		border-bottom: 1px solid #3E3D3F;
+		padding-left: 100%;
+		position:absolute;
+		display: block; 
+		color : #3E3D3F;
+		margin-top:-38px;
+	}
+
+	/* *************************
+			CONTACT	 					
+	************************** */ 
+
+	main.contact {
+		position: absolute;
+		top: 12em;
+		left: 7em;
+	}
+
+	/* *************************
+			BIO	 					
+	************************** */ 
+
+	main.bio {
+		position: absolute;
+		height:100%;
+		padding-left: 0;
+		left:15em;
+	}
+
+	main.bio section {
+		display: inline-block;
+		position: absolute;
+		width:45em;
+	}
+
+	main.bio p {
+		padding-top:4em;
+		margin-bottom: 0;
+	}
+
+	main.bio section article {
+		width: 25em;
+		vertical-align: baseline;
+		padding-top:20%;
+		padding-left:12em;
+	}
+
+	main.bio section.intro article {
+		padding-top:20%;
+	}
+
+	section.formation {
+		margin-left:35em;
+	}
+
+	section.formation article:before {
+		content:'formation / déformation';
+		position: absolute;
+		width: 4em;
+		font-family: "Bebas";
+		font-weight: normal;
+		text-transform: uppercase;
+		margin-top:-2em;
+		padding-bottom:5em;
+		color: #E1001A;
+		line-height: 1em;
+		font-size: 3.5em;
+	}
+
+	section.formation article p:before {
+		position: absolute; 
+	    display: block; 
+	    content: '';
+	    margin-top: -2em;
+	    border-top:5px solid #E1001A;
+	    width: 2em;
+	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+	}
+
+	section.defigurer {
+		padding-left:70em;
+	}
+
+	section.defigurer article:before {
+		content:'défigurer';
+		position: absolute;
+		font-family: "Bebas";
+		font-weight: normal;
+		text-transform: uppercase;
+		margin-top:-1em;
+		color: #E1001A;
+		line-height: 1em;
+		font-size: 3.5em;
+	}
+
+	section.defigurer article p:before {
+		position: absolute; 
+	    display: block; 
+	    content: '';
+	    margin-top: -2em;
+	    border-top:5px solid #E1001A;
+	    width: 2em;
+	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
+	}
+
+	section.detourner {
+		padding-left:105em;
+	}
+
+	section.detourner article:before {
+		content:'détourner';
+		position: absolute;
+		font-family: "Bebas";
+		font-weight: normal;
+		text-transform: uppercase;
+		margin-top:-1em;
+		color: #E1001A;
+		line-height: 1em;
+		font-size: 3.5em;
+	}
+
+	section.detourner article p:before {
+		position: absolute; 
+	    display: block; 
+	    content: '';
+	    margin-top: -2em;
+	    border-top:5px solid #E1001A;
+	    width: 2em;
+	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
+	}
+
+	section.deplacer {
+		padding-left: 140em;
+	}
+
+	section.deplacer article:before {
+		content:'déplacer';
+		position: absolute;
+		font-family: "Bebas";
+		font-weight: normal;
+		text-transform: uppercase;
+		margin-top:-1em;
+		color: #E1001A;
+		line-height: 1em;
+		font-size: 3.5em;
+	}
+
+	section.deplacer article p:before {
+		position: absolute; 
+	    display: block; 
+	    content: '';
+	    margin-top: -2em;
+	    border-top:5px solid #E1001A;
+	    width: 2em;
+	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
+	}
+
+}

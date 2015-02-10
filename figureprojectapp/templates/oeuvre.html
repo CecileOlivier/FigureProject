@@ -1,0 +1,131 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	  	<meta charset="UTF-8">
+		<title>Figure project</title>
+		<meta name="description" content="">
+      	<meta name="author" content="">
+      	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link href="{% static "css/reset.css" %}" rel="stylesheet">
+		<link href="{% static "css/style.css" %}" rel="stylesheet">
+		<link href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+		<link href="{% static "css/jquery.mCustomScrollbar.css" %}" rel="stylesheet" media="all" />
+		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mousewheel.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
+	</head>
+	<body>
+
+	<nav>
+		<a href="index.html"><img src="{% static "img/logo.png" %}" alt="" title="" class="logo"/></a>
+		<div class="menu"><a href="#menu" class=""></a></div>
+			<ul class="menu-principal">
+				<a href="calendrier.html"><li>calendrier</li></a>
+				<a href="biographie.html"><li>biographie</li></a>
+				<a href="index.html" class="lienvisible"><li>œuvres</li></a>
+					<div id="oeuvres" class="oeuvres hide">
+						<ul class="sous-menu-oeuvres">
+							<li><a href="oeuvre.html">¬ Adieu et merci</a></li>
+							<li><a href="oeuvre.html">¬ Autoarchive</a></li>
+							<li><a href="oeuvre.html">¬ La part du rite</a></li>
+							<li><a href="oeuvre.html">¬ Ecran somnambule</a></li>
+							<li><a href="oeuvre.html">¬ Loredreamsong</a></li>
+							<li><a href="oeuvre.html">¬ Histoire par celui qui la raconte</a></li>
+							<li><a href="oeuvre.html">¬ Self portrait Camouflage</a></li>
+							<li><a href="oeuvre.html">¬ Habiter</a></li>
+							<li><a href="oeuvre.html">¬ Love</a></li>
+							<li><a href="oeuvre.html">¬ I <em>love</em> like animals</a></li>
+						</ul>
+					</div>
+				<a href="extension-sauvage.html"><li>extension sauvage</li></a>
+				<a href="contact.html"><li>contact</li></a>
+				<a href="liens.html"><li>liens</li></a>
+				<li><a href="#" class="langues">Fr</a>/<a href="#" class="langues">En</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<main class="oeuvre">
+		<img src="{% static "img/oeuvres/adieuetmerciB.png" %}" alt="" title="" class="oeuvre-max" />
+		<div class="presentation">
+		<h1>adieu et merci</h1>
+		<p class="prec-suiv"> <a href="#"><</a> <a href="#">></a> </p>
+			<section class="note inline">
+			<!-- ouvert par défaut en desktop avec disparition du titre -->
+				<a href="#note" class="lienvisible"><h2 class="note">note</h2></a>
+				<div id="note" class="note hide scroll-pane">
+					<p>
+						Le cosmos, c’est partout, comme disait Marguerite Duras : « Ici, c’est
+						partout et partout, c’est ici. » Il y a une convention, un objet, un
+						spectacle, une navette spatiale. Un objet qui nous entoure (le théâtre),
+						un objet que l’on a devant soi : soi. C’est pareil. Devant soi ou autour de
+						soi, c’est toujours soi. Adieu et merci. Rien n’aura eu lieu que le lieu.
+						Axel Bogousslavsky a dit récemment dans une émission de radio que la
+						voix de Marguerite Duras — voix si particulière — laissait entendre,
+						dans son voyage, ce qu’il y avait avant la naissance (rien) et ce qu’il y
+						avait après la mort (rien). Que cette voix si riche en harmoniques
+						laissait entendre ça : le cosmos de tout qu’on ne peut pas penser. Latifa
+						Laâbissi a ce pouvoir-là, ce pouvoir de sorcière. Adieu et merci. Je suis
+						là, mais momentanément. Vraiment momentanément. Elle danse une
+						danse qui, pour moi, n’est pas un solo, mais un quatuor. Au moins. Elle
+						déploie une machine de guerre en étoile de sens, efficace et cyclique
+						pour voir ce dont il est question : cet avant et cet après dont nous
+						sommes le passage. /Yves-Noël Genod
+					</p>
+				</div>
+			</section>
+			</div>
+			<div class="sous-menu">
+			<section class="distribution inline">
+				<a href="#distribution" class="lienvisible"><h2>distribution</h2></a>
+				<div id="distribution" class="distribution hide">
+					<ul>
+						<li><span class="fonction">Conception et interprétation : </span><span class="nom">Latifa Laâbissi</span></li>
+						<li><span class="fonction">Conception scénographique : </span><span class="nom">Nadia Lauro</span></li>
+						<li><span class="fonction">Costumes : </span><span class="nom">Nadia Lauro / Latifa Laâbissi</span></li>
+						<li><span class="fonction">Création lumière : </span><span class="nom">Yves Godin</span></li>
+						<li><span class="fonction">Création son : </span><span class="nom">Manuel Coursin</span></li>
+						<li><span class="fonction">Remerciements à Isabelle Launay, Yves Noël Genod, Jean-Christophe Paré, Francois Chaignaud</span></li>
+						<li><span class="fonction">Direction technique : </span><span class="nom">Ludovic Rivière</span></li>
+					</ul>
+				</div>
+			</section>
+			<section class="mentions inline">
+				<a href="#mentions" class="lienvisible"><h2>mentions</h2></a>
+				<div id="mentions" class="mentions hide">
+					<ul>
+						<li><span class="fonction">Production : </span><span class="nom">Figure Project – Rennes</span></li>
+						<li><span class="fonction">Production déléguée : </span><span class="nom">Latitudes Prod – Lille</span></li>
+						<li><span class="fonction">Coproduction : Les Spectacles vivants – Centre Pompidou – Paris, Festival d’Automne à Paris, Musée de la danse -CCNRB, Théâtre National de Bretagne – Rennes, Le Phare – CCN du Havre Haute-Normandie, Open Latitudes network, Le Vivat – scène conventionnée d’Armentières, Institut français / Ville de Rennes et Rennes Métropole. Avec le soutien du Tanzquartier Wien et du Centre national de danse contemporaine Angers / direction Emmanuelle Huynh (2012)</span></li>
+					</ul>
+				</div>
+			</section>
+			<section class="diffusion inline">
+			<!-- ouvert par défaut en mobile -->
+				<a href="#diffusion" class="lienvisible"><h2>diffusion</h2></a>
+				<div id="diffusion" class="diffusion hide">
+					<p class="date">} 28 JANVIER 2014</p>
+					<p class="lieu">Le Vivat, Armentières</p>
+					<p class="evenement">dans le cadre du festival <strong>Vivat la danse</strong></p>
+					<p class="date">} 20, 21, 22 NOVEMBRE 2013</p>
+					<p class="lieu">Centre Pompidou, Paris</p>
+					<p class="evenement">dans le cadre du <strong>Festival d’Automne</strong></p>
+					<p class="date">} 11 & 14 NOVEMBRE 2013</p>
+					<p class="lieu">TNB – Rennes</p>
+					<p class="evenement">dans le cadre du festival <strong>Mettre en Scène,</strong><em> Première</em></p>
+					<p class="date">} LE 12 JUIN 2013 À 20H30</p>
+					<p class="lieu">Théâtre de l’Oiseau-Mouche / Le Garage, Roubaix</p>
+					<p class="evenement">dans le cadre du festival <strong>Latitudes Contemporaines, </strong><em>maquette</em></p>
+				</div>
+			</section>
+			</div>
+			<section class="galerie">
+				<img src="{% static "img/oeuvres/adieuetmerciS.png" %}" alt="" title="" class="oeuvre-mini"/>
+			</section>
+		</div>
+	</main>
+
+	</body>
+</html>

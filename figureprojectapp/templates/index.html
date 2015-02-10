@@ -1,0 +1,149 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	  	<meta charset="UTF-8">
+		<title>Figure project</title>
+		<meta name="description" content="">
+      	<meta name="author" content="">
+      	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link href="{% static "css/reset.css" %}" rel="stylesheet">
+		<link href="{% static "css/style.css" %}" rel="stylesheet">
+		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mousewheel.js" %}"></script>
+		<script>
+		$(document).ready(function() {
+
+			$('html, body, *').mousewheel(function(e, delta) {
+				this.scrollLeft -= (delta * 40);
+				e.preventDefault();
+			});
+
+		});
+		</script>
+	</head>
+	<body>
+
+	<nav>
+		<a href="index.html" class="retour"><img src="{% static "img/logo.png" %}" alt="" title="" class="logo"/></a>
+		<div class="menu"><a href="#menu-principal" class="lienvisible"></a></div>
+			<ul id="menu-principal" class="menu-principal hide">
+				<a href="calendrier.html"><li>calendrier</li></a>
+				<a href="biographie.html"><li>biographie</li></a>
+				<a href="#oeuvres" class="lienvisible"><li>œuvres</li></a>
+					<div id="oeuvres" class="oeuvres hide">
+						<ul class="sous-menu-oeuvres">
+							<li><a href="oeuvre.html">¬ Adieu et merci</a></li>
+							<li><a href="oeuvre.html">¬ Autoarchive</a></li>
+							<li><a href="oeuvre.html">¬ La part du rite</a></li>
+							<li><a href="oeuvre.html">¬ Ecran somnambule</a></li>
+							<li><a href="oeuvre.html">¬ Loredreamsong</a></li>
+							<li><a href="oeuvre.html">¬ Histoire par celui qui la raconte</a></li>
+							<li><a href="oeuvre.html">¬ Self portrait Camouflage</a></li>
+							<li><a href="oeuvre.html">¬ Habiter</a></li>
+							<li><a href="oeuvre.html">¬ Love</a></li>
+							<li><a href="oeuvre.html">¬ I <em>love</em> like animals</a></li>
+						</ul>
+					</div>
+				<a href="extension-sauvage.html"><li>extension sauvage</li></a>
+				<a href="contact.html"><li>contact</li></a>
+				<a href="liens.html"><li>liens</li></a>
+			</ul>
+			<!--<p><a href="#" class="langues">Fr</a>/<a href="#" class="langues">En</a></p>-->
+		</div>
+	</nav>
+
+	<main class="oeuvres">
+		<!-- oeuvres en photo pour mobile et tablette -->
+		<ul class="oeuvres-photo">
+			<li>
+				<a href="oeuvre.html">
+					<img src="{{ STATIC_PREFIX }}img/oeuvres/adieuetmerciB.png" alt="" title="" class="oeuvres-max"/>
+				</a>
+			</li>
+			<li>
+				<img src="/static/img/oeuvres/autoarchiveB.png" alt="" title="" class="oeuvres-max"/>
+			</li>
+			<li>
+				<img src="/static/img/oeuvres/lapartduriteB.png" alt="" title="" class="oeuvres-max"/>
+			</li>
+			<li>
+				<img src="img/oeuvres/ecransomnambuleB.png" alt="" title="" class="oeuvres-max"/>
+			</li>
+			<li>
+				<img src="img/oeuvres/loredreamsongB.png" alt="" title="" class="oeuvres-max"/>
+			</li>
+			<li>
+				<img src="img/oeuvres/histoireB.png" alt="" title="" class="oeuvres-max"/>
+			</li>
+			<li>
+				<img src="img/oeuvres/selfportraitB.png" alt="" title="" class="oeuvres-max"/>
+			</li>
+			<li>
+				<img src="img/oeuvres/habiterB.png" alt="" title="" class="oeuvres-max"/>
+			</li>
+			<li>
+				<img src="img/oeuvres/loveB.png" alt="" title="" class="oeuvres-max"/>
+			</li>
+			<li>
+				<img src="img/oeuvres/ilovelikeanimalsB.png" alt="" title="" class="oeuvres-max"/>
+			</li>
+		</ul>
+		<!-- oeuvres en typo pour desktop -->
+		<ul class="oeuvres-typo">
+			<li>
+				<a href="oeuvre.html">
+					<img src="{% static "img/oeuvres/adieuetmerci.png" %}" alt="" title="" class="oeuvres-max"/>
+				</a>
+			</li>
+			<li>
+				<a href="oeuvre.html">
+					<img src="{% static "img/oeuvres/autoarchive.png" %}" alt="" title="" class="oeuvres-max"/>
+				</a>
+			</li>
+			<li>
+				<a href="oeuvre.html">
+					<img src="{% static "img/oeuvres/lapartdurite.png" %}" alt="" title="" class="oeuvres-max"/>
+				</a>
+			</li>
+			<li>
+				<a href="oeuvre.html">
+					<img src="{% static "img/oeuvres/ecransomnambule.png" %}" alt="" title="" class="oeuvres-max"/>
+				</a>
+			</li>
+			<li>
+				<a href="oeuvre.html">
+					<img src="{% static "img/oeuvres/loredreamsong.png" %}" alt="" title="" class="oeuvres-max"/>
+				</a>
+			</li>
+			<li>
+				<a href="oeuvre.html">
+					<img src="{% static "img/oeuvres/histoire.png" %}" alt="" title="" class="oeuvres-max"/>
+				</a>
+			</li>
+			<li>
+				<a href="oeuvre.html">
+					<img src="{% static "img/oeuvres/selfportrait.png" %}" alt="" title="" class="oeuvres-max"/>
+				</a>
+			</li>
+			<li>
+				<a href="oeuvre.html">
+					<img src="{% static "img/oeuvres/habiter.png" %}" alt="" title="" class="oeuvres-max"/>
+				</a>
+			</li>
+			<li>
+				<a href="oeuvre.html">
+					<img src="{% static "img/oeuvres/love.png" %}" alt="" title="" class="oeuvres-max"/>
+				</a>
+			</li>
+			<li>
+				<a href="oeuvre.html">
+					<img src="{% static "img/oeuvres/ilovelikeanimals.png" %}" alt="" title="" class="oeuvres-max"/>
+				</a>
+			</li>
+		</ul>
+	</main>
+
+	</body>
+</html>
