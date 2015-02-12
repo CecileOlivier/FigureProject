@@ -606,19 +606,20 @@ main.contact h2 {
 	padding-top:0.5em;
 }
 
-section.production {
-	padding-bottom: 3em;
+section.contact {
+	padding-bottom: 2em;
 }
 
-section.production:after {
+section.contact:after {
 	position: absolute; 
     display: block; 
     content: '_';
     color : #3D3D3F;
+    padding-bottom: 2em;
     box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
 }
 
-section.developpement {
+/*section.developpement {
 	padding-bottom: 2em;
 }
 
@@ -628,7 +629,7 @@ section.developpement:after {
     content: '_';
     color : #3D3D3F;
     box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
-}
+}*/
 
 main.contact p {
 	font-size: 1.30em;

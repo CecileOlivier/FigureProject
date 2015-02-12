@@ -34,16 +34,10 @@
 				<a href="#oeuvres" class="lienvisible"><li>œuvres</li></a>
 					<div id="oeuvres" class="oeuvres hide">
 						<ul class="sous-menu-oeuvres">
-							<li><a href="oeuvre.html">¬ Adieu et merci</a></li>
-							<li><a href="oeuvre.html">¬ Autoarchive</a></li>
-							<li><a href="oeuvre.html">¬ La part du rite</a></li>
-							<li><a href="oeuvre.html">¬ Ecran somnambule</a></li>
-							<li><a href="oeuvre.html">¬ Loredreamsong</a></li>
-							<li><a href="oeuvre.html">¬ Histoire par celui qui la raconte</a></li>
-							<li><a href="oeuvre.html">¬ Self portrait Camouflage</a></li>
-							<li><a href="oeuvre.html">¬ Habiter</a></li>
-							<li><a href="oeuvre.html">¬ Love</a></li>
-							<li><a href="oeuvre.html">¬ I <em>love</em> like animals</a></li>
+							{% for oeuvre in oeuvres %}
+							<li><a href="{{ oeuvre.get_absolute_url }}">¬ {{ oeuvre.titre_oeuvre }}</a></li>
+							{% endfor %}
+							<!-- em encadrant le mot love pour l'oeuvre i love like animals -->
 						</ul>
 					</div>
 				<a href="extension-sauvage.html"><li>extension sauvage</li></a>
@@ -57,91 +51,21 @@
 	<main class="oeuvres">
 		<!-- oeuvres en photo pour mobile et tablette -->
 		<ul class="oeuvres-photo">
-			<li>
-				<a href="oeuvre.html">
-					<img src="{{ STATIC_PREFIX }}img/oeuvres/adieuetmerciB.png" alt="" title="" class="oeuvres-max"/>
-				</a>
-			</li>
-			<li>
-				<img src="/static/img/oeuvres/autoarchiveB.png" alt="" title="" class="oeuvres-max"/>
-			</li>
-			<li>
-				<img src="/static/img/oeuvres/lapartduriteB.png" alt="" title="" class="oeuvres-max"/>
-			</li>
-			<li>
-				<img src="img/oeuvres/ecransomnambuleB.png" alt="" title="" class="oeuvres-max"/>
-			</li>
-			<li>
-				<img src="img/oeuvres/loredreamsongB.png" alt="" title="" class="oeuvres-max"/>
-			</li>
-			<li>
-				<img src="img/oeuvres/histoireB.png" alt="" title="" class="oeuvres-max"/>
-			</li>
-			<li>
-				<img src="img/oeuvres/selfportraitB.png" alt="" title="" class="oeuvres-max"/>
-			</li>
-			<li>
-				<img src="img/oeuvres/habiterB.png" alt="" title="" class="oeuvres-max"/>
-			</li>
-			<li>
-				<img src="img/oeuvres/loveB.png" alt="" title="" class="oeuvres-max"/>
-			</li>
-			<li>
-				<img src="img/oeuvres/ilovelikeanimalsB.png" alt="" title="" class="oeuvres-max"/>
-			</li>
+			{% for oeuvre in oeuvres %}
+				<li>
+				<a href="{{ oeuvre.get_absolute_url }}">
+				<img src="{{ oeuvre.image_titre.url }}" alt="{{ oeuvre.titre_oeuvre }}" class="oeuvres-max"/></a>
+				</li>
+			{% endfor %}
 		</ul>
 		<!-- oeuvres en typo pour desktop -->
 		<ul class="oeuvres-typo">
-			<li>
-				<a href="oeuvre.html">
-					<img src="{% static "img/oeuvres/adieuetmerci.png" %}" alt="" title="" class="oeuvres-max"/>
-				</a>
-			</li>
-			<li>
-				<a href="oeuvre.html">
-					<img src="{% static "img/oeuvres/autoarchive.png" %}" alt="" title="" class="oeuvres-max"/>
-				</a>
-			</li>
-			<li>
-				<a href="oeuvre.html">
-					<img src="{% static "img/oeuvres/lapartdurite.png" %}" alt="" title="" class="oeuvres-max"/>
-				</a>
-			</li>
-			<li>
-				<a href="oeuvre.html">
-					<img src="{% static "img/oeuvres/ecransomnambule.png" %}" alt="" title="" class="oeuvres-max"/>
-				</a>
-			</li>
-			<li>
-				<a href="oeuvre.html">
-					<img src="{% static "img/oeuvres/loredreamsong.png" %}" alt="" title="" class="oeuvres-max"/>
-				</a>
-			</li>
-			<li>
-				<a href="oeuvre.html">
-					<img src="{% static "img/oeuvres/histoire.png" %}" alt="" title="" class="oeuvres-max"/>
-				</a>
-			</li>
-			<li>
-				<a href="oeuvre.html">
-					<img src="{% static "img/oeuvres/selfportrait.png" %}" alt="" title="" class="oeuvres-max"/>
-				</a>
-			</li>
-			<li>
-				<a href="oeuvre.html">
-					<img src="{% static "img/oeuvres/habiter.png" %}" alt="" title="" class="oeuvres-max"/>
-				</a>
-			</li>
-			<li>
-				<a href="oeuvre.html">
-					<img src="{% static "img/oeuvres/love.png" %}" alt="" title="" class="oeuvres-max"/>
-				</a>
-			</li>
-			<li>
-				<a href="oeuvre.html">
-					<img src="{% static "img/oeuvres/ilovelikeanimals.png" %}" alt="" title="" class="oeuvres-max"/>
-				</a>
-			</li>
+			{% for oeuvre in oeuvres %}
+				<li>
+				<a href="{{ oeuvre.get_absolute_url }}">
+				<img src="{{ oeuvre.typo_titre.url }}" alt="{{ oeuvre.titre_oeuvre }}" class="oeuvres-max"/></a>
+				</li>
+			{% endfor %}
 		</ul>
 	</main>
 

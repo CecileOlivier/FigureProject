@@ -46,34 +46,17 @@
 			</ul>
 		</div>
 	</nav>
-
+	{{ oeuvre.mentions }} 
 	<main class="oeuvre">
-		<img src="{% static "img/oeuvres/adieuetmerciB.png" %}" alt="" title="" class="oeuvre-max" />
+		<img src="{{ oeuvre.typo_titre }}" alt="{{ oeuvre.titre_oeuvre }}" title="" class="oeuvre-max" />
 		<div class="presentation">
-		<h1>adieu et merci</h1>
+		<h1>{{ oeuvre.titre_oeuvre }}</h1>
 		<p class="prec-suiv"> <a href="#"><</a> <a href="#">></a> </p>
 			<section class="note inline">
 			<!-- ouvert par défaut en desktop avec disparition du titre -->
 				<a href="#note" class="lienvisible"><h2 class="note">note</h2></a>
 				<div id="note" class="note hide scroll-pane">
-					<p>
-						Le cosmos, c’est partout, comme disait Marguerite Duras : « Ici, c’est
-						partout et partout, c’est ici. » Il y a une convention, un objet, un
-						spectacle, une navette spatiale. Un objet qui nous entoure (le théâtre),
-						un objet que l’on a devant soi : soi. C’est pareil. Devant soi ou autour de
-						soi, c’est toujours soi. Adieu et merci. Rien n’aura eu lieu que le lieu.
-						Axel Bogousslavsky a dit récemment dans une émission de radio que la
-						voix de Marguerite Duras — voix si particulière — laissait entendre,
-						dans son voyage, ce qu’il y avait avant la naissance (rien) et ce qu’il y
-						avait après la mort (rien). Que cette voix si riche en harmoniques
-						laissait entendre ça : le cosmos de tout qu’on ne peut pas penser. Latifa
-						Laâbissi a ce pouvoir-là, ce pouvoir de sorcière. Adieu et merci. Je suis
-						là, mais momentanément. Vraiment momentanément. Elle danse une
-						danse qui, pour moi, n’est pas un solo, mais un quatuor. Au moins. Elle
-						déploie une machine de guerre en étoile de sens, efficace et cyclique
-						pour voir ce dont il est question : cet avant et cet après dont nous
-						sommes le passage. /Yves-Noël Genod
-					</p>
+					<p>{{ oeuvre.note }}</p>
 				</div>
 			</section>
 			</div>

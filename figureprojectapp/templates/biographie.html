@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -6,10 +7,21 @@
 		<meta name="description" content="">
       	<meta name="author" content="">
       	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link href="css/reset.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<script src="js/jquery-2.1.1.min.js"></script>
-		<script src="js/main.js"></script>
+		<link href="{% static "css/reset.css" %}" rel="stylesheet">
+		<link href="{% static "css/style.css" %}" rel="stylesheet">
+		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mousewheel.js" %}"></script>
+		<script>
+		$(document).ready(function() {
+
+			$('html, body, *').mousewheel(function(e, delta) {
+				this.scrollLeft -= (delta * 40);
+				e.preventDefault();
+			});
+
+		});
+		</script>
 	</head>
 	<body>
 
@@ -55,12 +67,12 @@
 		<section class="formation">
 			<article>
 				<!--<h1>FORMATION / DÉFORMATION</h1>-->
-				<p>Après un apprentissage au studio Cunningham à N-Y, Latifa Laâbissi cherche à thématiser la question du
+				<p>{{ biographie.texte }}<!--Après un apprentissage au studio Cunningham à N-Y, Latifa Laâbissi cherche à thématiser la question du
 				corps comme zone d’influences plurielles, traversée de strates subjectives et culturelles hétérogènes. À
 				rebours d’une esthétique abstraite – elle va extraire des débuts de la modernité une gestualité fondée sur le trouble des genres et des postures sociales : un travestissement des identifications qui révèle la violence des conflits dont le corps est l’objet, et en renvoie une image grimaçante.
 				En 2001, elle crée Phasmes, pièce hantée par les fantômes de Dore Hoyer, Valeska Gert et Mary Wigman.
 				Elle revient sur la danse allemande des années 20 avec La part du rite, accompagnée par la chercheuse Isabelle
-				Launay, et Ecran somnambule, une version étirée de la Danse de la Sorcière de Mary Wigman.</p>
+				Launay, et Ecran somnambule, une version étirée de la Danse de la Sorcière de Mary Wigman.--></p>
 			</article>
 		</section>
 

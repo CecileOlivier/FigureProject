@@ -1,19 +1,23 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
+from figureprojectapp.models import Oeuvre, Biographie, Lien, Contact
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'index.html')
+    oeuvres = Oeuvre.objects.all()
+    return render(request, 'index.html', {'oeuvres': oeuvres})
     # objet request + template + contexte cad les variables qui seront disponibles dans le template
 
-def oeuvres(request):
-    return render(request, 'index.html')
 
-def oeuvre(request):
-    return render(request, 'oeuvre.html')
+def oeuvre(request, slug):
+    objet_oeuvre = Oeuvre.objects.get(slug=slug)
+#   1er slug : paramètre nomme, 2eme : variable fournie a def
+    return render(request, 'oeuvre.html', {'oeuvre': objet_oeuvre})
 
 def biographie(request):
-    return render(request, 'biographie.html')
+    objet_bio = Biographie.objects.get(titre='Formation/déformation')
+    return render(request, 'biographie.html', {'biographie': objet_bio})
 
 def extensionsauvage(request):
     return render(request, 'extension-sauvage.html')
@@ -22,7 +26,12 @@ def calendrier(request):
     return render(request, 'calendrier.html')
 
 def contact(request):
-    return render(request, 'contact.html')
+    contacts = Contact.objects.all()
+    return render(request, 'contact.html', {'contacts': contacts})
 
 def liens(request):
-    return render(request, 'liens.html')
+    liens_partcult = Lien.objects.filter(domaine='Partenaires culturels')
+    liens_parteduc = Lien.objects.filter(domaine='Partenaires éducatifs')
+    liens_artistes = Lien.objects.filter(domaine='Artistes')
+    liens_utiles = Lien.objects.filter(domaine='Liens utiles')
+    return render(request, 'liens.html', {'liens_partcult': liens_partcult, 'liens_parteduc': liens_parteduc, 'liens_artistes': liens_artistes, 'liens_utiles': liens_utiles})

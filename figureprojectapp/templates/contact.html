@@ -45,23 +45,18 @@
 	
 	<main class="contact">
 		<h1>CONTACT</h1>
-		<!--<section class="developpement">
-			<h2>Développement / administration générale</h2>
-			<p>Figure Project – <em class="nom">Caroline Haigron</em></p>
-			<p>Le Garage, 18 rue André et Yvonne Meynier, 35000 Rennes</p>
-			<p class="tel">+33 (0)6 42 80 82 50 / +33 (0)2 99 54 38 33</p>
-			<p class="mail">contact@figureproject.com</p>
+		{% for contact in contacts %}
+		<section class="contact">
+			<h2>{{ contact.domaine }}</h2>
+			<p>{{ contact.entite }} <em class="nom">{{ contact.nom }}</em></p>
+			<p>{{ contact.adresse }}</p>
+			<p class="tel">{{ contact.telephone }}</p>
+			<p class="mail">{{ contact.mail }}</p>
 		</section>
-		<section class="production">
-			<h2>Production / diffusion</h2>
-			<p>Latitudes Prod – <em class="nom">Maria-Carmela Mini</em></p>
-			<p>58, rue Brûle Maison, 59000 Lille</p>
-			<p class="tel">+33 (0)3 20 55 18 62</p>
-			<p class="mail">mcmini@latitudescontemporaines.com</p>
-		</section>
+		{% endfor %}
 		<p><small>Figure Project est soutenue par le Ministère de la Culture – DRAC
 		Bretagne au titre des compagnies conventionnées, le Conseil
-		régional de Bretagne et la Ville de Rennes.</small></p>-->
+		régional de Bretagne et la Ville de Rennes.</small></p>
 
 	</main>
 
