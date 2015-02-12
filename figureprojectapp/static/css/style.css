@@ -682,7 +682,6 @@ main.liens p {
 main.liens p.site {
 	font-family: "UniversBold";
 	font-style: bold;	
-	color : #DF051C;
 	padding-bottom: 2em;
 }
 
@@ -693,6 +692,10 @@ p.site:after {
 	font-family: "Univers";
 	font-style: bold;	
 	color : #3E3D3F;
+}
+
+p.site a {
+	color : #DF051C;
 }
 
 main.liens p.contact {

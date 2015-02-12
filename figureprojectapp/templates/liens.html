@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -6,16 +7,19 @@
 		<meta name="description" content="">
       	<meta name="author" content="">
       	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link href="css/reset.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-		<script src="js/jquery-2.1.1.min.js"></script>
-		<script src="js/main.js"></script>
+		<link href="{% static "css/reset.css" %}" rel="stylesheet">
+		<link href="{% static "css/style.css" %}" rel="stylesheet">
+		<link href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+		<link href="{% static "css/jquery.mCustomScrollbar.css" %}" rel="stylesheet" media="all" />
+		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mousewheel.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
 	</head>
 	<body>
 
 	<nav>
-		<a href="index.html"><img src="img/logo.png" alt="" title="" class="logo"/></a>
+		<a href="index.html"><img src="{% static "img/logo.png" %}" alt="" title="" class="logo"/></a>
 		<div class="menu"><a href="#menu" class=""></a></div>
 			<ul class="menu-principal">
 				<a href="calendrier.html"><li>calendrier</li></a>
@@ -46,97 +50,39 @@
 	<main class="liens">
 
 		<h1>liens</h1>
-
-		<a href="#partenaires-cult" class="lienvisible"><h2>partenaires culturels</h2></a>
-		<div id="partenaires-cult" class="partenaires-cult hide">
-
-			<p>Centre chorégraphique national de Montpellier – Languedoc-Roussillon</p>
-			<p class="contact">contact@mathildemonnier.com</p>
-			<p class="site">http://www.mathildemonnier.com</p>
-
-			<p>Centre national de danse contemporaine Angers</p>
-			<p class="contact">contact@cndc.fr</p>
-			<p class="site">http://www.cndc.fr</p>
-
-			<p>Centre Pompidou – Beaubourg</p>
-			<p class="site">http://www.centrepompidou.fr</p>
-
-			<p>La Criée – centre d’art contemporain – Rennes</p>
-			<p class="site">http://www.criee.org</p>
-
-			<p>Les Laboratoires d’Aubervilliers</p>
-			<p class="contact">info@leslaboratoires.org</p>
-
-			<p>Musée de la danse / Centre Chorégraphique National de Rennes et de Bretagne</p>
-			<p class="site">http://www.ccnrb.org</p>
-
-			<p>Bétonsalon</p>
-			<p class="site">http://www.betonsalon.net</p>
-
-		</div>
-
-		<a href="#partenaires-educ" class="lienvisible"><h2>partenaires éducatifs</h2></a>
-		<div id="partenaires-educ" class="partenaires-educ hide">
-
-		<p>Arts Vivants en Ille et Vilaine</p>
-		<p class="site">http://www.addm35.org</p>
-
-		<p>Le Cifas</p>
-		<p class="site">http://www.cifas.be</p>
-
-		</div>
-
-
-		<a href="#artistes" class="lienvisible"><h2>artistes</h2></a>
-		<div id="artistes" class="artistes hide">
-
-		<p>Nadia Lauro</p>
-		<p class="site">http://www.nadialauro.com</p>
-
-		<p>Alain Buffard</p>
-		<p class="site">http://www.alainbuffard.eu</p>
-
-		<p>Robert Steijn et Frans Poelstra</p>
-		<p class="site">http://www.unitedsorry.com</p>
-
-		<p>Thomas Lacoste</p>
-		<p class="site">http://www.lautrecampagne.org</p>
-
-		<p>Yves-Noël Genod</p>
-		<p class="site">http://ledispariteur.blogspot.com</p>
-
-		<p>Jocelyn Cottencin</p>
-		<p class="site">http://www.jocelyncottencin.com</p>
-
-		<p>Julien Jeanne</p>
-		<p class="site">http://julienjeanne.blogspot.com</p>
-
-		<p>Maria La Ribot</p>
-		<p class="site">http://www.laribot.com</p>
-
-		<p>Xavier Le Roy</p>
-		<p class="site">http://www.insituproductions.net</p>
-
-		<p>Robyn Orlin</p>
-		<p class="site">http://www.robynorlin.com</p>
-
-		</div>
-
-
-		<a href="#liens-utiles" class="lienvisible"><h2>liens utiles</h2></a>
-		<div id="liens-utiles" class="liens-utiles hide">
-
-		<p>CND – centre national de la danse</p>
-		<p class="contact">métiers@cnd.fr</p>
-		<p class="site">http://www.cnd.fr</p>
-
-		<p>Syndicat national des entreprises artistiques et culturelles</p>
-		<p class="site">http://www.syndeac.org</p>
-
-		</div>
-
+			<a href="#partenaires-cult" class="lienvisible"><h2>partenaires culturels</h2></a>
+			<div id="partenaires-cult" class="partenaires-cult hide">
+			{% for lien_partcult in liens_partcult %}
+				<p>{{ lien_partcult.nom }}</p>
+				<p class="contact">{{ lien_partcult.mail }}</p>
+				<p class="site"><a href="{{ lien_partcult.url }}" target="_blank" />{{ lien_partcult.url }}</a></p>
+			{% endfor %}
+			</div>
+			<a href="#partenaires-educ" class="lienvisible"><h2>partenaires éducatifs</h2></a>
+			<div id="partenaires-educ" class="partenaires-educ hide">
+			{% for lien_parteduc in liens_parteduc %}
+				<p>{{ lien_parteduc.nom }}</p>
+				<p class="contact">{{ lien_parteduc.mail }}</p>
+				<p class="site"><a href="{{ lien_parteduc.url }}" target="_blank" />{{ lien_parteduc.url }}</a></p>
+			{% endfor %}
+			</div>
+			<a href="#artistes" class="lienvisible"><h2>artistes</h2></a>
+			<div id="artistes" class="artistes hide">
+			{% for lien_artiste in liens_artistes %}
+				<p>{{ lien_artiste.nom }}</p>
+				<p class="contact">{{ lien_artiste.mail }}</p>
+				<p class="site"><a href="{{ lien_parteduc.url }}" target="_blank" />{{ lien_artiste.url }}</a></p>
+			{% endfor %}
+			</div>
+			<a href="#liens-utiles" class="lienvisible"><h2>liens utiles</h2></a>
+			<div id="liens-utiles" class="liens-utiles hide">
+			{% for lien_utile in liens_utiles %}
+				<p>{{ lien_utile.nom }}</p>
+				<p class="contact">{{ lien_utile.mail }}</p>
+				<p class="site"><a href="{{ lien_utile.url }}" target="_blank" />{{ lien_utile.url }}</a></p>
+			{% endfor %}
+			</div>
 
 	</main>
-
 	</body>
 </html>
