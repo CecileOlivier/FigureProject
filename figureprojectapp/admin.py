@@ -1,5 +1,5 @@
 from django.contrib import admin
-from figureprojectapp.models import Biographie, Calendrier, Contact, Image, Oeuvre, Lien, Langue
+from figureprojectapp.models import Biographie, Calendrier, Contact, Image, Oeuvre, Lien, Langue, Projet
 
 # Register your models here.
 
@@ -19,3 +19,4 @@ admin.site.register(Lien, LienAdmin)
 admin.site.register(Image)
 admin.site.register(Langue)
 admin.site.register(Oeuvre)
+admin.site.register(Projet)

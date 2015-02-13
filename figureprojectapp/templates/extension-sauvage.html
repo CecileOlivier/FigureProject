@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -6,12 +7,14 @@
 		<meta name="description" content="">
       	<meta name="author" content="">
       	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link href="css/reset.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<script src="js/jquery-2.1.1.min.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/vendor/scroll-converter.js"></script>
-		<script src="js/vendor/scroll.js"></script>
+		<link href="{% static "css/reset.css" %}" rel="stylesheet">
+		<link href="{% static "css/style.css" %}" rel="stylesheet">
+		<link href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+		<link href="{% static "css/jquery.mCustomScrollbar.css" %}" rel="stylesheet" media="all" />
+		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mousewheel.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
 	</head>
 	<body>
 
@@ -22,21 +25,10 @@
 		<img src="img/extensionsauvage-desk.png" alt="" title="" class="oeuvre-max desk"/>
 		<section class="note">
 			<p>
-				Extension sauvage est une aventure
-				chorégraphique en milieu rural qui se décline sous la
-				forme d’un programme pédagogique pour enfants et
-				adultes, et d’un festival à
-				Combourg et dans les jardins du Château de la Ballue à
-				Bazouges-la-Pérouse. Entamée en novembre 2010, elle
-				est pensée sur trois ans et spécifiquement pour un
-				territoire allant de
-				Combourg à Bazouges-la-Pérouse, en Ile-et-Vilaine. Porté par l’association Figure Project, la direction artistique de ce programme est
-				assurée par Latifa Laâbissi. Extension sauvage a pour
-				ambition d’être à la fois généreux et
-				innovant, exigeant et jubilatoire.
+			{{ extsauvage.note }}
 			</p>
 			<p class="info">
-				+ d'infos: www.extensionsauvage.com
+			{{ extsauvage.info }}
 			</p>
 		</section>
 		<section class="galerie">

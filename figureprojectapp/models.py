@@ -39,7 +39,8 @@ class Contact(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(upload_to='images')
-    oeuvre = models.ForeignKey('Oeuvre')
+    oeuvre = models.ForeignKey('Oeuvre', blank=True)
+    projet = models.ForeignKey('Projet', blank=True)
 
 
 class Lien(models.Model):
@@ -71,6 +72,19 @@ class Oeuvre(models.Model):
         return reverse('oeuvre', kwargs={'slug': self.slug})
 #   kwargs = arguments nommes
 #   args = arguments ordonnes
+
+
+class Projet(models.Model):
+    titre = models.CharField(max_length=200)
+    image_titre = models.ImageField(upload_to='images_titre')
+    note = models.TextField()
+    info = models.CharField(max_length=200, blank=True)
+    url = models.URLField(blank=True)
+    langue = models.ForeignKey('Langue')
+
+    def __unicode__(self):
+        return '[%s] %s' % (self.langue, self.titre)
+
 
 
 class Langue(models.Model):
