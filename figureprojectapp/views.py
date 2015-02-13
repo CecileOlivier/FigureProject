@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
-from figureprojectapp.models import Oeuvre, Biographie, Lien, Contact
+from figureprojectapp.models import Oeuvre, Biographie, Lien, Contact, Calendrier
 
 # Create your views here.
 
@@ -23,7 +23,8 @@ def extensionsauvage(request):
     return render(request, 'extension-sauvage.html')
 
 def calendrier(request):
-    return render(request, 'calendrier.html')
+    dates = Calendrier.objects.all()
+    return render(request, 'calendrier.html', {'dates': dates})
 
 def contact(request):
     contacts = Contact.objects.all()
