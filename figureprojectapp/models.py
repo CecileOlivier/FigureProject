@@ -16,8 +16,12 @@ class Calendrier(models.Model):
     date = models.DateTimeField()
     lieu = models.CharField(max_length=200)
     cadre = models.CharField(max_length=200, blank=True)
-    url = models.URLField(blank=True)
+    url = models.CharField(max_length=200, blank=True)
+    oeuvre = models.ForeignKey('Oeuvre', blank=True)
     langue = models.ForeignKey('Langue')
+
+    def __unicode__(self):
+        return '[%s] %s %s %s' % (self.langue, self.date, self.lieu, self.oeuvre)
 
 
 class Contact(models.Model):
@@ -30,7 +34,7 @@ class Contact(models.Model):
     langue = models.ForeignKey('Langue')
 
     def __unicode__(self):
-        return '[%s] %s' % (self.langue, self.domaine)
+        return '[%s] %s - %s %s' % (self.langue, self.domaine, self.entite, self.nom)
 
 
 class Image(models.Model):
@@ -55,7 +59,6 @@ class Oeuvre(models.Model):
     note = models.TextField()
     mentions = models.TextField()
     distribution = models.TextField()
-    diffusion = models.TextField(blank=True)
     image_titre = models.ImageField(upload_to='images_titre')
     typo_titre = models.ImageField(upload_to='images_titre')
     langue = models.ForeignKey('Langue')
