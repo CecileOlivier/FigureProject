@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<nav>
+		<a href="index.html" class="retour"><img src="{% static "img/logo.png" %}" alt="" title="" class="logo"/></a>
+		<div class="menu"><a href="#menu-principal" class="lienvisible"></a></div>
+			<ul id="menu-principal" class="menu-principal hide">
+				<a href="calendrier.html"><li>calendrier</li></a>
+				<a href="biographie.html"><li>biographie</li></a>
+				<a href="#oeuvres" class="lienvisible"><li>œuvres</li></a>
+					<div id="oeuvres" class="oeuvres hide">
+						<ul class="sous-menu-oeuvres">
+							{% for oeuvre in oeuvres %}
+							<li><a href="{{ oeuvre.get_absolute_url }}">¬ {{ oeuvre.titre_oeuvre }}</a></li>
+							{% endfor %}
+							<!-- em encadrant le mot love pour l'oeuvre i love like animals -->
+						</ul>
+					</div>
+				<a href="extension-sauvage.html"><li>extension sauvage</li></a>
+				<a href="contact.html"><li>contact</li></a>
+				<a href="liens.html"><li>liens</li></a>
+			</ul>
+			<!--<p><a href="#" class="langues">Fr</a>/<a href="#" class="langues">En</a></p>-->
+		</div>
+	</nav>

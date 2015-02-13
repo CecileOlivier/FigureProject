@@ -14,34 +14,7 @@
 	</head>
 	<body>
 
-	<nav>
-		<a href="index.html"><img src="{% static "img/logo.png" %}" alt="" title="" class="logo"/></a>
-		<div class="menu"><a href="#menu" class=""></a></div>
-			<ul class="menu-principal">
-				<a href="calendrier.html"><li>calendrier</li></a>
-				<a href="biographie.html"><li>biographie</li></a>
-				<a href="#oeuvres" class="lienvisible"><li>œuvres</li></a>
-					<div id="oeuvres" class="oeuvres hide">
-						<ul class="sous-menu-oeuvres">
-							<li><a href="oeuvre.html">¬ Adieu et merci</a></li>
-							<li><a href="oeuvre.html">¬ Autoarchive</a></li>
-							<li><a href="oeuvre.html">¬ La part du rite</a></li>
-							<li><a href="oeuvre.html">¬ Ecran somnambule</a></li>
-							<li><a href="oeuvre.html">¬ Loredreamsong</a></li>
-							<li><a href="oeuvre.html">¬ Histoire par celui qui la raconte</a></li>
-							<li><a href="oeuvre.html">¬ Self portrait Camouflage</a></li>
-							<li><a href="oeuvre.html">¬ Habiter</a></li>
-							<li><a href="oeuvre.html">¬ Love</a></li>
-							<li><a href="oeuvre.html">¬ I <em>love</em> like animals</a></li>
-						</ul>
-					</div>
-				<a href="extension-sauvage.html"><li>extension sauvage</li></a>
-				<a href="contact.html"><li>contact</li></a>
-				<a href="liens.html"><li>liens</li></a>
-				<li><a href="#" class="langues">Fr</a>/<a href="#" class="langues">En</a></li>
-			</ul>
-		</div>
-	</nav>
+    {% include "nav.html" %}
 	
 	<main class="contact">
 		<h1>CONTACT</h1>

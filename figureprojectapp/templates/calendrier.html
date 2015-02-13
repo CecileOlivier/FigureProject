@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -6,41 +7,18 @@
 		<meta name="description" content="">
       	<meta name="author" content="">
       	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link href="css/reset.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<script src="js/jquery-2.1.1.min.js"></script>
-		<script src="js/main.js"></script>
+		<link href="{% static "css/reset.css" %}" rel="stylesheet">
+		<link href="{% static "css/style.css" %}" rel="stylesheet">
+		<link href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+		<link href="{% static "css/jquery.mCustomScrollbar.css" %}" rel="stylesheet" media="all" />
+		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mousewheel.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
 	</head>
 	<body>
 
-	<nav>
-		<a href="index.html"><img src="img/logo.png" alt="" title="" class="logo"/></a>
-		<div class="menu"><a href="#menu-principal" class="lienvisible"></a></div>
-			<ul id="menu-principal" class="menu-principal hide">
-				<a href="calendrier.html"><li>calendrier</li></a>
-				<a href="biographie.html"><li>biographie</li></a>
-				<a href="#oeuvres" class="lienvisible"><li>œuvres</li></a>
-					<div id="oeuvres" class="oeuvres hide">
-						<ul class="sous-menu-oeuvres">
-							<li><a href="oeuvre.html">¬ Adieu et merci</a></li>
-							<li><a href="oeuvre.html">¬ Autoarchive</a></li>
-							<li><a href="oeuvre.html">¬ La part du rite</a></li>
-							<li><a href="oeuvre.html">¬ Ecran somnambule</a></li>
-							<li><a href="oeuvre.html">¬ Loredreamsong</a></li>
-							<li><a href="oeuvre.html">¬ Histoire par celui qui la raconte</a></li>
-							<li><a href="oeuvre.html">¬ Self portrait Camouflage</a></li>
-							<li><a href="oeuvre.html">¬ Habiter</a></li>
-							<li><a href="oeuvre.html">¬ Love</a></li>
-							<li><a href="oeuvre.html">¬ I <em>love</em> like animals</a></li>
-						</ul>
-					</div>
-				<a href="extension-sauvage.html"><li>extension sauvage</li></a>
-				<a href="contact.html"><li>contact</li></a>
-				<a href="liens.html"><li>liens</li></a>
-				<li><a href="#" class="langues">Fr</a>/<a href="#" class="langues">En</a></li>
-			</ul>
-		</div>
-	</nav>
+    {% include "nav.html" %}
 
 	<main class="calendrier">
 
@@ -58,7 +36,21 @@
 		</ul>
 
 		<ul class="dates">
+		{% for date in dates %}
 			<li>
+				<div class="img-oeuvre">
+					<img src="img/oeuvres/adieuetmerci.png" alt="" title="" class="oeuvres-typo"/>
+				</div>
+				<div class="description">
+					<p class="date"><span class="jour">28</span><span class="mois">/JANV</span></p>
+					<p class="heure">20h30</p>
+					<p class="lieu">Le Vivat,</p>
+					<p class="evenement">Scène Conventionnée d'Armentières dans le cadre du <strong>festival Vivat la danse !</strong></p>
+					<p class="lien">levivat.net</p>
+				</div>
+			</li>	
+		{% endfor %}
+			<!--<li>
 				<div class="img-oeuvre">
 					<img src="img/oeuvres/adieuetmerci.png" alt="" title="" class="oeuvres-typo"/>
 				</div>
@@ -105,7 +97,7 @@
 					<p class="evenement">Bât. B amphi B4 Lamennais dans le cadre de <strong>Rejouer la performance</strong></p>
 					<p class="lien">museedeladanse.org</p>
 				</div>
-			</li>
+			</li>-->
 
 		</ul>
 	</main>
