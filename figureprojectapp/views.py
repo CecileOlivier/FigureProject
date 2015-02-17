@@ -11,11 +11,12 @@ def home(request):
 
 
 def oeuvre(request, slug):
-    objet_oeuvre = Oeuvre.objects.get(slug=slug)
+    objet_oeuvre = Oeuvre.objects.select_related('image').get(slug=slug)
+    img_oeuvre = objet_oeuvre.image_set.all()
     next_oeuvre = Oeuvre.objects.filter(id__gt=objet_oeuvre.id).first()
     prev_oeuvre = Oeuvre.objects.filter(id__gt=objet_oeuvre.id).first()
 #   1er slug : paramètre nomme, 2eme : variable fournie a def
-    return render(request, 'oeuvre.html', {'oeuvre': objet_oeuvre})
+    return render(request, 'oeuvre.html', {'oeuvre': objet_oeuvre, 'img_oeuvre':img_oeuvre})
 
 def biographie(request):
     objet_bio = Biographie.objects.get(titre='Formation/déformation')

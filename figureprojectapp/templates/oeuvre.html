@@ -71,14 +71,16 @@
 					<p class="date">} 11 & 14 NOVEMBRE 2013</p>
 					<p class="lieu">TNB – Rennes</p>
 					<p class="evenement">dans le cadre du festival <strong>Mettre en Scène,</strong><em> Première</em></p>
-					<p class="date">} LE 12 JUIN 2013 À 20H30</p>
+					<p class="date">} 12 JUIN 2013 À 20H30</p>
 					<p class="lieu">Théâtre de l’Oiseau-Mouche / Le Garage, Roubaix</p>
 					<p class="evenement">dans le cadre du festival <strong>Latitudes Contemporaines, </strong><em>maquette</em></p>
 				</div>
 			</section>
 			</div>
 			<section class="galerie">
-				<img src="{% static "img/oeuvres/adieuetmerciS.png" %}" alt="" title="" class="oeuvre-mini"/>
+			{% for image in img_oeuvre %}
+				<img src="{{ image.image.url }}" alt="" title="" class="oeuvre-mini"/>
+			{% endfor %}
 			</section>
 		</div>
 	</main>
