@@ -6,7 +6,7 @@
 			
 				<a href="{% url 'calendrier' %}"><li>calendrier</li></a>
 				<a href="{% url 'biographie' %}"><li>biographie</li></a>
-				<a href="#oeuvres" class="lienvisible"><li>œuvres</li></a>
+				<a href="{% url 'oeuvres' %}" class="lienvisible"><li>œuvres</li></a>
 					<div id="oeuvres" class="oeuvres hide">
 						<ul class="sous-menu-oeuvres">
 							{% for oeuvre in oeuvres %}
