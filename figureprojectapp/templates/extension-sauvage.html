@@ -21,8 +21,8 @@
     {% include "nav.html" %}
 
 	<main class="extension">
-		<img src="img/extensionsauvageB.png" alt="" title="" class="oeuvre-max mobile"/>
-		<img src="img/extensionsauvage-desk.png" alt="" title="" class="oeuvre-max desk"/>
+		<img src="{{ extsauvage.image_titre_mobile.url }}" alt="" title="" class="oeuvre-max mobile"/>
+		<img src="{{ extsauvage.image_titre_desktop.url }}" alt="" title="" class="oeuvre-max desk"/>
 		<section class="note">
 			<p>
 			{{ extsauvage.note }}
@@ -32,8 +32,9 @@
 			</p>
 		</section>
 		<section class="galerie">
-			<img src="img/extensionsauvageS2.png" alt="" title="" class="oeuvre-mini"/>
-			<img src="img/extensionsauvageS1.png" alt="" title="" class="oeuvre-mini"/>
+		{% for image in i_es %}
+			<img src="{{ image.image.url }}" alt="" title="" class="oeuvre-mini"/>
+		{% endfor %}
 		</section>
 	</main>
 

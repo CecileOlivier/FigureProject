@@ -38,9 +38,17 @@ class Contact(models.Model):
 
 
 class Image(models.Model):
+
+    def visuel(self):
+        return '<img src="%s" width="auto" height="50"/>' % self.image.url
+    visuel.allow_tags = True
+
     image = models.ImageField(upload_to='images')
-    oeuvre = models.ForeignKey('Oeuvre', blank=True)
-    projet = models.ForeignKey('Projet', blank=True)
+    oeuvre = models.ForeignKey('Oeuvre', blank=True, null=True)
+    projet = models.ForeignKey('Projet', blank=True,  null=True)
+
+    def __unicode__(self):
+        return u'%s %s %s' % (self.image, self.oeuvre, self.projet)
 
 
 class Lien(models.Model):
@@ -56,6 +64,11 @@ class Lien(models.Model):
 
 
 class Oeuvre(models.Model):
+
+    def visuel(self):
+        return '<img src="%s" width="auto" height="50"/>' % self.image_titre.url
+    visuel.allow_tags = True
+
     titre_oeuvre = models.CharField(max_length=200)
     note = models.TextField()
     mentions = models.TextField()
@@ -66,7 +79,7 @@ class Oeuvre(models.Model):
     slug = models.SlugField(default='slug-non-configure')
 
     def __unicode__(self):
-        return '[%s] %s' % (self.langue, self.titre_oeuvre)
+        return u'[%s] %s %s' % (self.langue, self.titre_oeuvre, self.image_titre)
 
     def get_absolute_url(self):
         return reverse('oeuvre', kwargs={'slug': self.slug})
@@ -76,7 +89,8 @@ class Oeuvre(models.Model):
 
 class Projet(models.Model):
     titre = models.CharField(max_length=200)
-    image_titre = models.ImageField(upload_to='images_titre')
+    image_titre_desktop = models.ImageField(upload_to='images_titre')
+    image_titre_mobile = models.ImageField(upload_to='images_titre')
     note = models.TextField()
     info = models.CharField(max_length=200, blank=True)
     url = models.URLField(blank=True)
