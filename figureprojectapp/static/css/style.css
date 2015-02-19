@@ -54,7 +54,7 @@ body {
 ************************** */ 
 
 nav {
-	width:100%;
+	width:100%; /* supprimer */
 }
 
 ul.sous-menu-oeuvres {
@@ -90,8 +90,6 @@ nav a {
 	text-transform: uppercase;
 	text-decoration: none;
 	font-size:1.2em;
-	float:right;
-	clear:both;
 }
 
 nav a:hover {
@@ -105,39 +103,32 @@ nav a.retour {
 nav li {
 	margin-bottom: 2.5em;
 	padding-right: 5em;
+	float:right;
+	clear:both;
 }
 
-nav a li:after{
+nav li a:after{
     position: absolute; 
     display: block; 
     content: '';
     border-bottom: 2px solid #B3B3B3;
-    width: 30%;
+    width: 32%;
     right:0;
     margin-top: 1em;
     margin-bottom: 1em;
     box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
 }
 
-nav li.langues:after {
-	display: none;
-}
-
-nav a:hover li:after{
-    position: absolute; 
-    display: block; 
-    content: '';
+nav li a:hover:after {
     border-bottom: 2px solid #E1001A;
-    width: 30%;
-    right:0;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
 }
 
-nav a.langues {
-	font-size: 0.9em;
+nav li.langues a {
 	text-transform: capitalize;
+}
+
+nav li.langues a:after {
+	display: none;
 }
 
 nav li a.langues:after {
@@ -303,6 +294,7 @@ h2 {
 	color : #DF051C;
 	font-size: 1.30em;
 	line-height: 1.30em;
+	clear:both;
 }
 
 .evenement {
@@ -312,6 +304,7 @@ h2 {
 	font-size: 1.25em;
 	line-height: 1.25em;
 	margin-bottom:1em;
+	clear:both;
 }
 
 /* *************************
@@ -768,11 +761,6 @@ main.liens p.contact {
 		margin-top:5em;
 	}
 
-	nav a {
-		clear:none;
-		float:left;
-	}
-
 	nav ul {
 		width:55%;
 		display: inline-block;
@@ -784,17 +772,18 @@ main.liens p.contact {
 		list-style-type: none;
 		float: left;
 		vertical-align: middle;
-		width: 13em;
+		width: 14em;
 		margin-left: 1.5em;
 		margin-bottom: 0.5em;
 		padding-right: 0em;
+		clear:none;
 	}
 
 	nav li:after {
 		display: none;
 	}
 
-	nav a li:after {
+	nav li a:after {
 		display: none;
 	    position: relative; 
 	    display: block; 
@@ -806,16 +795,8 @@ main.liens p.contact {
 	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
 	}
 
-	nav a:hover li:after {
-		display: none;
-	    position: relative; 
-	    display: block; 
-	    content: '';
+	nav li a:hover:after {
 	    border-bottom: 1px solid #E1001A;
-	    width: 100%;
-	    margin-top: 0.7em;
-	    margin-bottom: 0.7em;
-	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
 	}
 
 	/* *************************
@@ -979,13 +960,13 @@ main.liens p.contact {
 		display:block;
 	}
 
+	.hide {
+		padding-top: 1em;
+	}
+
 	/* *************************
 			MENU	 					
 	************************** */ 
-
-	nav {
-		width:100%;
-	}
 
 	img.logo {
 		width: auto;
@@ -995,13 +976,9 @@ main.liens p.contact {
 	nav {
 		position: absolute;
 		top:25%;
-		/*margin-bottom:1em;
-		margin-top:1em;*/
 	}
 
 	nav a {
-		clear:none;
-		float:none;
 		font-size:1em;
 	}
 
@@ -1018,15 +995,10 @@ main.liens p.contact {
 	nav ul.menu-principal li {
 		display: block;
 		float: none;
-		/*width: auto;*/
 		height: auto;
 		margin-left: 1em;
 		margin-bottom: 0em;
 		margin-top:0.5em;
-	}
-
-	nav ul.menu-principal li:after {
-		display: none;
 	}
 
 	nav ul.menu-principal a:after {
@@ -1041,32 +1013,12 @@ main.liens p.contact {
 	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
 	}
 
-	nav ul.menu-principal a.langues:after {
-	    display: none; 
-	}
-
-	nav ul.sous-menu-oeuvres a:after {
+	nav ul.sous-menu-oeuvres a:after, nav li.langues a:after {
 	    display: none; 
 	}
 
 	nav ul.menu-principal a:hover:after {
-		position: absolute; 
-	    display: block; 
-	    content: '';
 	    border-bottom: 1px solid #E1001A;
-	    width: 5%;
-	    margin-top: 0em;
-	    margin-bottom: 1em;
-	    left:0;
-	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
-	}
-
-	nav ul.menu-principal a.langues:hover:after {
-	    display: none; 
-	}
-
-	nav ul.sous-menu-oeuvres a:hover:after {
-	    display: none; 
 	}
 
 	nav ul ul.sous-menu-oeuvres li a{
@@ -1078,20 +1030,16 @@ main.liens p.contact {
 		clear:both;
 	}
 
-	nav ul ul.sous-menu-oeuvres li a em {
+	/*nav ul ul.sous-menu-oeuvres li a em {
 		text-decoration:  line-through;
 		font-style: normal;
-	}
+	}*/
 
 	nav ul ul.sous-menu-oeuvres li a:hover {
 		color: #E1001A;
 	}
 
-	nav ul.sous-menu-oeuvres li:after {
-		display: none;
-	}
-
-	nav ul.sous-menu-oeuvres .hide {
+	.hide {
 		padding-top:0;
 		padding-bottom: 0;
 	}
@@ -1166,28 +1114,23 @@ main.liens p.contact {
 
 	#note {
 		width:100%;
-		background-color: #999666;
 		height: 60%;
 		/*overflow:scroll; inutile avec le plugin */ 
 	}
 
-	section.note {
-		height:100%;
-	}
-
-	section.note:after {
+	/*section.note:after {
 		content:'';
 		border-bottom: 3px solid #E1001A;
 		width:5em;
 		display: block;
-	}
+	} le placer sur presentation */
 
 	main.oeuvre {
 		position: absolute;
 		height:100%;
 		margin-top:-1em;
 		left: 25em;
-		width:2000px;
+		width: 5000px;
 	}
 
 	main.oeuvre img.oeuvre-max {
@@ -1202,11 +1145,11 @@ main.liens p.contact {
 		display: inline-block;
 		top: 12em;
 		width:35em;
-		height:55%;
+		height:70%;
 		vertical-align: middle;
 		padding-left:3em;
-		padding-bottom: 15em;
 		/*overflow:scroll;*/
+		background-color: #E26D5A;
 	}
 
 	main.oeuvre .sous-menu {
@@ -1214,8 +1157,8 @@ main.liens p.contact {
 		vertical-align: middle;
 		top: 12em;		
 		padding-left:3em;
-		/*padding-top:5%;*/
 		height:55%;
+		background-color: #21A179;
 	}
 
 	main.oeuvre .sous-menu section {
@@ -1245,6 +1188,7 @@ main.liens p.contact {
 		padding-left:3em;
 		vertical-align: middle;
 		height:55%;
+		background-color: #3F7CAC;
 	}
 
 	.galerie img {
@@ -1273,6 +1217,10 @@ main.liens p.contact {
 		padding-bottom: 0;
 		padding-top: 0;
 		left: 27em;
+	}
+
+	main.calendrier p.lieu, p.evenement {
+		display: block;
 	}
 
 	ul.dates {
@@ -1328,7 +1276,7 @@ main.liens p.contact {
 
 	main.extension {
 		position: absolute;
-		width:2000px;
+		width:2700px;
 		height:100%;
 		margin-top:-1em;
 		left: 25em;

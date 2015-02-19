@@ -3,10 +3,9 @@
 		<a href="index.html" class="retour"><img src="{% static "img/logo.png" %}" alt="" title="" class="logo"/></a>
 		<div class="menu"><a href="#menu-principal" class="lienvisible"></a></div>
 			<ul id="menu-principal" class="menu-principal hide">
-			
-				<a href="{% url 'calendrier' %}"><li>calendrier</li></a>
-				<a href="{% url 'biographie' %}"><li>biographie</li></a>
-				<a href="{% url 'oeuvres' %}" class="lienvisible"><li>œuvres</li></a>
+				<li><a href="{% url 'calendrier' %}">calendrier</a></li>
+				<li><a href="{% url 'biographie' %}">biographie</a></li>
+				<li><a href="{% url 'oeuvres' %}" class="lienvisible">œuvres</a></li>
 					<div id="oeuvres" class="oeuvres hide">
 						<ul class="sous-menu-oeuvres">
 							{% for oeuvre in oeuvres %}
@@ -15,10 +14,9 @@
 							<!-- em encadrant le mot love pour l'oeuvre i love like animals -->
 						</ul>
 					</div>
-				<a href="{% url 'extensionsauvage' %}"><li>extension sauvage</li></a>
-				<a href="{% url 'contact' %}"><li>contact</li></a>
-				<a href="{% url 'liens' %}"><li>liens</li></a>
+				<li><a href="{% url 'extensionsauvage' %}">extension sauvage</a></li>
+				<li><a href="{% url 'contact' %}">contact</a></li>
+				<li><a href="{% url 'liens' %}">liens</a></li>
+				<li class="langues"><a href="#" class="">Fr</a>/<a href="#" class="">En</a></li>
 			</ul>
-			<!--<p><a href="#" class="langues">Fr</a>/<a href="#" class="langues">En</a></p>-->
-		</div>
-	</nav>
+</nav>
