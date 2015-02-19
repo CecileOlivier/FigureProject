@@ -975,7 +975,7 @@ main.liens p.contact {
 
 	nav {
 		position: absolute;
-		top:25%;
+		top:40%;
 	}
 
 	nav a {
@@ -1192,7 +1192,7 @@ main.liens p.contact {
 	}
 
 	.galerie img {
-		/*width: 35%;*/
+		width: 35%;
 		vertical-align: middle;
 	}
 
