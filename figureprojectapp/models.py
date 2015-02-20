@@ -3,6 +3,9 @@ from django.db import models
 from django.core.urlresolvers import reverse
 # Create your models here.
 
+TYPE_CHOICES = (('oeuvre', 'oeuvre'),
+                ('atelier', 'atelier'))
+
 class Biographie(models.Model):
     titre = models.CharField(max_length=200, blank=True)
     texte = models.TextField()
@@ -17,11 +20,16 @@ class Calendrier(models.Model):
     lieu = models.CharField(max_length=200)
     cadre = models.CharField(max_length=200, blank=True)
     url = models.CharField(max_length=200, blank=True)
-    oeuvre = models.ForeignKey('Oeuvre', blank=True)
+    oeuvre = models.ForeignKey('Oeuvre', blank=True, null=True)
+    atelier = models.ForeignKey('Atelier', blank=True, null=True)
     langue = models.ForeignKey('Langue')
+    type_objet = models.CharField(max_length=7, choices=TYPE_CHOICES);
 
     def __unicode__(self):
         return '[%s] %s %s %s' % (self.langue, self.date, self.lieu, self.oeuvre)
+
+    def objet(self):
+        return getattr(self, self.type_objet)
 
 
 class Contact(models.Model):
@@ -39,13 +47,13 @@ class Contact(models.Model):
 
 class Image(models.Model):
 
-    def visuel(self):
-        return '<img src="%s" width="auto" height="50"/>' % self.image.url
-    visuel.allow_tags = True
-
     image = models.ImageField(upload_to='images')
     oeuvre = models.ForeignKey('Oeuvre', blank=True, null=True)
     projet = models.ForeignKey('Projet', blank=True,  null=True)
+
+    def visuel(self):
+        return '<img src="%s" width="auto" height="50"/>' % self.image.url
+    visuel.allow_tags = True
 
     def __unicode__(self):
         return u'%s %s %s' % (self.image, self.oeuvre, self.projet)
@@ -99,6 +107,14 @@ class Projet(models.Model):
     def __unicode__(self):
         return '[%s] %s' % (self.langue, self.titre)
 
+
+class Atelier(models.Model):
+    titre = models.CharField(max_length=200)
+    typo_titre = models.ImageField(upload_to='images_titre')
+    langue = models.ForeignKey('Langue')
+
+    def __unicode__(self):
+        return '[%s] %s' % (self.langue, self.titre)
 
 
 class Langue(models.Model):

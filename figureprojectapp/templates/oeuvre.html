@@ -62,7 +62,12 @@
 			<!-- ouvert par défaut en mobile -->
 				<a href="#diffusion" class="lienvisible"><h2>diffusion</h2></a>
 				<div id="diffusion" class="diffusion hide">
-					<p class="date">} 28 JANVIER 2014</p>
+				{% for date in dates %}
+					<p class="date">} {{ date.date }}</p>
+					<p class="lieu">{{ date.lieu }}</p>
+					<p class="evenement">{{ date.cadre }}</p>
+				{% endfor %}
+					<!--<p class="date">} 28 JANVIER 2014</p>
 					<p class="lieu">Le Vivat, Armentières</p>
 					<p class="evenement">dans le cadre du festival <strong>Vivat la danse</strong></p>
 					<p class="date">} 20, 21, 22 NOVEMBRE 2013</p>
@@ -73,7 +78,7 @@
 					<p class="evenement">dans le cadre du festival <strong>Mettre en Scène,</strong><em> Première</em></p>
 					<p class="date">} 12 JUIN 2013 À 20H30</p>
 					<p class="lieu">Théâtre de l’Oiseau-Mouche / Le Garage, Roubaix</p>
-					<p class="evenement">dans le cadre du festival <strong>Latitudes Contemporaines, </strong><em>maquette</em></p>
+					<p class="evenement">dans le cadre du festival <strong>Latitudes Contemporaines, </strong><em>maquette</em></p>-->
 				</div>
 			</section>
 			</div>

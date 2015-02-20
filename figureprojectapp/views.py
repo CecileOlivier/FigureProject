@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
-from figureprojectapp.models import Oeuvre, Biographie, Lien, Contact, Calendrier, Projet, Image
+from figureprojectapp.models import Oeuvre, Biographie, Lien, Contact, Calendrier, Projet, Image, Atelier
 
 # Create your views here.
+# filter pour fr/en
+# variable, internationalisation doc django
 
 def home(request):
     oeuvres = Oeuvre.objects.all()
@@ -11,16 +13,17 @@ def home(request):
 
 
 def oeuvre(request, slug):
-    objet_oeuvre = Oeuvre.objects.select_related('image').get(slug=slug)
+    objet_oeuvre = Oeuvre.objects.select_related().get(slug=slug)
     img_oeuvre = objet_oeuvre.image_set.all()
+    dates = objet_oeuvre.calendrier_set.all()
     next_oeuvre = Oeuvre.objects.filter(id__gt=objet_oeuvre.id).first()
     prev_oeuvre = Oeuvre.objects.filter(id__gt=objet_oeuvre.id).first()
 #   1er slug : paramètre nomme, 2eme : variable fournie a def
-    return render(request, 'oeuvre.html', {'oeuvre': objet_oeuvre, 'img_oeuvre':img_oeuvre})
+    return render(request, 'oeuvre.html', {'oeuvre': objet_oeuvre, 'img_oeuvre':img_oeuvre, 'dates':dates})
 
 def biographie(request):
     objet_bio = Biographie.objects.get(titre='Formation/déformation')
-    return render(request, 'biographie.html', {'biographie': objet_bio})
+    return render(request, 'biographie.html', {'formation': objet_bio})
 
 def extensionsauvage(request):
     extsauvage = Projet.objects.select_related('image').get(titre='Extension sauvage')
@@ -28,7 +31,7 @@ def extensionsauvage(request):
     return render(request, 'extension-sauvage.html', {'extsauvage': extsauvage, 'i_es': i_es})
 
 def calendrier(request):
-    dates = Calendrier.objects.all()
+    dates = Calendrier.objects.select_related('oeuvre').all()
     return render(request, 'calendrier.html', {'dates': dates})
 
 def contact(request):

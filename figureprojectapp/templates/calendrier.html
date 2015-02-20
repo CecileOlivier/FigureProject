@@ -39,7 +39,7 @@
 		{% for date in dates %}
 			<li>
 				<div class="img-oeuvre">
-					<img src="img/oeuvres/adieuetmerci.png" alt="" title="" class="oeuvres-typo"/>
+					<img src="{{ date.objet.typo_titre.url }}" alt="" title="" class="oeuvres-typo"/>
 				</div>
 				<div class="description">
 					<p class="date"><span class="jour">{{ date.date|date:"j" }}</span><span class="mois">/{{ date.date|date:"b" }}</span></p>

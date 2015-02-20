@@ -1,5 +1,5 @@
 from django.contrib import admin
-from figureprojectapp.models import Biographie, Calendrier, Contact, Image, Oeuvre, Lien, Langue, Projet
+from figureprojectapp.models import Biographie, Calendrier, Contact, Image, Oeuvre, Lien, Langue, Projet, Atelier
 
 # Register your models here.
 
@@ -7,8 +7,8 @@ class BiographieAdmin(admin.ModelAdmin):
     list_display = ('titre', 'texte')
 
 class CalendrierAdmin(admin.ModelAdmin):
-    list_display = ('date', 'lieu', 'oeuvre')
-    search_fields = ['lieu', 'oeuvre']
+    list_display = ('date', 'lieu', 'oeuvre', 'atelier')
+    search_fields = ['lieu', 'oeuvre', 'atelier']
 
 class LienAdmin(admin.ModelAdmin):
     list_display = ('domaine', 'nom')
@@ -32,3 +32,4 @@ admin.site.register(Image, ImageAdmin)
 admin.site.register(Langue)
 admin.site.register(Oeuvre, OeuvreAdmin)
 admin.site.register(Projet)
+admin.site.register(Atelier)
