@@ -35,7 +35,7 @@ def calendrier(request):
     return render(request, 'calendrier.html', {'dates': dates})
 
 def contact(request):
-    contacts = Contact.objects.all()
+    contacts = Contact.objects.filter(langue="fr").all()
     return render(request, 'contact.html', {'contacts': contacts})
 
 def liens(request):
@@ -79,5 +79,5 @@ def calendar(request):
     return render(request, 'calendar.html', {'dates': dates})
 
 def contacten(request):
-    contacts = Contact.objects.all()
+    contacts = Contact.objects.filter(langue="en").all()
     return render(request, 'contacten.html', {'contacts': contacts})
