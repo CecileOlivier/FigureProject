@@ -26,6 +26,9 @@
 	<body>
 
     {% include "nav.html" %}
+       			<li class="langues"><a href="#" class="">Fr</a>/<a href="{% url 'biography' %}" class="">En</a></li>
+		</ul>
+	</nav>
 
 	<main class="bio">
 		<section class="intro">
@@ -40,7 +43,7 @@
 		<section class="formation">
 			<article>
 				<!--<h1>FORMATION / DÉFORMATION</h1>-->
-				<p>{{ biographie.texte }}<!--Après un apprentissage au studio Cunningham à N-Y, Latifa Laâbissi cherche à thématiser la question du
+				<p>{{ formation.texte }}<!--Après un apprentissage au studio Cunningham à N-Y, Latifa Laâbissi cherche à thématiser la question du
 				corps comme zone d’influences plurielles, traversée de strates subjectives et culturelles hétérogènes. À
 				rebours d’une esthétique abstraite – elle va extraire des débuts de la modernité une gestualité fondée sur le trouble des genres et des postures sociales : un travestissement des identifications qui révèle la violence des conflits dont le corps est l’objet, et en renvoie une image grimaçante.
 				En 2001, elle crée Phasmes, pièce hantée par les fantômes de Dore Hoyer, Valeska Gert et Mary Wigman.

@@ -1,0 +1,84 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	  	<meta charset="UTF-8">
+		<title>Figure project</title>
+		<meta name="description" content="">
+      	<meta name="author" content="">
+      	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link href="{% static "css/reset.css" %}" rel="stylesheet">
+		<link href="{% static "css/style.css" %}" rel="stylesheet">
+		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mousewheel.js" %}"></script>
+		<script>
+		$(document).ready(function() {
+
+			$('html, body, *').mousewheel(function(e, delta) {
+				this.scrollLeft -= (delta * 40);
+				e.preventDefault();
+			});
+
+		});
+		</script>
+	</head>
+	<body>
+
+    {% include "nav.html" %}
+       			<li class="langues"><a href="{% url 'biographie' %}" class="">Fr</a>/<a href="#" class="">En</a></li>
+		</ul>
+	</nav>
+
+	<main class="bio">
+		<section class="intro">
+			<article>
+				<p>Pièces, installations, conférences performées, collaborations pluridisciplinaires : mêlant les genres, réfléchissant et redéfinissant les formats, le travail de Latifa Laâbissi cherche à faire
+				entrer sur scène un hors-champ multiple ; un paysage anthropologique où se découpent des histoires, des
+				figures et des voix. Les codes de la danse y sont bousculés par des corps récalcitrants, des récits alternatifs,
+				des montages de matériaux par où s’infiltrent les signes de l’époque.</p>
+			</article>
+		</section>
+
+		<section class="formation">
+			<article>
+				<!--<h1>FORMATION / DÉFORMATION</h1>-->
+				<p>{{ formation.texte }}<!--Après un apprentissage au studio Cunningham à N-Y, Latifa Laâbissi cherche à thématiser la question du
+				corps comme zone d’influences plurielles, traversée de strates subjectives et culturelles hétérogènes. À
+				rebours d’une esthétique abstraite – elle va extraire des débuts de la modernité une gestualité fondée sur le trouble des genres et des postures sociales : un travestissement des identifications qui révèle la violence des conflits dont le corps est l’objet, et en renvoie une image grimaçante.
+				En 2001, elle crée Phasmes, pièce hantée par les fantômes de Dore Hoyer, Valeska Gert et Mary Wigman.
+				Elle revient sur la danse allemande des années 20 avec La part du rite, accompagnée par la chercheuse Isabelle
+				Launay, et Ecran somnambule, une version étirée de la Danse de la Sorcière de Mary Wigman.--></p>
+			</article>
+		</section>
+
+		<section class="defigurer">
+			<article>
+				<!--<h1>DÉFIGURER</h1>-->
+				<p>Dès ses premières collaborations, la mise en jeu de la voix et du visage comme véhicule d’états et d’accents
+				minoritaires devient indissociable de l’acte dansé. A partir de 2000, elle s’engage dans le processus de
+				Morceau avec Loïc Touzé, Jennifer Lacey et Yves-Noël Genod. Jouant de postures empruntées au grotesque,
+				elle affirme une stratégie de glissement des identités et des registres de la représentation. Figure est le nom de
+				ce montage – où auto-fiction, dérision et discours, matériaux contemporains et spectres de danse interfèrent et s’interprètent. En 2002, I love like animals développe ce nouage entre voix et figure, en vue de
+				perturber la lecture du chorégraphique.</p>
+			</article>
+		</section>
+
+		<section class="detourner">
+			<article>
+				<!--<h1>DÉTOURNER</h1>-->
+				<p>Creusant les liens souterrains entre histoire des représentations et imaginaire collectif, la figure lui sert d’outil pour exposer les symptômes du refoulé colonial, et retourner contre elle-même la brutalité des mécanismes d’aliénation qu’il produit. En 2006, Self Portrait Camouflage matérialise cet examen critique des images de l’altérité – entre dispositif d’exposition du corps, show burlesque et confrontation de signes politiques. Histoire par celui qui la raconte (2008) étend la déconstruction narrative et le jeu sur le grotesque à un large spectre de références. Avec Loredreamsong (2010), elle poursuit cette exploration sous la forme d’un duo, où fragments de discours, rumeurs subversives, états de rage et ironie s’entrechoquent, faisant dérailler les repères subjectifs, politiques et narratifs. La réappropriation sauvage d’un imaginaire ambigu, que deux fantômes manipulent comme une matière explosive.</p>
+			</article>
+		</section>
+
+		<section class="deplacer">
+			<article>
+				<!--<h1>DÉPLACER</h1>-->
+				<p>Pour Latifa Lâabissi l’acte artistique implique un déplacement des modes de production et de perception : la transmission, le partage des savoirs, des matériaux, et la porosité des formats sont inséparables du processus de création. En 2005, elle mène le projet Habiter, qui scrute différents espaces quotidiens par le biais du médium vidéo. Le branchement de sa pratique sur d’autres champs de recherche l’amène également à intervenir au sein de différents contextes – tels les universités, les écoles d’art ou les centres chorégraphiques nationaux. Lors de sa résidence en tant qu’artiste invitée au Musée de la danse, elle organise, en mars 2010, Grimace du réel – manifestation pluridisciplinaire mettant en perspective les sources historiques, textuelles ou cinématographiques qui participent à l’élaboration de l’œuvre. Sources, matériaux – films documentaires, fictions, travaux ethnographiques, sociologiques ou philosophiques qui ne cessent d’irriguer sa pratique, ses modalités d’intervention, de dissémination et d’expérimentation des formes artistiques.</p>
+			</article>
+		</section>
+
+	</main>
+
+	</body>
+</html>

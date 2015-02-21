@@ -19,6 +19,9 @@
 	<body>
 
     {% include "nav.html" %}
+   			<li class="langues"><a href="{% url 'oeuvres' %}" class="">Fr</a>/<a href="#" class="">En</a></li>
+		</ul>
+	</nav>
 
 	<main class="oeuvre">
 		<img src="{{ oeuvre.image_titre.url }}" alt="{{ oeuvre.titre_oeuvre }}" title="" class="oeuvre-max" />
