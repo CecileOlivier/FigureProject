@@ -1,0 +1,94 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	  	<meta charset="UTF-8">
+		<title>Figure project</title>
+		<meta name="description" content="">
+      	<meta name="author" content="">
+      	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link href="{% static "css/reset.css" %}" rel="stylesheet">
+		<link href="{% static "css/style.css" %}" rel="stylesheet">
+		<link href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+		<link href="{% static "css/jquery.mCustomScrollbar.css" %}" rel="stylesheet" media="all" />
+		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mousewheel.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
+	</head>
+	<body>
+
+    {% include "nav.html" %}
+
+	<main class="oeuvre">
+		<img src="{{ oeuvre.image_titre.url }}" alt="{{ oeuvre.titre_oeuvre }}" title="" class="oeuvre-max" />
+		<div class="presentation">
+		<h1>{{ oeuvre.titre_oeuvre }}</h1>
+		<p class="prec-suiv"> <a href="#"><</a> <a href="#">></a> </p>
+			<section class="note inline">
+			<!-- ouvert par défaut en desktop avec disparition du titre -->
+				<a href="#note" class="lienvisible"><h2 class="note">note</h2></a>
+				<div id="note" class="note hide scroll-pane">
+					<p>{{ oeuvre.note }}</p>
+				</div>
+			</section>
+			</div>
+			<div class="sous-menu">
+			<section class="distribution inline">
+				<a href="#distribution" class="lienvisible"><h2>distribution</h2></a>
+				<div id="distribution" class="distribution hide">
+					<ul>
+						<li><span class="fonction">Conception et interprétation : </span><span class="nom">Latifa Laâbissi</span></li>
+						<li><span class="fonction">Conception scénographique : </span><span class="nom">Nadia Lauro</span></li>
+						<li><span class="fonction">Costumes : </span><span class="nom">Nadia Lauro / Latifa Laâbissi</span></li>
+						<li><span class="fonction">Création lumière : </span><span class="nom">Yves Godin</span></li>
+						<li><span class="fonction">Création son : </span><span class="nom">Manuel Coursin</span></li>
+						<li><span class="fonction">Remerciements à Isabelle Launay, Yves Noël Genod, Jean-Christophe Paré, Francois Chaignaud</span></li>
+						<li><span class="fonction">Direction technique : </span><span class="nom">Ludovic Rivière</span></li>
+					</ul>
+				</div>
+			</section>
+			<section class="mentions inline">
+				<a href="#mentions" class="lienvisible"><h2>mentions</h2></a>
+				<div id="mentions" class="mentions hide">
+					<ul>
+						<li><span class="fonction">Production : </span><span class="nom">Figure Project – Rennes</span></li>
+						<li><span class="fonction">Production déléguée : </span><span class="nom">Latitudes Prod – Lille</span></li>
+						<li><span class="fonction">Coproduction : Les Spectacles vivants – Centre Pompidou – Paris, Festival d’Automne à Paris, Musée de la danse -CCNRB, Théâtre National de Bretagne – Rennes, Le Phare – CCN du Havre Haute-Normandie, Open Latitudes network, Le Vivat – scène conventionnée d’Armentières, Institut français / Ville de Rennes et Rennes Métropole. Avec le soutien du Tanzquartier Wien et du Centre national de danse contemporaine Angers / direction Emmanuelle Huynh (2012)</span></li>
+					</ul>
+				</div>
+			</section>
+			<section class="diffusion inline">
+			<!-- ouvert par défaut en mobile -->
+				<a href="#diffusion" class="lienvisible"><h2>diffusion</h2></a>
+				<div id="diffusion" class="diffusion hide">
+				{% for date in dates %}
+					<p class="date">} {{ date.date }}</p>
+					<p class="lieu">{{ date.lieu }}</p>
+					<p class="evenement">{{ date.cadre }}</p>
+				{% endfor %}
+					<!--<p class="date">} 28 JANVIER 2014</p>
+					<p class="lieu">Le Vivat, Armentières</p>
+					<p class="evenement">dans le cadre du festival <strong>Vivat la danse</strong></p>
+					<p class="date">} 20, 21, 22 NOVEMBRE 2013</p>
+					<p class="lieu">Centre Pompidou, Paris</p>
+					<p class="evenement">dans le cadre du <strong>Festival d’Automne</strong></p>
+					<p class="date">} 11 & 14 NOVEMBRE 2013</p>
+					<p class="lieu">TNB – Rennes</p>
+					<p class="evenement">dans le cadre du festival <strong>Mettre en Scène,</strong><em> Première</em></p>
+					<p class="date">} 12 JUIN 2013 À 20H30</p>
+					<p class="lieu">Théâtre de l’Oiseau-Mouche / Le Garage, Roubaix</p>
+					<p class="evenement">dans le cadre du festival <strong>Latitudes Contemporaines, </strong><em>maquette</em></p>-->
+				</div>
+			</section>
+			</div>
+			<section class="galerie">
+			{% for image in img_oeuvre %}
+				<img src="{{ image.image.url }}" alt="" title="" class="oeuvre-mini"/>
+			{% endfor %}
+			</section>
+		</div>
+	</main>
+
+	</body>
+</html>

@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	  	<meta charset="UTF-8">
+		<title>Figure project</title>
+		<meta name="description" content="">
+      	<meta name="author" content="">
+      	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link href="{% static "css/reset.css" %}" rel="stylesheet">
+		<link href="{% static "css/style.css" %}" rel="stylesheet">
+		<link href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+		<link href="{% static "css/jquery.mCustomScrollbar.css" %}" rel="stylesheet" media="all" />
+		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mousewheel.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
+	</head>
+	<body>
+
+    {% include "nav.html" %}
+
+	<main class="calendrier">
+
+		<ul class="dates">
+		{% for date in dates %}
+			<li>
+				<div class="img-oeuvre">
+					<img src="{{ date.objet.typo_titre.url }}" alt="" title="" class="oeuvres-typo"/>
+				</div>
+				<div class="description">
+					<p class="date"><span class="jour">{{ date.date|date:"j" }}</span><span class="mois">/{{ date.date|date:"b" }}</span></p>
+					<p class="heure">{{ date.date|date:"H" }}h{{ date.date|date:"i" }}</p>
+					<p class="lieu">
+					{{ date.lieu }}
+					<!-- css :after content ',' -->
+					</p>
+					<p class="evenement">
+					{{ date.cadre }}
+					<!-- balise strong à replacer -->
+					</p>
+					<p class="lien">{{ date.url }}</p>
+				</div>
+			</li>	
+		{% endfor %}
+			<!--<li>
+				<div class="img-oeuvre">
+					<img src="img/oeuvres/adieuetmerci.png" alt="" title="" class="oeuvres-typo"/>
+				</div>
+				<div class="description">
+					<p class="date"><span class="jour">28</span><span class="mois">/JANV</span></p>
+					<p class="heure">20h30</p>
+					<p class="lieu">Le Vivat,</p>
+					<p class="evenement">Scène Conventionnée d'Armentières dans le cadre du <strong>festival Vivat la danse !</strong></p>
+					<p class="lien">levivat.net</p>
+				</div>
+			</li>
+			<li>
+				<div class="img-oeuvre">
+					<img src="img/oeuvres/ecransomnambule.png" alt="" title="" class="oeuvres-typo"/>
+				</div>
+				<div class="description">
+					<p class="date"><span class="jour">6</span><span class="mois">/FEV</span></p>
+					<p class="heure">14h30</p>
+					<p class="lieu">Université Rennes 2,</p>
+					<p class="evenement">Bât. B amphi B4 Lamennais dans le cadre de <strong>Rejouer la performance</strong></p>
+					<p class="lien">museedeladanse.org</p>
+				</div>
+			</li>
+			<li>
+				<div class="img-oeuvre">
+					<img src="img/oeuvres/adieuetmerci.png" alt="" title="" class="oeuvres-typo"/>
+				</div>
+				<div class="description">
+					<p class="date"><span class="jour">28</span><span class="mois">/JANV</span></p>
+					<p class="heure">20h30</p>
+					<p class="lieu">Le Vivat,</p>
+					<p class="evenement">Scène Conventionnée d'Armentières dans le cadre du <strong>festival Vivat la danse !</strong></p>
+					<p class="lien">levivat.net</p>
+				</div>
+			</li>
+			<li>
+				<div class="img-oeuvre">
+					<img src="img/oeuvres/ecransomnambule.png" alt="" title="" class="oeuvres-typo"/>
+				</div>
+				<div class="description">
+					<p class="date"><span class="jour">6</span><span class="mois">/FEV</span></p>
+					<p class="heure">14h30</p>
+					<p class="lieu">Université Rennes 2,</p>
+					<p class="evenement">Bât. B amphi B4 Lamennais dans le cadre de <strong>Rejouer la performance</strong></p>
+					<p class="lien">museedeladanse.org</p>
+				</div>
+			</li>-->
+
+		</ul>
+	</main>
+
+	</body>
+</html>
