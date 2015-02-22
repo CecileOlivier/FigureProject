@@ -45,20 +45,6 @@ class Contact(models.Model):
         return '[%s] %s - %s %s' % (self.langue, self.domaine, self.entite, self.nom)
 
 
-class Image(models.Model):
-
-    image = models.ImageField(upload_to='images')
-    oeuvre = models.ForeignKey('Oeuvre', blank=True, null=True)
-    projet = models.ForeignKey('Projet', blank=True,  null=True)
-
-    def visuel(self):
-        return '<img src="%s" width="auto" height="50"/>' % self.image.url
-    visuel.allow_tags = True
-
-    def __unicode__(self):
-        return u'%s %s %s' % (self.image, self.oeuvre, self.projet)
-
-
 class Lien(models.Model):
     domaine = models.CharField(max_length=200)
     url = models.URLField()
@@ -106,6 +92,22 @@ class Projet(models.Model):
 
     def __unicode__(self):
         return '[%s] %s' % (self.langue, self.titre)
+
+
+class Image(models.Model):
+
+    image = models.ImageField(upload_to='images')
+    projet = models.ManyToManyField(Projet, blank=True, null=True)
+    oeuvre = models.ManyToManyField(Oeuvre, blank=True, null=True)
+#    oeuvre = models.ForeignKey('Oeuvre', blank=True, null=True)
+#    projet = models.ForeignKey('Projet', blank=True,  null=True)
+
+    def visuel(self):
+        return '<img src="%s" width="auto" height="50"/>' % self.image.url
+    visuel.allow_tags = True
+
+    def __unicode__(self):
+        return u'%s' % (self.image)
 
 
 class Atelier(models.Model):

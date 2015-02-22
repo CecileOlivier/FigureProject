@@ -1,5 +1,5 @@
 from django.contrib import admin
-from figureprojectapp.models import Biographie, Calendrier, Contact, Image, Oeuvre, Lien, Langue, Projet, Atelier
+from figureprojectapp.models import Biographie, Calendrier, Contact, Oeuvre, Image, Lien, Langue, Projet, Atelier
 
 # Register your models here.
 
@@ -18,7 +18,7 @@ class LienAdmin(admin.ModelAdmin):
 class ImageAdmin(admin.ModelAdmin):    
     # visuel c'est la fonction qui renvoi le code html qui va etre afficher 
     # faut aussi le mettre en 1er pour qu'il soit afficher comme lien
-    list_display = ('visuel', 'image', 'oeuvre', 'projet')
+    list_display = ('visuel', 'image')
     search_fields = ['oeuvre', 'projet']
 
 class OeuvreAdmin(admin.ModelAdmin):    
