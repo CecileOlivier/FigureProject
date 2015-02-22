@@ -1359,14 +1359,23 @@ main.liens p.contact {
 	main.bio {
 		position: absolute;
 		height:100%;
+		width:1800px;
 		padding-left: 0;
 		left:15em;
 	}
 
+	main.bio h1 {
+		padding-top: 25%;
+		padding-bottom: 0;
+	}
+
+	main.bio h1:after {
+		display: none;
+	}
+
 	main.bio section {
-		display: inline-block;
-		position: absolute;
-		width:45em;
+		display: table-cell;
+		width:35em;
 	}
 
 	main.bio p {
@@ -1376,20 +1385,21 @@ main.liens p.contact {
 
 	main.bio section article {
 		width: 25em;
-		vertical-align: baseline;
-		padding-top:20%;
-		padding-left:12em;
+		vertical-align: super;
+		padding-top: 0;
 	}
 
-	main.bio section.intro article {
-		padding-top:20%;
+	section article p:before {
+		position: absolute; 
+	    display: block; 
+	    content: '';
+	    margin-top: -2em;
+	    border-top:5px solid #E1001A;
+	    width: 2em;
+	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
 	}
 
-	section.formation {
-		margin-left:35em;
-	}
-
-	section.formation article:before {
+	/*section.formation article:before {
 		content:'formation / déformation';
 		position: absolute;
 		width: 4em;
@@ -1489,6 +1499,6 @@ main.liens p.contact {
 	    border-top:5px solid #E1001A;
 	    width: 2em;
 	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
-	}
+	}*/
 
 }

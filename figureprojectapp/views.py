@@ -22,11 +22,12 @@ def oeuvre(request, slug):
     return render(request, 'oeuvre.html', {'oeuvre': objet_oeuvre, 'img_oeuvre':img_oeuvre, 'dates':dates})
 
 def biographie(request):
-    objet_bio = Biographie.objects.filter(langue="en").get(titre='Formation/deformation')
-    return render(request, 'biographie.html', {'formation': objet_bio})
+    biographie = Biographie.objects.filter(langue='fr').all()
+    return render(request, 'biographie.html', {'biographie': biographie})
+# , 'formfr':formfr, 'defigurerfr':defigurerfr, 'detournerfr':detournerfr, 'deplacerfr':deplacerfr
 
 def extensionsauvage(request):
-    extsauvage = Projet.objects.select_related('image').get(titre='Extension sauvage')
+    extsauvage = Projet.objects.select_related('image').filter(langue="fr").get(titre='Extension sauvage')
     i_es = extsauvage.image_set.all()
     return render(request, 'extension-sauvage.html', {'extsauvage': extsauvage, 'i_es': i_es})
 
@@ -66,11 +67,11 @@ def links(request):
     return render(request, 'links.html', {'liens_partcult': liens_partcult, 'liens_parteduc': liens_parteduc, 'liens_artistes': liens_artistes, 'liens_utiles': liens_utiles})
 
 def biography(request):
-    objet_bio = Biographie.objects.filter(langue="en").get(titre='Formation/deformation')
-    return render(request, 'biography.html', {'formation': objet_bio})
+    biographie = Biographie.objects.filter(langue='en').all()
+    return render(request, 'biography.html', {'biographie': biographie})
 
 def extensionsauvageen(request):
-    extsauvage = Projet.objects.select_related('image').get(titre='Extension sauvage')
+    extsauvage = Projet.objects.select_related('image').filter(langue="en").get(titre='Extension sauvage')
     i_es = extsauvage.image_set.all()
     return render(request, 'extension-sauvage-en.html', {'extsauvage': extsauvage, 'i_es': i_es})
 
