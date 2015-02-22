@@ -75,10 +75,14 @@ class Oeuvre(models.Model):
     def __unicode__(self):
         return u'[%s] %s %s' % (self.langue, self.titre_oeuvre, self.image_titre)
 
-    def get_absolute_url(self):
-        return reverse('oeuvre', kwargs={'slug': self.slug})
+
 #   kwargs = arguments nommes
 #   args = arguments ordonnes
+    def get_absolute_url(self):
+        if self.langue.code == 'fr':
+            return reverse('oeuvre', kwargs={'slug': self.slug})
+        else:
+            return reverse('work', kwargs={'slug': self.slug})
 
 
 class Projet(models.Model):

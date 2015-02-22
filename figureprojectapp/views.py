@@ -6,8 +6,8 @@ from figureprojectapp.models import Oeuvre, Biographie, Lien, Contact, Calendrie
 # filter pour fr/en
 # variable, internationalisation
 
-def home(request):
-    oeuvres = Oeuvre.objects.all()
+def oeuvres(request):
+    oeuvres = Oeuvre.objects.filter(langue='fr').all()
     return render(request, 'index.html', {'oeuvres': oeuvres})
     # objet request + template + contexte cad les variables qui seront disponibles dans le template
 
@@ -47,15 +47,15 @@ def liens(request):
     return render(request, 'liens.html', {'liens_partcult': liens_partcult, 'liens_parteduc': liens_parteduc, 'liens_artistes': liens_artistes, 'liens_utiles': liens_utiles})
 
 def works(request):
-    oeuvres = Oeuvre.objects.all()
+    oeuvres = Oeuvre.objects.filter(langue='en').all()
     return render(request, 'works.html', {'oeuvres': oeuvres})
 
-def work(request):
+def work(request, slug):
     object_work = Oeuvre.objects.select_related().filter(langue="en").get(slug=slug)
-    img_oeuvre = objet_oeuvre.image_set.all()
-    dates = objet_oeuvre.calendrier_set.all()
-    next_oeuvre = Oeuvre.objects.filter(id__gt=objet_oeuvre.id).first()
-    prev_oeuvre = Oeuvre.objects.filter(id__gt=objet_oeuvre.id).first()
+    img_oeuvre = object_work.image_set.all()
+    dates = object_work.calendrier_set.all()
+#    next_work = Oeuvre.objects.filter(id__gt=object_work.id).first()
+#    prev_work = Oeuvre.objects.filter(id__gt=object_work.id).first()
 #   1er slug : paramètre nomme, 2eme : variable fournie a def
     return render(request, 'work.html', {'oeuvre': object_work, 'img_oeuvre':img_oeuvre, 'dates':dates})
 
