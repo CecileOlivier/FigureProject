@@ -31,9 +31,14 @@ def extensionsauvage(request):
     i_es = extsauvage.image_set.all()
     return render(request, 'extension-sauvage.html', {'extsauvage': extsauvage, 'i_es': i_es})
 
-def calendrier(request):
-    dates = Calendrier.objects.select_related('oeuvre').all()
-    return render(request, 'calendrier.html', {'dates': dates})
+def calendrier(request, year):
+    calendriers_menu = Calendrier.objects.select_related('oeuvre').all()
+    if year == None:
+        calendriers = calendriers_menu
+    else:
+        calendriers = [ calendrier for calendrier in calendriers_menu if calendrier.date.year == int(year) ]
+
+    return render(request, 'calendrier.html', {'dates': calendriers, 'calendriers_menu': calendriers_menu})
 
 def contact(request):
     contacts = Contact.objects.filter(langue="fr").all()

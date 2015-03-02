@@ -1,23 +1,26 @@
 $(document).ready(function() {
+	$(".lienvisible").click(function(event) {
+		$(event.currentTarget).show();
+	    var val_link = $(event.currentTarget).attr('href'); 
+	    console.log(val_link);
+	    $(val_link).toggle();
+	});
+	// si un hash est présent, on simule le clic sur le lien correspondant
+    var hash = window.location.hash;
+    if(hash) {
+        var lien = $('[href="'+hash+'"]')
+        console.log(lien);
+        lien.click();
+    }
 	if ($(window).width() < 360) {
 		console.log('petit');
 		$(".hide").hide(); 
-		$(".lienvisible").click(function(event) {
-	        var val_link = $(event.currentTarget).attr('href'); 
-	        console.log(val_link);
-	        $(val_link).toggle();
-		});
 	}
 	else if ($(window).width() < 1024) {
 		console.log('moyen');
 		$("#menu-principal").removeClass("hide");
 		$("#oeuvres").addClass("hide");
 		$(".hide").hide(); 
-		$(".lienvisible").click(function(event) {
-	        $(event.currentTarget).show();
-	        var val_link = $(event.currentTarget).attr('href'); 
-	        $(val_link).toggle();
-		});
 	}
 	else {
 		console.log('grand');
@@ -35,19 +38,11 @@ $(document).ready(function() {
 		});*/
 		$("#note").removeClass("hide");
 		$("#menu-principal").removeClass("hide");
-		$("#oeuvres").addClass("hide");
-		$("#calendrier").addClass("hide");
+		$("#oeuvres").removeClass("hide");
+		$("#calendrier").removeClass("hide");
 		$("#diffusion").addClass("hide");
 		$("a[href=#note]").css("display:none;");
 		$(".hide").hide(); 
-		$(".lienvisible").click(function(event) {
-	        var val_link = $(event.currentTarget).attr('href'); 
-	        $(val_link).toggle();
-		});
-		$(".lienvisiblemenu").click(function(event) {
-	        var val_link_menu = $(event.currentTarget).attr('href'); 
-	        var val_link_menu2 = val_link_menu.substring(1);
-	        $(val_link_menu2).toggle();
-		});
 	}
+	/* tester avec un if et un else, puis un autre if */
 });
