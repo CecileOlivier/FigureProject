@@ -1012,7 +1012,7 @@ main.liens p.contact {
 		display: table-cell;
 		padding:1em;
 		height:50%;
-		border-left: 1px solid #3D3D3F;
+		/*border-left: 1px solid #3D3D3F;*/
 		border-right: 1px solid #3D3D3F;
 	}
 
@@ -1022,27 +1022,9 @@ main.liens p.contact {
 		vertical-align: middle;
 	}
 
-	/*ul.oeuvres-typo li:after {
-		content:'';
-		display: block;
-		position: absolute;
-		border-right: 1px solid #3D3D3F;
-		top:0;
-		padding-right: 2em;
-		height:55%;
-		width:5%;
-	}
-
-	ul.oeuvres-typo li:nth-child(1):before {
-		content:'';
-		display: block;
-		position: absolute;
+	ul.oeuvres-typo li:nth-child(1) {
 		border-left: 1px solid #3D3D3F;
-		top:0;
-		margin-left: -1.5em;
-		height:55%;
-		width:5%;
-	}*/
+	}
 
 	main.oeuvres {
 		position: absolute;
