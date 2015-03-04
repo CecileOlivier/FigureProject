@@ -969,19 +969,13 @@ main.liens p.contact {
 		/*display: block;*/
 	}
 
-	nav ul.sous-menu.annee li a {
+	ul.sous-menu-annee li a {
 		text-decoration: none;
-		float:left;
-	}
-
-	ul.sous-menu.annee li a {
-		text-decoration: none;
-		font-size: 1em;
-		line-height: 0;
+		line-height: 0.5em;
+		font-size: 1.3em;
 	}
 
 	nav ul.sous-menu-annee li {
-		text-transform: none;
 		text-decoration: none;
 	}
 
@@ -1159,7 +1153,7 @@ main.liens p.contact {
 
 	ul.dates li {
 		display: inline-block;
-		width: 10%;
+		width: 8%;
 		height: auto;
 	}
 
