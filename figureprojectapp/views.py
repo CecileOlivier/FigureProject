@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
-from figureprojectapp.models import Oeuvre, Biographie, Lien, Contact, Calendrier, Projet, Image, Atelier
+from figureprojectapp.models import Oeuvre, Biographie, Lien, Contact, Calendrier, Projet, Image, Atelier, Actualite
 
 # Create your views here.
 # filter pour fr/en
@@ -11,15 +11,15 @@ def oeuvres(request):
     return render(request, 'index.html', {'oeuvres': oeuvres})
     # objet request + template + contexte cad les variables qui seront disponibles dans le template
 
-
 def oeuvre(request, slug):
+    oeuvres = Oeuvre.objects.filter(langue='fr').all()
     objet_oeuvre = Oeuvre.objects.select_related().filter(langue="fr").get(slug=slug)
     img_oeuvre = objet_oeuvre.image_set.all()
     dates = objet_oeuvre.calendrier_set.all()
     next_oeuvre = Oeuvre.objects.filter(id__gt=objet_oeuvre.id).first()
     prev_oeuvre = Oeuvre.objects.filter(id__gt=objet_oeuvre.id).first()
 #   1er slug : paramètre nomme, 2eme : variable fournie a def
-    return render(request, 'oeuvre.html', {'oeuvre': objet_oeuvre, 'img_oeuvre':img_oeuvre, 'dates':dates, 'next': next_oeuvre, 'prev': prev_oeuvre})
+    return render(request, 'oeuvre.html', {'oeuvre': objet_oeuvre, 'img_oeuvre':img_oeuvre, 'dates':dates, 'next': next_oeuvre, 'prev': prev_oeuvre, 'oeuvres': oeuvres})
 
 def biographie(request):
     biographie = Biographie.objects.filter(langue='fr').all()
@@ -50,6 +50,10 @@ def liens(request):
     liens_artistes = Lien.objects.filter(domaine='Artistes')
     liens_utiles = Lien.objects.filter(domaine='Liens utiles')
     return render(request, 'liens.html', {'liens_partcult': liens_partcult, 'liens_parteduc': liens_parteduc, 'liens_artistes': liens_artistes, 'liens_utiles': liens_utiles})
+
+def actualite(request):
+    actu = Actualite.objects.filter(langue='fr').all()
+    return render(request, 'actu.html', {'actu': actu})
 
 def works(request):
     oeuvres = Oeuvre.objects.filter(langue='en').all()
