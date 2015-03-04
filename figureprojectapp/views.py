@@ -33,7 +33,7 @@ def extensionsauvage(request):
     return render(request, 'extension-sauvage.html', {'extsauvage': extsauvage, 'i_es': i_es})
 
 def calendrier(request, year):
-    calendriers_menu = Calendrier.objects.select_related('oeuvre').all()
+    calendriers_menu = Calendrier.objects.select_related('oeuvre').all()[:6]
     if year == None:
         calendriers = calendriers_menu
     else:
