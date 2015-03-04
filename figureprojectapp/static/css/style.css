@@ -1163,6 +1163,10 @@ main.liens p.contact {
 		height: auto;
 	}
 
+	ul.dates li:nth-child(1) div.img-oeuvre {
+		border-left: 1px solid #3D3D3F;
+	}
+
 	ul.dates div.img-oeuvre {
 		line-height:35em;
 	  	text-align:center;
@@ -1170,18 +1174,6 @@ main.liens p.contact {
 		width: 100%;
 		border-right: 1px solid #3D3D3F;
 	}
-
-	ul.dates div.img-oeuvre:first-of-type {
-		border-left: 1px solid #3D3D3F;
-	}
-
-	/*ul.dates div.img-oeuvre:before {
-		content: "";
-		display: inline-block;
-		position: absolute;
-		border-left: 1px solid #3D3D3F;
-		height: 350px;
-	}*/
 
 	/*ul.dates div.img-oeuvre:after {
 		content: "";
