@@ -135,6 +135,42 @@ nav li a.langues:after {
 	display: none;
 }
 
+/* SOUS MENU CALENDRIER */
+
+nav ul.sous-menu-annee {
+	position: absolute;
+	width: 100%;
+}
+
+nav ul.sous-menu-annee li {
+	display:inline-block;
+	position: relative;
+	clear:none;
+	width:15%;
+	padding-right: 0;
+}
+
+ul.sous-menu-annee li a {
+	font-family:"Bebas";
+	font-size: 2em;
+	font-style: normal;
+	line-height: 2em;
+	text-transform: uppercase;
+	color: #3E3D3F;
+}
+
+nav ul.sous-menu-annee li a:after {
+	display:none;
+}
+
+ul.sous-menu-annee li a:hover {
+	color: #DF051C;
+}
+
+ul.sous-menu-mois {
+	display:none;
+}
+
 /* *************************
 			COMMUN	 					
 ************************** */ 
@@ -315,7 +351,7 @@ main.calendrier {
 	clear:both;
 }
 
-ul.sous-menu-annee {
+/*ul.sous-menu-annee {
 	display: block;
 	padding-bottom:3%;
 	overflow: hidden;
@@ -325,24 +361,7 @@ ul.sous-menu-annee li {
 	display: inline-block;
 	margin-bottom: 0;
 	padding-right: 0;
-}
-
-ul.sous-menu-annee li a {
-	font-family:"Bebas";
-	font-size: 2em;
-	font-style: normal;
-	line-height: 2em;
-	text-transform: uppercase;
-	color: #3E3D3F;
-}
-
-ul.sous-menu-annee li a:hover {
-	color: #DF051C;
-}
-
-ul.sous-menu-mois {
-	display:none;
-}
+}*/
 
 ul.dates {
 	clear:both;
@@ -688,34 +707,35 @@ main.liens p.contact {
 	    border-bottom: 1px solid #E1001A;
 	}
 
-	/* *************************
-			CALENDRIER	 					
-	************************** */ 
+	/* SOUS MENU CALENDRIER */
 
-	ul.sous-menu-annee {
+	nav ul.sous-menu-annee {
     	position:absolute;
-    	left:8%;
+    	top:27%;
+    	left:6%;
+    	width: auto;
+    	height: 50%;
+    	display: block;
+    	padding-left: 0;
 	}
 
-	ul.sous-menu-annee li {
+	nav ul.sous-menu-annee li {
 		padding-bottom: 0;
 		display: block;
 		text-decoration: underline;
+		width: auto;
+		clear:both;
+		float:right;
 	}
 
 	ul.sous-menu-annee li a {
-		float:right;
 		text-decoration: underline;
-		clear:both;
 		line-height: 1.5em;
-	}
-
-	ul.dates {
-		margin-left:30%;
 	}
 
 	ul.sous-menu-mois{
 		display: block;
+		width: auto;
 	}
 
 	ul.sous-menu-mois li a {
@@ -724,6 +744,14 @@ main.liens p.contact {
 		font-size: 1.15em;
 		float:right;
 		text-decoration: none;
+	}
+
+	/* *************************
+			CALENDRIER	 					
+	************************** */ 
+
+	ul.dates {
+		margin-left:30%;
 	}
 
 	ul.dates div.img-oeuvre {
@@ -898,6 +926,8 @@ main.liens p.contact {
 	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
 	}
 
+	/* SOUS MENU OEUVRES */ 
+
 	nav ul.sous-menu-oeuvres a:after, nav li.langues a:after {
 	    display: none; 
 	}
@@ -924,9 +954,40 @@ main.liens p.contact {
 		color: #E1001A;
 	}
 
+	/* SOUS MENU CALENDRIER */ 
+
 	.hide {
 		padding-top:0;
 		padding-bottom: 0;
+	}
+
+	nav ul.sous-menu-annee {
+		position: relative;
+		left: 0;
+		padding-bottom: 0;
+		width: auto;
+		/*display: block;*/
+	}
+
+	nav ul.sous-menu.annee li a {
+		text-decoration: none;
+		float:left;
+	}
+
+	ul.sous-menu.annee li a {
+		text-decoration: none;
+		font-size: 1em;
+		line-height: 0;
+	}
+
+	nav ul.sous-menu-annee li {
+		text-transform: none;
+		text-decoration: none;
+	}
+
+	ul.sous-menu-mois li a {
+		float: left;
+		text-transform: lowercase;
 	}
 
 	/* *************************
@@ -948,9 +1009,11 @@ main.liens p.contact {
 	}
 
 	ul.oeuvres-typo li {
-		display: inline-block;
+		display: table-cell;
 		padding:1em;
 		height:50%;
+		border-left: 1px solid #3D3D3F;
+		border-right: 1px solid #3D3D3F;
 	}
 
 	ul.oeuvres-typo img {
@@ -959,7 +1022,7 @@ main.liens p.contact {
 		vertical-align: middle;
 	}
 
-	ul.oeuvres-typo a:after {
+	/*ul.oeuvres-typo li:after {
 		content:'';
 		display: block;
 		position: absolute;
@@ -979,7 +1042,7 @@ main.liens p.contact {
 		margin-left: -1.5em;
 		height:55%;
 		width:5%;
-	}
+	}*/
 
 	main.oeuvres {
 		position: absolute;
@@ -999,7 +1062,7 @@ main.liens p.contact {
 
 	#note {
 		width:100%;
-		height: 60%;
+		height: 100%;
 		/*overflow:scroll; inutile avec le plugin */ 
 	}
 
@@ -1033,7 +1096,6 @@ main.liens p.contact {
 		height:70%;
 		vertical-align: middle;
 		padding-left:3em;
-		/*overflow:scroll;*/
 		background-color: #E26D5A;
 	}
 
@@ -1101,7 +1163,7 @@ main.liens p.contact {
 		padding-left: 0px;
 		padding-bottom: 0;
 		padding-top: 0;
-		left: 27em;
+		left: 25em;
 	}
 
 	main.calendrier p.lieu, p.evenement {
@@ -1120,16 +1182,39 @@ main.liens p.contact {
 	}
 
 	ul.dates div.img-oeuvre {
-		line-height:350px;
+		line-height:35em;
 	  	text-align:center;
-		height:350px;
-		width: auto;
+		height:35em;
+		width: 100%;
+		border-right: 1px solid #3D3D3F;
 	}
+
+	ul.dates div.img-oeuvre:first-of-type {
+		border-left: 1px solid #3D3D3F;
+	}
+
+	/*ul.dates div.img-oeuvre:before {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		border-left: 1px solid #3D3D3F;
+		height: 350px;
+	}*/
+
+	/*ul.dates div.img-oeuvre:after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		margin-left: -0.5em;
+		border-left: 1px solid #3D3D3F;
+		height: 350px;
+	}*/
 
 	ul.dates div.img-oeuvre > img {
 		height:auto;
-		width: 100%;
+		width: 50%;
 		vertical-align: middle;
+		text-align: center;
 	}
 
 	ul.dates div.description {
@@ -1137,14 +1222,23 @@ main.liens p.contact {
 		width: auto;
 	}
 
-	ul.dates li:nth-child(1):before {
+	/*ul.dates li:nth-child(1):before {
 		content: "";
 		display: inline-block;
 		position: absolute;
 		margin-left: -0.5em;
 		border-left: 1px solid #3D3D3F;
 		height: 350px;
-	}	
+	}*/
+
+	/*ul.dates li:after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		margin-left: -0.5em;
+		border-left: 1px solid #3D3D3F;
+		height: 350px;
+	}	*/
 
 	div.img-oeuvre:after {
 	    display: none;
@@ -1246,7 +1340,7 @@ main.liens p.contact {
 		height:100%;
 		width:1800px;
 		padding-left: 0;
-		left:15em;
+		left:25em;
 	}
 
 	main.bio h1 {
@@ -1283,107 +1377,5 @@ main.liens p.contact {
 	    width: 2em;
 	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
 	}
-
-	/*section.formation article:before {
-		content:'formation / déformation';
-		position: absolute;
-		width: 4em;
-		font-family: "Bebas";
-		font-weight: normal;
-		text-transform: uppercase;
-		margin-top:-2em;
-		padding-bottom:5em;
-		color: #E1001A;
-		line-height: 1em;
-		font-size: 3.5em;
-	}
-
-	section.formation article p:before {
-		position: absolute; 
-	    display: block; 
-	    content: '';
-	    margin-top: -2em;
-	    border-top:5px solid #E1001A;
-	    width: 2em;
-	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
-	}
-
-	section.defigurer {
-		padding-left:70em;
-	}
-
-	section.defigurer article:before {
-		content:'défigurer';
-		position: absolute;
-		font-family: "Bebas";
-		font-weight: normal;
-		text-transform: uppercase;
-		margin-top:-1em;
-		color: #E1001A;
-		line-height: 1em;
-		font-size: 3.5em;
-	}
-
-	section.defigurer article p:before {
-		position: absolute; 
-	    display: block; 
-	    content: '';
-	    margin-top: -2em;
-	    border-top:5px solid #E1001A;
-	    width: 2em;
-	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
-	}
-
-	section.detourner {
-		padding-left:105em;
-	}
-
-	section.detourner article:before {
-		content:'détourner';
-		position: absolute;
-		font-family: "Bebas";
-		font-weight: normal;
-		text-transform: uppercase;
-		margin-top:-1em;
-		color: #E1001A;
-		line-height: 1em;
-		font-size: 3.5em;
-	}
-
-	section.detourner article p:before {
-		position: absolute; 
-	    display: block; 
-	    content: '';
-	    margin-top: -2em;
-	    border-top:5px solid #E1001A;
-	    width: 2em;
-	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
-	}
-
-	section.deplacer {
-		padding-left: 140em;
-	}
-
-	section.deplacer article:before {
-		content:'déplacer';
-		position: absolute;
-		font-family: "Bebas";
-		font-weight: normal;
-		text-transform: uppercase;
-		margin-top:-1em;
-		color: #E1001A;
-		line-height: 1em;
-		font-size: 3.5em;
-	}
-
-	section.deplacer article p:before {
-		position: absolute; 
-	    display: block; 
-	    content: '';
-	    margin-top: -2em;
-	    border-top:5px solid #E1001A;
-	    width: 2em;
-	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
-	}*/
 
 }
