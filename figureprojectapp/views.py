@@ -8,7 +8,7 @@ from figureprojectapp.models import Oeuvre, Biographie, Lien, Contact, Calendrie
 
 def oeuvres(request):
     oeuvres = Oeuvre.objects.filter(langue='fr').all()
-    actu = Actualite.objects.filter(langue='fr').get()
+    actu = Actualite.objects.filter(langue='fr').filter(statut_objet='actif').first()
     return render(request, 'index.html', {'oeuvres': oeuvres, 'actu':actu})
     # objet request + template + contexte cad les variables qui seront disponibles dans le template
 
@@ -51,10 +51,6 @@ def liens(request):
     liens_artistes = Lien.objects.filter(domaine='Artistes')
     liens_utiles = Lien.objects.filter(domaine='Liens utiles')
     return render(request, 'liens.html', {'liens_partcult': liens_partcult, 'liens_parteduc': liens_parteduc, 'liens_artistes': liens_artistes, 'liens_utiles': liens_utiles})
-
-def actualite(request):
-    actu = Actualite.objects.filter(langue='fr').get(statut_objet='actif')
-    return render(request, 'actu.html', {'actu': actu})
 
 def works(request):
     oeuvres = Oeuvre.objects.filter(langue='en').all()
