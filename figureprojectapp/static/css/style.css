@@ -232,6 +232,10 @@ ul.oeuvres-typo {
 			OEUVRE	 					
 ************************** */ 
 
+main.oeuvre h1 {
+	width:60%;
+}
+
 h1 {
 	display: inline-block;
 	font-family: "Bebas";
@@ -261,6 +265,8 @@ h1:after {
 .prec-suiv {
 	display: inline-block;
 	padding-left: 3.5em;
+	position: absolute;
+	left: 50%;
 }
 
 h2 {
@@ -630,6 +636,10 @@ main.liens p.contact {
 		display:inline;
 	}
 
+	main.oeuvre h1 {
+		width:auto;
+	}
+
 	main.oeuvre a h2:after {
 		content:'▼';
 		border-bottom: 1px solid #3E3D3F;
@@ -800,7 +810,9 @@ main.liens p.contact {
 	************************** */ 
 
 	.prec-suiv {
-		padding-left: 33em;
+		/*padding-left: 33em;*/
+		position: absolute;
+		left: 65%;
 	}
 
 	/* ******** note ******** */
