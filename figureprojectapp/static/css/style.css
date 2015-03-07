@@ -140,6 +140,8 @@ nav li a.langues:after {
 nav ul.sous-menu-annee {
 	position: absolute;
 	width: 100%;
+	left:1em;
+	top:65%;
 }
 
 nav ul.sous-menu-annee li {
@@ -148,6 +150,7 @@ nav ul.sous-menu-annee li {
 	clear:none;
 	width:15%;
 	padding-right: 0;
+	float:left;
 }
 
 ul.sous-menu-annee li a {
@@ -339,7 +342,7 @@ h2 {
 	color: #3E3D3F;
 	font-size: 1.25em;
 	line-height: 1.25em;
-	margin-bottom:1em;
+	/*margin-bottom:1em;*/
 	clear:both;
 }
 
@@ -349,6 +352,7 @@ h2 {
 
 main.calendrier {
 	clear:both;
+	padding-top:10%;
 }
 
 /*ul.sous-menu-annee {
@@ -404,7 +408,7 @@ div.description {
 
 main.calendrier .date {
 	padding-top: 1em;
-	padding-bottom: 2em;
+	padding-bottom: 1em;
 }
 
 p.heure {
@@ -1072,7 +1076,7 @@ main.liens p.contact {
 		height:70%;
 		vertical-align: middle;
 		padding-left:3em;
-		background-color: #E26D5A;
+		/*background-color: #E26D5A;*/
 	}
 
 	main.oeuvre .sous-menu {
@@ -1081,7 +1085,7 @@ main.liens p.contact {
 		top: 12em;		
 		padding-left:3em;
 		height:55%;
-		background-color: #21A179;
+		/*background-color: #21A179;*/
 	}
 
 	main.oeuvre .sous-menu section {
@@ -1111,7 +1115,7 @@ main.liens p.contact {
 		padding-left:3em;
 		vertical-align: middle;
 		height:55%;
-		background-color: #3F7CAC;
+		/*background-color: #3F7CAC;*/
 	}
 
 	.galerie img {
