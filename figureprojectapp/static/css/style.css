@@ -284,7 +284,13 @@ h2 {
 
 /* ******** distri ******** */
 
-.distribution .fonction {
+.distribution ul, .mentions ul {
+	font-family: "Univers";
+	font-size: 1.25em;
+	line-height: 1.25em;
+}
+
+/*.distribution .fonction {
 	font-family: "UniversOblique";
 	font-style: italic;
 	font-size: 1.25em;
@@ -297,11 +303,11 @@ h2 {
 	color:#E1001A;
 	font-size: 1.25em;
 	line-height: 1.25em;
-}
+}*/
 
 /* ******** mentions ******** */
 
-.mentions .fonction {
+/*.mentions .fonction {
 	font-family: "UniversOblique";
 	font-style: italic;
 	font-size: 1.25em;
@@ -314,7 +320,7 @@ h2 {
 	color:#E1001A;
 	font-size: 1.25em;
 	line-height: 1.25em;
-}
+}*/
 
 /* ******** diff ******** */
 

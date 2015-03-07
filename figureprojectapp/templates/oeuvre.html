@@ -41,13 +41,7 @@
 				<a href="#distribution" class="lienvisible"><h2>distribution</h2></a>
 				<div id="distribution" class="distribution hide">
 					<ul>
-						<li><span class="fonction">Conception et interprétation : </span><span class="nom">Latifa Laâbissi</span></li>
-						<li><span class="fonction">Conception scénographique : </span><span class="nom">Nadia Lauro</span></li>
-						<li><span class="fonction">Costumes : </span><span class="nom">Nadia Lauro / Latifa Laâbissi</span></li>
-						<li><span class="fonction">Création lumière : </span><span class="nom">Yves Godin</span></li>
-						<li><span class="fonction">Création son : </span><span class="nom">Manuel Coursin</span></li>
-						<li><span class="fonction">Remerciements à Isabelle Launay, Yves Noël Genod, Jean-Christophe Paré, Francois Chaignaud</span></li>
-						<li><span class="fonction">Direction technique : </span><span class="nom">Ludovic Rivière</span></li>
+						{{ oeuvre.distribution|safe }}
 					</ul>
 				</div>
 			</section>
@@ -55,9 +49,7 @@
 				<a href="#mentions" class="lienvisible"><h2>mentions</h2></a>
 				<div id="mentions" class="mentions hide">
 					<ul>
-						<li><span class="fonction">Production : </span><span class="nom">Figure Project – Rennes</span></li>
-						<li><span class="fonction">Production déléguée : </span><span class="nom">Latitudes Prod – Lille</span></li>
-						<li><span class="fonction">Coproduction : Les Spectacles vivants – Centre Pompidou – Paris, Festival d’Automne à Paris, Musée de la danse -CCNRB, Théâtre National de Bretagne – Rennes, Le Phare – CCN du Havre Haute-Normandie, Open Latitudes network, Le Vivat – scène conventionnée d’Armentières, Institut français / Ville de Rennes et Rennes Métropole. Avec le soutien du Tanzquartier Wien et du Centre national de danse contemporaine Angers / direction Emmanuelle Huynh (2012)</span></li>
+						{{ oeuvre.mentions|safe }}
 					</ul>
 				</div>
 			</section>
