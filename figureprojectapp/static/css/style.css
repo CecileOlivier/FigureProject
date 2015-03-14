@@ -343,8 +343,8 @@ h2 {
 	font-family: "UniversBold";
 	font-style: bold;	
 	color : #DF051C;
-	font-size: 1.30em;
-	line-height: 1.30em;
+	font-size: 1.25em;
+	line-height: 1.15em;
 	clear:both;
 }
 
@@ -352,8 +352,8 @@ h2 {
 	font-family: "Univers";
 	font-style: normal;
 	color: #3E3D3F;
-	font-size: 1.25em;
-	line-height: 1.25em;
+	font-size: 1.2em;
+	line-height: 1.15em;
 	/*margin-bottom:1em;*/
 	clear:both;
 }
@@ -1066,6 +1066,7 @@ main.liens p.contact {
 	#note {
 		width:100%;
 		height: 100%;
+		padding-top:1em;
 		/*overflow:scroll; inutile avec le plugin */ 
 	}
 
@@ -1095,10 +1096,11 @@ main.liens p.contact {
 	main.oeuvre .presentation {
 		display: inline-block;
 		top: 12em;
-		width:35em;
+		width:37em;
 		height:70%;
 		vertical-align: middle;
-		padding-left:3em;
+		padding-left:2em;
+		padding-bottom:0.5%;
 		/*background-color: #E26D5A;*/
 	}
 
@@ -1189,13 +1191,13 @@ main.liens p.contact {
 
 	ul.dates div.img-oeuvre > img {
 		height:auto;
-		width: 50%;
+		/*width: 50%;*/
 		vertical-align: middle;
 		text-align: center;
 	}
 
 	ul.dates div.description {
-		padding-top: 2em;
+		padding: 2em 1em 0 1em;
 		width: auto;
 	}
 

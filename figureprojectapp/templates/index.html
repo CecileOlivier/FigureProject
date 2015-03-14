@@ -10,8 +10,9 @@
 		<link href="{% static "css/reset.css" %}" rel="stylesheet">
 		<link href="{% static "css/style.css" %}" rel="stylesheet">
 		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.cookie.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mousewheel.min.js" %}"></script>
 		<script src="{% static "js/main.js" %}"></script>
-		<script src="{% static "js/vendor/jquery.mousewheel.js" %}"></script>
 		<script>
 		$(document).ready(function() {
 
@@ -34,11 +35,11 @@
 	<body>
 
     {% include "nav.html" %}
-           	<li class="langues"><a href="#" class="">Fr</a>/<a href="{% url 'works' %}" class="">En</a></li>
+           	<li class="langues"><a href="#" class="">Fr</a> / <a href="{% url 'works' %}" class="">En</a></li>
 		</ul>
 	</nav>
 
-	{% include "actu.html" %}
+	
 	
 	<main class="oeuvres">
 		<!-- oeuvres en photo pour mobile et tablette -->

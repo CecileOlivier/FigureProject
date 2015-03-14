@@ -10,16 +10,13 @@
 		<link href="{% static "css/reset.css" %}" rel="stylesheet">
 		<link href="{% static "css/style.css" %}" rel="stylesheet">
 		<link href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
-		<link href="{% static "css/jquery.mCustomScrollbar.css" %}" rel="stylesheet" media="all" />
 		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
-		<script src="{% static "js/vendor/jquery.mousewheel.min.js" %}"></script>
-		<script src="{% static "js/vendor/jquery.mCustomScrollbar.concat.min.js" %}"></script>
 		<script src="{% static "js/main.js" %}"></script>
 	</head>
 	<body>
 
     {% include "nav.html" %}
-       			<li class="langues"><a href="#" class="">Fr</a>/<a href="{% url 'links' %}" class="">En</a></li>
+       			<li class="langues"><a href="#" class="">Fr</a> / <a href="{% url 'links' %}" class="">En</a></li>
 		</ul>
 	</nav>
 	
