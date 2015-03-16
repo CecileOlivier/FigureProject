@@ -770,6 +770,10 @@ main.liens p.contact {
 			CALENDRIER	 					
 	************************** */ 
 
+	main.calendrier {
+		padding-top:0;
+	}
+
 	ul.dates {
 		margin-left:30%;
 	}
@@ -1006,9 +1010,24 @@ main.liens p.contact {
 		text-decoration: none;
 	}
 
+	nav ul.sous-menu-mois {
+		padding-left:1em;
+		padding-bottom:1em;
+	}
+
 	ul.sous-menu-mois li a {
 		float: left;
 		text-transform: lowercase;
+		line-height: 1.1em;
+		font-size: 1.1em;
+	}
+
+	ul.sous-menu-mois li a:before {
+		content:'¬   ';
+		position: absolute;
+		display: block;
+		left: -1em;
+		margin-bottom:-1em;
 	}
 
 	/* *************************
@@ -1033,6 +1052,7 @@ main.liens p.contact {
 		display: table-cell;
 		padding:1em;
 		height:50%;
+		width: 5em;
 		/*border-left: 1px solid #3D3D3F;*/
 		border-right: 1px solid #3D3D3F;
 	}
@@ -1041,6 +1061,7 @@ main.liens p.contact {
 		margin-top: 2.5em;
 		margin-bottom: 2.5em;
 		vertical-align: middle;
+		width: 100%;
 	}
 
 	ul.oeuvres-typo li:nth-child(1) {
@@ -1065,17 +1086,18 @@ main.liens p.contact {
 
 	#note {
 		width:100%;
-		height: 100%;
+		height: 320px;
 		padding-top:1em;
 		/*overflow:scroll; */
 	}
 
-	/*section.note:after {
+	.presentation:after {
 		content:'';
-		border-bottom: 3px solid #E1001A;
-		width:5em;
+		border-bottom: 5px solid #E1001A;
+		padding-bottom: 10%;
+		width:20%;
 		display: block;
-	} le placer sur presentation */
+	}
 
 	main.oeuvre {
 		position: absolute;
@@ -1101,7 +1123,7 @@ main.liens p.contact {
 		vertical-align: middle;
 		padding-left:2em;
 		padding-bottom:0.5%;
-		background-color: #E26D5A;
+		/*background-color: #E26D5A;*/
 	}
 
 	main.oeuvre .sous-menu {
@@ -1261,6 +1283,14 @@ main.liens p.contact {
 		padding-left:3em;
 	}
 
+	main.extension section.note:after{
+		content:'';
+		border-bottom: 5px solid #E1001A;
+		padding-bottom: 10%;
+		width:20%;
+		display: block;
+	}
+
 	main.extension .oeuvre-mini {
 		width: auto;
 		display: inline-block;
@@ -1371,6 +1401,18 @@ main.liens p.contact {
 	    border-top:5px solid #E1001A;
 	    width: 2em;
 	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
+	}
+
+/* *************************
+			DESKTOP
+			1280*1024			
+************************** */ 
+
+@media only screen and (min-width : 1024px) {
+
+	nav {
+		position: absolute;
+		top:40%;
 	}
 
 }

@@ -9,12 +9,12 @@
 						{% regroup calendriers_menu by date.year as calendrier_list %}
 						{% for calendrier_group in calendrier_list %}
 							<li><a href="{% url 'calendrier' calendrier_group.grouper %}">{{ calendrier_group.grouper }}</a></li>
-								<!--<ul class="sous-menu-mois">
+								<ul class="sous-menu-mois">
 									<li><a href="#">janv. > mars</a></li>
 									<li><a href="#">avr. > juin</a></li>
 									<li><a href="#">juil. > sept.</a></li>
 									<li><a href="#">oct. > déc.</a></li>
-								</ul>-->
+								</ul>
 						{% endfor %}
 						</ul>
 					</div>
