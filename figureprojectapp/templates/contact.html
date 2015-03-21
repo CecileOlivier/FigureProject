@@ -27,7 +27,7 @@
 			<p>{{ contact.entite }} <em class="nom">{{ contact.nom }}</em></p>
 			<p>{{ contact.adresse }}</p>
 			<p class="tel">{{ contact.telephone }}</p>
-			<p class="mail">{{ contact.mail }}</p>
+			<p class="mail"><a class="mail" href="mailto:{{ contact.mail }}">{{ contact.mail }}</a></p>
 		</section>
 		{% endfor %}
 		<p><small>Figure Project est soutenue par le Ministère de la Culture – DRAC
