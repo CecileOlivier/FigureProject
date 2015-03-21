@@ -574,11 +574,12 @@ main.contact .tel {
 	color : #3D3D3F;
 }
 
-main.contact p small {
-	font-size: 0.8em;
-	line-height: 0.7em;
+main.contact small {
+	font-size: 1.1em;
+	line-height: 1em;
 	font-family: "UniversOblique";
 	font-style: italic;
+	color : #3D3D3F;
 }
 
 /* *************************
@@ -909,7 +910,7 @@ main.liens p.contact {
 
 	img.logo {
 		width: auto;
-		padding: 3em;
+		padding: 2em;
 	}
 
 	nav {
@@ -924,7 +925,7 @@ main.liens p.contact {
 	nav ul {
 		width:auto;
 		display: block;
-		padding-left: 2em;
+		padding-left: 1em;
 	}
 
 	ul.sous-menu-oeuvres {
@@ -956,6 +957,7 @@ main.liens p.contact {
 
 	nav ul.sous-menu-oeuvres {
 		padding-left: 0;
+		padding-top:0.2em;
 	}
 
 	nav ul.sous-menu-oeuvres a:after, nav li.langues a:after {
@@ -995,7 +997,8 @@ main.liens p.contact {
 	nav ul.sous-menu-annee {
 		position: relative;
 		left: 0;
-		padding-bottom: 0;
+		padding-top: 0.2em;
+   		padding-bottom: 0;
 		width: auto;
 		/*display: block;*/
 	}
@@ -1050,7 +1053,7 @@ main.liens p.contact {
 
 	ul.oeuvres-typo li {
 		display: table-cell;
-		padding:1em;
+		padding:0.7em;
 		height:50%;
 		width: 5em;
 		/*border-left: 1px solid #3D3D3F;*/
@@ -1412,7 +1415,7 @@ main.liens p.contact {
 
 	nav {
 		position: absolute;
-		top:40%;
+		/*top:40%;*/
 	}
 
 }
