@@ -7,9 +7,16 @@ from figureprojectapp.models import Oeuvre, Biographie, Lien, Contact, Calendrie
 # variable, internationalisation
 
 def oeuvres(request):
+    has_popped = False
+    print 'has_popped = ', has_popped
+    has_popped = request.session.get('has_popped', False)
+    print 'has_popped = ', has_popped
+    request.session['has_popped'] = True
+    print 'has_popped = ', has_popped
+
     oeuvres = Oeuvre.objects.filter(langue='fr').all()
     actu = Actualite.objects.filter(langue='fr').filter(statut_objet='actif').first()
-    return render(request, 'index.html', {'oeuvres': oeuvres, 'actu':actu})
+    return render(request, 'index.html', {'oeuvres': oeuvres, 'actu':actu, 'has_popped': has_popped })
     # objet request + template + contexte cad les variables qui seront disponibles dans le template
 
 def oeuvre(request, slug):

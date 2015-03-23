@@ -9,28 +9,13 @@
       	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<link href="{% static "css/reset.css" %}" rel="stylesheet">
 		<link href="{% static "css/style.css" %}" rel="stylesheet">
+		<!--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/base/jquery-ui.css">-->
 		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
 		<script src="{% static "js/vendor/jquery.cookie.js" %}"></script>
 		<script src="{% static "js/vendor/jquery.mousewheel.min.js" %}"></script>
 		<script src="{% static "js/main.js" %}"></script>
-		<script>
-		$(document).ready(function() {
-
-			$('html, body, *').mousewheel(function(e, delta) {
-				this.scrollLeft -= (delta * 40);
-				e.preventDefault();
-			});
-
-		});
-		</script>
-		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/base/jquery-ui.css">
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> 
-		<script>
-		  $(function() {
-		    $( "#dialog" ).dialog();
-		  });
-		</script>
 	</head>
 	<body>
 
@@ -39,8 +24,11 @@
 		</ul>
 	</nav>
 
-	
-	
+
+	{% if not has_popped %}
+	    {% include "actu.html" %}
+	{% endif %}
+
 	<main class="oeuvres">
 		<!-- oeuvres en photo pour mobile et tablette -->
 		<ul class="oeuvres-photo">
