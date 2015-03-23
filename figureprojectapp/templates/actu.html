@@ -1,8 +1,15 @@
+{% load staticfiles %}
 {% if actu %}
-<div id="dialog" title="{{ actu.titre }}">
-	<h1>{{ actu.titre }}</h1>
-	<p>{{ actu.texte }}
-	</p>
-	<img src="{{ actu.image.url }}" alt="" title=""/>
+<div id="dialog" class="dialog">
+	<div id="logo"><img src="{% static "img/logo-blanc.png" %}" alt="" title="" class="actu"/></div>
+	<div id="texte">
+		<h1 class="actu">{{ actu.titre|safe }}</h1>
+		<p class="dateactu">{{ actu.date|safe }}</p>
+		<span class="texteactu"><p class="texteactu">{{ actu.texte|safe }}</p></span>
+		<p class="retoursite"><a href="{% url 'oeuvres' %}" class="site">>> [Accéder au site]</a></p>
+	</div>
+	<div id="image">
+		<img src="{{ actu.image.url }}" alt="" title="" class="background"/>
+	</div>
 </div>
 {% endif %}
