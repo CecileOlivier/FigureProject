@@ -27,7 +27,7 @@
 			<div id="partenaires-cult" class="partenaires-cult hide">
 			{% for lien_partcult in liens_partcult %}
 				<p>{{ lien_partcult.nom }}</p>
-				<p class="contact">{{ lien_partcult.mail }}</p>
+				<p class="contact"><a class="mail" href="mailto:{{ lien_partcult.mail }}">{{ lien_partcult.mail }}</a></p>
 				<p class="site"><a href="{{ lien_partcult.url }}" target="_blank" />{{ lien_partcult.url }}</a></p>
 			{% endfor %}
 			</div>
@@ -35,7 +35,7 @@
 			<div id="partenaires-educ" class="partenaires-educ hide">
 			{% for lien_parteduc in liens_parteduc %}
 				<p>{{ lien_parteduc.nom }}</p>
-				<p class="contact">{{ lien_parteduc.mail }}</p>
+				<p class="contact"><a class="mail" href="mailto:{{ lien_parteduc.mail }}">{{ lien_parteduc.mail }}</a></p>
 				<p class="site"><a href="{{ lien_parteduc.url }}" target="_blank" />{{ lien_parteduc.url }}</a></p>
 			{% endfor %}
 			</div>
@@ -43,15 +43,15 @@
 			<div id="artistes" class="artistes hide">
 			{% for lien_artiste in liens_artistes %}
 				<p>{{ lien_artiste.nom }}</p>
-				<p class="contact">{{ lien_artiste.mail }}</p>
-				<p class="site"><a href="{{ lien_parteduc.url }}" target="_blank" />{{ lien_artiste.url }}</a></p>
+				<p class="contact"><a class="mail" href="mailto:{{ lien_artiste.mail }}">{{ lien_artiste.mail }}</a></p>
+				<p class="site"><a href="{{ lien_artiste.url }}" target="_blank" />{{ lien_artiste.url }}</a></p>
 			{% endfor %}
 			</div>
 			<a href="#liens-utiles" class="lienvisible"><h2>liens utiles</h2></a>
 			<div id="liens-utiles" class="liens-utiles hide">
 			{% for lien_utile in liens_utiles %}
 				<p>{{ lien_utile.nom }}</p>
-				<p class="contact">{{ lien_utile.mail }}</p>
+				<p class="contact"><a class="mail" href="mailto:{{ lien_utile.mail }}">{{ lien_utile.mail }}</a></p>
 				<p class="site"><a href="{{ lien_utile.url }}" target="_blank" />{{ lien_utile.url }}</a></p>
 			{% endfor %}
 			</div>
