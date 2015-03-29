@@ -407,12 +407,12 @@ ul.dates div.img-oeuvre, div.description {
 }
 
 ul.dates div.img-oeuvre {
-	width: 20%;
+	width: 28%;
 }
 
 div.img-oeuvre img{
 	vertical-align: top;
-	width: 50%;
+	width: 60%;
 }
 
 div.img-oeuvre:before {
