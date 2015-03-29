@@ -192,7 +192,7 @@ img.oeuvre-mini {
 }
 
 main {
-	position: absolute;
+	/* position absolute pour le template actu avec z-index */
 	padding-left:1em;
 	padding-right: 1em;
 	z-index:-10;
