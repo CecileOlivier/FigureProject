@@ -110,9 +110,9 @@ y-axis
 	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ /* the dragger element */
 		position: relative;
 		width: 4px;
-		height: 50%;
+		height: 100%;
 		margin: 0 auto;
-		-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;
+		/*-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;*/
 		text-align: center;
 	}
 	
@@ -637,7 +637,7 @@ yx-axis
 	.mCS-rounded.mCSB_scrollTools .mCSB_dragger, 
 	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger, 
 	.mCS-rounded-dots.mCSB_scrollTools .mCSB_dragger, 
-	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger{ height: 14px; }
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger{ height: 9px; }
 	
 	.mCS-rounded.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
 	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
@@ -703,17 +703,17 @@ yx-axis
 	/* theme "rounded-dark", "rounded-dots-dark" */
 	
 	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
-	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #E1001A; }
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-image:url(nav.png); }
 	
-	.mCS-rounded-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: #E1001A; }
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: #000; background-color: rgba(0,0,0,0.15); }
 	
 	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, 
-	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #E1001A; }
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: none; }
 	
 	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
 	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, 
 	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
-	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #E1001A; }
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: none; }
 	
 	.mCS-rounded-dark.mCSB_scrollTools .mCSB_buttonUp{ background-position: -80px -72px; }
 	
@@ -736,28 +736,7 @@ yx-axis
 		background-color: transparent;
 		background-position: center;
 	}
-
-	.mCSB_draggerRail::before {
-		content: "";
-		background-image: url("rect.png");
-		background-size: 16px auto;
-		position: absolute;
-		width: 15px;
-		top: -18px;
-		height: 7px;
-		left: 0;
-	}
-
-	.mCSB_draggerRail::after {
-		content: "▼";
-		font-size:1.3em;
-		position: absolute;
-		width: 15px;
-		bottom: -11px;
-		height: 7px;
-		left: 3px;
-	}
-
+	
 	.mCS-rounded-dots.mCSB_scrollTools .mCSB_draggerRail, 
 	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_draggerRail{
 		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAANElEQVQYV2NkIAAYiVbw//9/Y6DiM1ANJoyMjGdBbLgJQAX/kU0DKgDLkaQAvxW4HEvQFwCRcxIJK1XznAAAAABJRU5ErkJggg==");
