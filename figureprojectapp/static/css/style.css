@@ -53,6 +53,10 @@ body {
 			MENU	 					
 ************************** */ 
 
+.active {
+	background-color: yellow;
+}
+
 nav {
 	width:100%; /* supprimer */
 }
@@ -202,6 +206,10 @@ a {
 	text-decoration: none;
 }
 
+a:active {
+	color:red;
+}
+
 main.oeuvre a h2:after, main.liens a h2:after {
 	content:'▼';
 	border-bottom: 1px solid #3E3D3F;
@@ -272,12 +280,16 @@ h1:after {
 }
 
 h2 {
-	color: #3D3D3F;
+	/*color: #3D3D3F;*/
 	font-family: "Univers";
 	font-weight: normal;
 	text-transform: uppercase;
 	font-size: 1.4em;
 	line-height: 2em;
+}
+
+a {
+	color: #3D3D3F;
 }
 
 /* ******** note ******** */
@@ -386,15 +398,21 @@ ul.dates {
 }
 
 ul.dates li {
-	height:22em;
+	height:25em;
+	width: 100%;
 }
 
 ul.dates div.img-oeuvre, div.description {
 	display: inline-block;
 }
 
+ul.dates div.img-oeuvre {
+	width: 20%;
+}
+
 div.img-oeuvre img{
 	vertical-align: top;
+	width: 50%;
 }
 
 div.img-oeuvre:before {
@@ -412,7 +430,7 @@ div.img-oeuvre:after {
 }
 
 div.description {
-	width:80%;
+	width:60%;
 	vertical-align: top;
 }
 
@@ -781,6 +799,10 @@ main.liens p.contact {
 		margin-left:30%;
 	}
 
+	ul.dates li {
+		height: 40em;
+	}
+
 	ul.dates div.img-oeuvre {
 		width: 20%;
 	}
@@ -791,6 +813,14 @@ main.liens p.contact {
 
 	ul.dates div.description {
 		width: 60%;
+	}
+
+	div.img-oeuvre:before {
+		height:34.5em;
+	}
+
+	div.img-oeuvre:after {
+		height:34.5em;
 	}
 
 
@@ -917,6 +947,7 @@ main.liens p.contact {
 
 	nav {
 		position: absolute;
+		width: 20%;
 		top:18%;
 	}
 
@@ -948,7 +979,7 @@ main.liens p.contact {
 	    display: block; 
 	    content: '';
 	    border-bottom: 1px solid #3E3D3F;
-	    width: 7%;
+	    width: 27%;
 	    margin-top: 0em;
 	    margin-bottom: 1em;
 	    left:0;
@@ -1202,9 +1233,13 @@ main.liens p.contact {
 	ul.dates div.img-oeuvre {
 		line-height:35em;
 	  	text-align:center;
-		height:35em;
+	  	height:80%;
+		/*height:35em;*/
+		/*height:50em;*/
 		width: 100%;
 		border-right: 1px solid #3D3D3F;
+		background-color: pink;
+		overflow: hidden;
 	}
 
 	/*ul.dates div.img-oeuvre:after {
@@ -1218,7 +1253,7 @@ main.liens p.contact {
 
 	ul.dates div.img-oeuvre > img {
 		height:auto;
-		/*width: 50%;*/
+		width: 75%;
 		vertical-align: middle;
 		text-align: center;
 	}
@@ -1226,6 +1261,9 @@ main.liens p.contact {
 	ul.dates div.description {
 		padding: 2em 1em 0 1em;
 		width: auto;
+		height: 20%;
+		background-color: yellow;
+		overflow: hidden;
 	}
 
 	/*ul.dates li:nth-child(1):before {
@@ -1420,7 +1458,6 @@ main.liens p.contact {
 		height: 100%;
 		width: 100%;
 		margin-top:-10px;
-		background-color: black;
 	}
 
 	#image {
@@ -1490,22 +1527,3 @@ main.liens p.contact {
 		font-size: 1.15em;
 		padding-top: 3em;
 	}
-
-
-
-
-
-
-/* *************************
-			DESKTOP
-			1280*1024			
-************************** */ 
-
-@media only screen and (min-width : 1024px) {
-
-	nav {
-		position: absolute;
-		/*top:40%;*/
-	}
-
-}
