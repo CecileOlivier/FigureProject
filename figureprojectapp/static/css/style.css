@@ -628,16 +628,6 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		margin-top:-34px;
 	}
 
-	/*main.oeuvre a:hover h2:after, main.liens a h2:after {
-		content:'▼';
-		border-bottom: 1px solid #DF051C;
-		padding-left: 35em;
-		position:absolute;
-		display: block; 
-		color : #DF051C;
-		margin-top:-38px;
-	}*/
-
 	/* *************************
 				MENU	 					
 	************************** */
@@ -1409,6 +1399,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	#image {
 		position: absolute;
+		width: 100%;
 		z-index:0;
 	}
 
@@ -1430,19 +1421,19 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	img.background {
 		width:100%;
-		height: 100%;
 	}
 
 	h1.actu {
 		clear:both;
-		padding-top:50%;
+		padding-top:40%;
 		color:white;
 		font-size: 4em;
+		padding-bottom: 0.8em;
 	}
 
 	h1.actu:after {
 		color:white;
-		margin-top: -0.35em;
+		margin-top: -0.55em;
 	}
 
 	.dialog a {
@@ -1472,5 +1463,5 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		font-family: "Univers";
 		font-weight: normal;
 		font-size: 1.15em;
-		padding-top: 3em;
+		padding-top: 2em;
 	}
