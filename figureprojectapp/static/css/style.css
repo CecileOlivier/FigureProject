@@ -53,10 +53,6 @@ body {
 			MENU	 					
 ************************** */ 
 
-.active {
-	background-color: yellow;
-}
-
 nav {
 	width:100%; /* supprimer */
 }
@@ -1175,8 +1171,6 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		/*height:50em;*/
 		width: 100%;
 		border-right: 1px solid #3D3D3F;
-		background-color: pink;
-		overflow: hidden;
 	}
 
 	/*ul.dates div.img-oeuvre:after {
@@ -1199,8 +1193,6 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		padding: 2em 1em 0 1em;
 		width: auto;
 		height: 20%;
-		background-color: yellow;
-		overflow: hidden;
 	}
 
 	/*ul.dates li:nth-child(1):before {
