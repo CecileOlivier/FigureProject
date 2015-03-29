@@ -1,5 +1,6 @@
 from django.contrib import admin
 from figureprojectapp.models import Biographie, Calendrier, Contact, Oeuvre, Image, Lien, Langue, Projet, Atelier, Actualite
+from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
 
@@ -23,9 +24,12 @@ class ImageAdmin(admin.ModelAdmin):
     search_fields = ['oeuvre', 'projet']
     list_filter = ('oeuvre', 'projet')
 
-class OeuvreAdmin(admin.ModelAdmin):    
+class OeuvreAdmin(SummernoteModelAdmin):    
     list_display = ('titre_oeuvre', 'visuel', 'langue')
     search_fields = ['oeuvre', 'projet']
+
+class ActualiteAdmin(SummernoteModelAdmin):    
+    list_display = ('titre', 'image')
 
 admin.site.register(Biographie, BiographieAdmin)
 admin.site.register(Calendrier, CalendrierAdmin)
@@ -36,4 +40,4 @@ admin.site.register(Langue)
 admin.site.register(Oeuvre, OeuvreAdmin)
 admin.site.register(Projet)
 admin.site.register(Atelier)
-admin.site.register(Actualite)
+admin.site.register(Actualite, ActualiteAdmin)

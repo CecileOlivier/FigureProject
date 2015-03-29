@@ -73,7 +73,7 @@ class Oeuvre(models.Model):
     slug = models.SlugField(default='slug-non-configure')
 
     def __unicode__(self):
-        return u'[%s] %s %s' % (self.langue, self.titre_oeuvre, self.image_titre)
+        return u'[%s] %s' % (self.langue, self.titre_oeuvre)
 
 
 #   kwargs = arguments nommes
@@ -129,3 +129,21 @@ class Langue(models.Model):
 
     def __unicode__(self):
         return self.code
+
+
+class Actualite(models.Model):
+    STATUS_CHOICES = (('actif', 'actif'),
+                    ('inactif', 'inactif'))
+    titre = models.TextField(blank=True, null=True)
+    date = models.TextField(blank=True, null=True)
+    texte = models.TextField(blank=True, null=True)
+    image = models.ImageField(upload_to='images')
+    logo = models.ImageField(upload_to='images', blank=True, null=True)
+    statut_objet = models.CharField(max_length=7, choices=STATUS_CHOICES, default='inactif')
+    langue = models.ForeignKey('Langue')
+
+#    def __unicode__(self):
+#        return '[%s] %s %s' % (self.langue, self.titre, self.statut_objet)
+
+    def objet(self):
+        return getattr(self, self.statut_objet)
