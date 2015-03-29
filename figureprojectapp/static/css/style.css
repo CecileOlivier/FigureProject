@@ -310,38 +310,6 @@ a {
 	line-height: 1.25em;
 }
 
-/*.distribution .fonction {
-	font-family: "UniversOblique";
-	font-style: italic;
-	font-size: 1.25em;
-	line-height: 1.25em;
-}
-
-.distribution .nom {
-	font-family: "UniversBold";
-	font-style: bold;
-	color:#E1001A;
-	font-size: 1.25em;
-	line-height: 1.25em;
-}*/
-
-/* ******** mentions ******** */
-
-/*.mentions .fonction {
-	font-family: "UniversOblique";
-	font-style: italic;
-	font-size: 1.25em;
-	line-height: 1.25em;
-}
-
-.mentions .nom {
-	font-family: "UniversBold";
-	font-style: bold;
-	color:#E1001A;
-	font-size: 1.25em;
-	line-height: 1.25em;
-}*/
-
 /* ******** diff ******** */
 
 .date {
@@ -368,7 +336,6 @@ a {
 	color: #3E3D3F;
 	font-size: 1.2em;
 	line-height: 1.15em;
-	/*margin-bottom:1em;*/
 	clear:both;
 }
 
@@ -380,18 +347,6 @@ main.calendrier {
 	clear:both;
 	padding-top:10%;
 }
-
-/*ul.sous-menu-annee {
-	display: block;
-	padding-bottom:3%;
-	overflow: hidden;
-}
-
-ul.sous-menu-annee li {
-	display: inline-block;
-	margin-bottom: 0;
-	padding-right: 0;
-}*/
 
 ul.dates {
 	clear:both;
@@ -556,18 +511,6 @@ section.contact:after {
     box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
 }
 
-/*section.developpement {
-	padding-bottom: 2em;
-}
-
-section.developpement:after {
-	position: absolute; 
-    display: block; 
-    content: '_';
-    color : #3D3D3F;
-    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
-}*/
-
 main.contact p {
 	font-size: 1.30em;
 	line-height: 1.30em;
@@ -640,6 +583,10 @@ main.liens p.contact {
 	font-family: "UniversBold";
 	font-style: bold;	
 	color : #3E3D3F;
+}
+
+div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
+	padding-top:1em;
 }
 
 /* *************************
