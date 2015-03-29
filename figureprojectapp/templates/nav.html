@@ -8,13 +8,15 @@
 						<ul class="sous-menu-annee mobile">
 						{% regroup calendriers_menu by date.year as calendrier_list %}
 						{% for calendrier_group in calendrier_list %}
-							<li><a href="{% url 'calendrier' calendrier_group.grouper %}">{{ calendrier_group.grouper }}</a></li>
-								<ul class="sous-menu-mois">
-									<li><a href="#">janv. > mars</a></li>
-									<li><a href="#">avr. > juin</a></li>
-									<li><a href="#">juil. > sept.</a></li>
-									<li><a href="#">oct. > déc.</a></li>
-								</ul>
+							<li><a href="{% url 'calendrier' calendrier_group.grouper %}" class="lienvisible">{{ calendrier_group.grouper }}</a></li>
+								<div id="annee" class="annee hide">
+									<ul class="sous-menu-mois">
+										<li><a href="#">janv. > mars</a></li>
+										<li><a href="#">avr. > juin</a></li>
+										<li><a href="#">juil. > sept.</a></li>
+										<li><a href="#">oct. > déc.</a></li>
+									</ul>
+								</div>
 						{% endfor %}
 						</ul>
 					</div>
