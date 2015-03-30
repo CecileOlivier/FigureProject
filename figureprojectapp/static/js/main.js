@@ -4,16 +4,19 @@ $(document).ready(function() {
 	    var val_link = $(event.currentTarget).attr('href'); 
 	    console.log('clic sur '+val_link);
 	    $(val_link).toggle();
-	    $("a h2").css("color", "#3D3D3F");
-	    $("a[href="+val_link+"] > h2").css("color", "#E1001A");
+	    //$("a h2").removeClass('active');
+	    //$("a h2").css("color", "#3D3D3F");
+	    $("a").removeClass('active');
+	    //$("a h2:after").css("color", "#3E3D3F");
+	    //$("a[href="+val_link+"] > h2").addClass('active');
+	    //$("a[href="+val_link+"] > h2").css("color", "#E1001A");
+	    $("a[href="+val_link+"]").addClass('active');
 	    console.log("a[href="+val_link+"]");
 	});
-	/* simulation du clic */
+	/* simulation du clic pour les couleurs */
     var hash = window.location.hash;
-    if(hash) {
-        var lien = $('[href="'+hash+'"]')
-        lien.click();
-    }
+	var lien = $('[href="'+hash+'"]')
+    $(lien).css("color", "#E1001A");
     /* media queries */
 	if ($(window).width() < 360) {
 		console.log('petit');

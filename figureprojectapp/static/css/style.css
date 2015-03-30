@@ -216,6 +216,20 @@ main.oeuvre a h2:after, main.liens a h2:after {
 	margin-top:-34px;
 }
 
+a.active {
+	color : #E1001A;
+}
+
+main.oeuvre a.active h2:after, main.liens a.active h2:after {
+	content:'▼';
+	border-bottom: 1px solid #E1001A;
+	/*padding-left: 19em;
+	position:absolute;
+	display: block; */
+	color : #E1001A;
+	/*margin-top:-34px;*/
+}
+
 section .hide {
 	padding-top:1em;
 	padding-bottom: 1em;
