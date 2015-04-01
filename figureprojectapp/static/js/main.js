@@ -14,9 +14,15 @@ $(document).ready(function() {
 	    console.log("a[href="+val_link+"]");
 	});
 	/* simulation du clic pour les couleurs */
-    var hash = window.location.hash;
-	var lien = $('[href="'+hash+'"]')
-    $(lien).css("color", "#E1001A");
+	var chemin = window.location.pathname;
+	var chemin2 = chemin.replace(/^.(\s+)?/, '');
+	var chemin3 = chemin2.replace(/(\s+)?.$/, '');
+    console.log('le chemin est  '+chemin3);
+    if(chemin) {
+    	console.log(chemin3);
+    	//$("li a[href='biographie]").addClass('active');
+    	$('li a[href="{% url '+chemin3+' %}]').addClass('active');
+    }
     /* media queries */
 	if ($(window).width() < 360) {
 		console.log('petit');
