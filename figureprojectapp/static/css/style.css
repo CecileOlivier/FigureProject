@@ -1352,6 +1352,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		width:1800px;
 		padding-left: 0;
 		left:25em;
+		margin-top: -1em;
 	}
 
 	main.bio h1 {
@@ -1470,4 +1471,47 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		font-weight: normal;
 		font-size: 1.15em;
 		padding-top: 2em;
+	}
+
+}
+
+
+/* *************************
+			DESKTOP
+			1280*600			
+************************** */ 
+
+@media only screen and (min-width : 1280) {
+
+	body {
+    	font-size: 1.15em;
+    	display:inline-block;
+    	height:100%;
+	}
+
+	ul.oeuvres-typo li {
+		width: 6em;
+	}
+}
+
+
+/* *************************
+			DESKTOP
+			1920*900			
+************************** */ 
+
+@media only screen and (min-width : 1920px) {
+
+	body {
+    	font-size: 1.17em;
+    	display:inline-block;
+    	height:100%;
+	}
+
+	ul.oeuvres-typo li {
+		width: 7em;
+	}
+
+	main.bio {
+		width:2000px;
 	}

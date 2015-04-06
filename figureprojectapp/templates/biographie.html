@@ -12,16 +12,15 @@
 		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
 		<script src="{% static "js/vendor/jquery.mousewheel.js" %}"></script>
 		<script src="{% static "js/main.js" %}"></script>
-		<!--<script>
+		<script>
 		$(document).ready(function() {
-
-			$('html, body, *').mousewheel(function(e, delta) {
-				this.scrollLeft -= (delta * 40);
-				e.preventDefault();
-			});
-
+			console.log('yep');
+		    $('html, body, *').mousewheel(function(e, delta) {
+		        this.scrollLeft -= (delta * 40);
+		        e.preventDefault();
+		    });
 		});
-		</script>-->
+		</script>
 	</head>
 	<body>
 
