@@ -13,6 +13,7 @@ def oeuvres(request):
     print 'has_popped = ', has_popped
     request.session['has_popped'] = True
     print 'has_popped = ', has_popped
+    request.session.set_expiry(86400)
 
     oeuvres = Oeuvre.objects.filter(langue='fr').all()
     actu = Actualite.objects.filter(langue='fr').filter(statut_objet='actif').first()
