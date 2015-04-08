@@ -1087,7 +1087,9 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		height:100%;
 		margin-top:-1em;
 		left: 25em;
-		width: 5000px;
+		width:150%;
+		max-width:250%;
+		/*width: 5000px;*/
 	}
 
 	main.oeuvre img.oeuvre-max {
@@ -1178,7 +1180,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	}
 
 	ul.dates div.img-oeuvre {
-		line-height:35em;
+		line-height:37em;
 	  	text-align:center;
 	  	height:80%;
 		/*height:35em;*/
@@ -1198,7 +1200,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	ul.dates div.img-oeuvre > img {
 		height:auto;
-		width: 75%;
+		width: 65%;
 		vertical-align: middle;
 		text-align: center;
 	}
@@ -1325,7 +1327,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	main.liens a h2:after {
 		content:'▼';
 		border-bottom: 1px solid #3E3D3F;
-		padding-left: 100%;
+		padding-left: 80%;
 		position:absolute;
 		display: block; 
 		color : #3E3D3F;
@@ -1375,9 +1377,10 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	}
 
 	main.bio section article {
-		width: 25em;
+		width: 28em;
 		vertical-align: super;
 		padding-top: 0;
+		padding-right:8em;
 	}
 
 	section article p:before {
