@@ -3,12 +3,12 @@
 		<a href="{% url 'oeuvres' %}" class="retour"><img src="{% static "img/logo.png" %}" alt="" title="" class="logo"/></a>
 		<div class="menu"><a href="#menu-principal" class="lienvisible"></a></div>
 			<ul id="menu-principal" class="menu-principal hide">
-				<li><a href="{% url 'calendrier' %}" data-actif="" class="calendriermenu lienvisible">calendrier</a></li>
+				<li>{% url 'calendrier' as calendrier_url %}<a href="{{ calendrier_url }}" class="{% if calendrier_url in request.path %} active_link {% endif %} calendriermenu lienvisible">calendrier</a></li>
 					<div id="calendrier" class="calendrier">
 						<ul class="sous-menu-annee mobile">
 						{% regroup calendriers_menu by date.year as calendrier_list %}
 						{% for calendrier_group in calendrier_list %}
-							<li><a href="{% url 'calendrier' calendrier_group.grouper %}" class="lienvisible">{{ calendrier_group.grouper }}</a></li>
+							<li>{% url 'calendrier' calendrier_group.grouper as annee_url %}<a href="{{ annee_url }}" class="{% if annee_url == request.path %} active_link {% endif %} lienvisible">{{ calendrier_group.grouper }}</a></li>
 								<div id="annee" class="annee hide">
 									<ul class="sous-menu-mois">
 										<li><a href="#">janv. > mars</a></li>
@@ -20,17 +20,16 @@
 						{% endfor %}
 						</ul>
 					</div>
-				<li><a href="{% url 'biographie' %}">biographie</a></li>
-				<li><a href="{% url 'oeuvres' %}" class="lienvisible oeuvresmenu">œuvres</a></li>
+				<li>{% url 'biographie' as biographie_url %}<a href="{{ biographie_url }}" class="{% if biographie_url == request.path %} active_link {% endif %}">biographie</a></li>
+				<li>{% url 'oeuvres' as oeuvres_url %}{% url 'oeuvre' as oeuvre_url %}<a href="{{ oeuvres_url }}" class="{% if oeuvres_url == request.path or oeuvre_url in request.path %} active_link {% endif %} lienvisible oeuvresmenu">œuvres</a></li>
 					<div id="oeuvres" class="oeuvres hide">
 						<ul class="sous-menu-oeuvres">
 							{% for oeuvre in oeuvres %}
-							<li><a href="{{ oeuvre.get_absolute_url }}">¬ {{ oeuvre.titre_oeuvre }}</a></li>
+							<li><a href="{{ oeuvre.get_absolute_url }}" class="{% if oeuvre.get_absolute_url == request.path %} active_link {% endif %}">¬ {{ oeuvre.titre_oeuvre }}</a></li>
 							{% endfor %}
-							<!-- em encadrant le mot love pour l'oeuvre i love like animals -->
 						</ul>
 					</div>
-				<li><a href="{% url 'extensionsauvage' %}">extension sauvage</a></li>
-				<li><a href="{% url 'contact' %}">contact</a></li>
-				<li><a href="{% url 'liens' %}">liens</a></li>
+				<li>{% url 'extensionsauvage' as extensionsauvage_url %}<a href="{{ extensionsauvage_url }}" class="{% if extensionsauvage_url == request.path %} active_link {% endif %}">extension sauvage </a></li>
+				<li>{% url 'contact' as contact_url %}<a href="{{ contact_url }}" class="{% if contact_url == request.path %} active_link {% endif %}">contact</a></li>
+				<li>{% url 'liens' as liens_url %}<a href="{{ liens_url }}" class="{% if liens_url == request.path %} active_link {% endif %}">liens</a></li>
 
