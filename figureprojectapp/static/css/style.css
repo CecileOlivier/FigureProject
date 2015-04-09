@@ -57,6 +57,10 @@ nav {
 	width:100%; /* supprimer */
 }
 
+nav ul ul.sous-menu-oeuvres li a.active_link, ul.sous-menu-annee li a.active_link, .active_link {
+	color: #E1001A;
+}
+
 ul.sous-menu-oeuvres {
 	display:none;
 }
@@ -933,6 +937,10 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
 	}
 
+	nav ul.menu-principal a.active_link:after {
+	    border-bottom: 1px solid red;
+	}
+
 	/* SOUS MENU OEUVRES */ 
 
 	nav ul.sous-menu-oeuvres {
@@ -1342,6 +1350,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		position: absolute;
 		top: 12em;
 		left: 7em;
+		width: 31%;
 	}
 
 	/* *************************
