@@ -4,7 +4,7 @@ from figureprojectapp import views
 urlpatterns = patterns('',
     url(r'^/?$', views.oeuvres, name='oeuvres'),
     url(r'^biographie/', views.biographie, name='biographie'),
-    url(r'^oeuvre/(?P<slug>[a-z0-9-_]+)', views.oeuvre, name='oeuvre'),
+    url(r'^oeuvre/(?P<slug>[a-z0-9-_]+)?', views.oeuvre, name='oeuvre'),
     url(r'^extension-sauvage/', views.extensionsauvage, name='extensionsauvage'),
     url(r'^calendrier/(?P<year>\d{4})?', views.calendrier, name='calendrier'),
     url(r'^liens/', views.liens, name='liens'),
