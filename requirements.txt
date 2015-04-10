@@ -2,7 +2,7 @@ Django==1.7.4
 Pillow==2.7.0
 argparse==1.2.1
 django-appconf==1.0.1
-django-summernote==0.6.3
+git+https://github.com/daimrod/django-summernote.git#egg=django-summernote
 ipdb==0.8
 ipython==2.4.1
 psycopg2==2.5.4
