@@ -1,2 +1,5 @@
 figureproject/localsettings.py
 figureprojectapp/migrations
+media/
+static/
+db.sqlite3
