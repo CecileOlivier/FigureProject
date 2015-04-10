@@ -9,11 +9,8 @@ from django.template import RequestContext
 
 def oeuvres(request):
     has_popped = False
-    print 'has_popped = ', has_popped
     has_popped = request.session.get('has_popped', False)
-    print 'has_popped = ', has_popped
     request.session['has_popped'] = True
-    print 'has_popped = ', has_popped
     request.session.set_expiry(86400)
 
     oeuvres = Oeuvre.objects.filter(langue='fr').all()
