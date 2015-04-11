@@ -61,6 +61,10 @@ nav ul ul.sous-menu-oeuvres li a.active_link, ul.sous-menu-annee li a.active_lin
 	color: #E1001A;
 }
 
+nav li a.active_link::after {
+	border-bottom: 2px solid #E1001A;
+}
+
 ul.sous-menu-oeuvres {
 	display:none;
 }
@@ -699,6 +703,10 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	    border-bottom: 1px solid #E1001A;
 	}
 
+	nav li a.active_link::after {
+		border-bottom: 1px solid #E1001A;
+	}
+
 	/* SOUS MENU CALENDRIER */
 
 	nav ul.sous-menu-annee {
@@ -1097,7 +1105,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		left: 25em;
 		width:150%;
 		max-width:250%;
-		/*width: 5000px;*/
+		width: 5000px;
 	}
 
 	main.oeuvre img.oeuvre-max {
