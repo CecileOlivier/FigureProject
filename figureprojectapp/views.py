@@ -31,21 +31,31 @@ def oeuvre(request, slug):
 def biographie(request):
     biographie = Biographie.objects.filter(langue='fr').all()
     return render(request, 'biographie.html', {'biographie': biographie}, context_instance=RequestContext(request))
-# , 'formfr':formfr, 'defigurerfr':defigurerfr, 'detournerfr':detournerfr, 'deplacerfr':deplacerfr
 
 def extensionsauvage(request):
     extsauvage = Projet.objects.select_related('image').filter(langue="fr").get(titre='Extension sauvage')
     i_es = extsauvage.image_set.all()
     return render(request, 'extension-sauvage.html', {'extsauvage': extsauvage, 'i_es': i_es}, context_instance=RequestContext(request))
 
-def calendrier(request, year):
+def calendrier(request, year, trim):
     calendriers_menu = Calendrier.objects.select_related('oeuvre').all()[:6]
     if year == None:
-        calendriers = calendriers_menu
+        calendriers_principal = calendriers_menu
     else:
-        calendriers = [ calendrier for calendrier in calendriers_menu if calendrier.date.year == int(year) ]
+        calendriers_principal = [ calendrier for calendrier in calendriers_menu if calendrier.date.year == int(year) ]
+    
+    if trim != None:
+        trimestre = int(trim)
+        if trimestre == 1:
+            calendriers_principal = [ calendrier for calendrier in calendriers_principal if calendrier.date.month >= 1 and calendrier.date.month <= 3 ]
+        elif trimestre == 2:
+            calendriers_principal = [ calendrier for calendrier in calendriers_principal if calendrier.date.month >= 4 and calendrier.date.month <= 6 ]
+        elif trimestre == 3:
+            calendriers_principal = [ calendrier for calendrier in calendriers_principal if calendrier.date.month >= 7 and calendrier.date.month <= 9 ]
+        elif trimestre == 4:
+            calendriers_principal = [ calendrier for calendrier in calendriers_principal if calendrier.date.month >= 10 and calendrier.date.month <= 12 ]
 
-    return render(request, 'calendrier.html', {'dates': calendriers, 'calendriers_menu': calendriers_menu}, context_instance=RequestContext(request))
+    return render(request, 'calendrier.html', {'dates': calendriers_principal, 'calendriers_menu': calendriers_menu}, context_instance=RequestContext(request))
 
 def contact(request):
     contacts = Contact.objects.filter(langue="fr").all()
