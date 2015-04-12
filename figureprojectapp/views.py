@@ -37,7 +37,7 @@ def extensionsauvage(request):
     i_es = extsauvage.image_set.all()
     return render(request, 'extension-sauvage.html', {'extsauvage': extsauvage, 'i_es': i_es}, context_instance=RequestContext(request))
 
-def calendrier(request, year, trim):
+def calendrier(request, year = None, trim = None):
     calendriers_menu = Calendrier.objects.select_related('oeuvre').all()[:6]
     if year == None:
         calendriers_principal = calendriers_menu
