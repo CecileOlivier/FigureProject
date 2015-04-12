@@ -3,27 +3,12 @@ $(document).ready(function() {
 		$(event.currentTarget).show();
 	    var val_link = $(event.currentTarget).attr('href'); 
 	    console.log('clic sur '+val_link);
-	    $(val_link).toggle();
-	    //$("a h2").removeClass('active');
-	    //$("a h2").css("color", "#3D3D3F");
+	    $(val_link).show();
 	    $("a").removeClass('active');
-	    //$("a h2:after").css("color", "#3E3D3F");
-	    //$("a[href="+val_link+"] > h2").addClass('active');
-	    //$("a[href="+val_link+"] > h2").css("color", "#E1001A");
 	    $("a[href="+val_link+"]").addClass('active');
 	    console.log("a[href="+val_link+"]");
 	});
-	/* simulation du clic pour les couleurs */
-	var chemin = window.location.pathname;
-	var chemin2 = chemin.replace(/^.(\s+)?/, '');
-	var chemin3 = chemin2.replace(/(\s+)?.$/, '');
-    console.log('le chemin est  '+chemin3);
-    if(chemin) {
-    	console.log(chemin3);
-    	//$("li a[href='biographie]").addClass('active');
-    	$('li a[href="{% url '+chemin3+' %}]').addClass('active');
-    }
-    /* media queries */
+    // media queries 
 	if ($(window).width() < 360) {
 		console.log('petit');
 		$(".hide").hide(); 
@@ -36,6 +21,16 @@ $(document).ready(function() {
 	}
 	else {
 		console.log('grand');
+		// affichage du calendrier
+		//$("div .annee").hide();
+		$(".lienvisible").click(function(event) {
+			$(event.currentTarget).show();
+			$("div .annee").show();
+		    var val_link = $(event.currentTarget).attr('href'); 
+		    console.log('clic sur '+val_link);
+		    $(val_link).show();
+		    console.log("a[href="+val_link+"]");
+		});
 		// jquery.mousewheel.min.js pour le scroll horizontal
 		$('html, body, *').on('mousewheel', function(e, delta) {
 			this.scrollLeft -= (delta * 40);
@@ -46,7 +41,7 @@ $(document).ready(function() {
 		$("#note").mCustomScrollbar({
     		theme:"rounded-dark",
     		scrollButtons:{
-     		 	enable: true // affichage flèches haut et bas
+     		 	enable: true
     		}
 		});
 		$("#note").removeClass("hide");
