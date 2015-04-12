@@ -11,10 +11,10 @@
 							<li>{% url 'calendrier' calendrier_group.grouper as annee_url %}<a href="{{ annee_url }}" class="{% if annee_url == request.path %} active_link {% endif %} lienvisible">{{ calendrier_group.grouper }}</a></li>
 								<div id="annee" class="annee hide">
 									<ul class="sous-menu-mois">
-										<li><a href="#">janv. > mars</a></li>
-										<li><a href="#">avr. > juin</a></li>
-										<li><a href="#">juil. > sept.</a></li>
-										<li><a href="#">oct. > déc.</a></li>
+										<li><a href="{% url 'calendrier' calendrier_group.grouper 1 %}">janv. > mars</a></li>
+										<li><a href="{% url 'calendrier' calendrier_group.grouper 2 %}">avr. > juin</a></li>
+										<li><a href="{% url 'calendrier' calendrier_group.grouper 3 %}">juil. > sept.</a></li>
+										<li><a href="{% url 'calendrier' calendrier_group.grouper 4 %}">oct. > déc.</a></li>
 									</ul>
 								</div>
 						{% endfor %}
