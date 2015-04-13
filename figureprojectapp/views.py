@@ -97,9 +97,25 @@ def extensionsauvageen(request):
     i_es = extsauvage.image_set.all()
     return render(request, 'extension-sauvage-en.html', {'extsauvage': extsauvage, 'i_es': i_es}, context_instance=RequestContext(request))
 
-def calendar(request):
-    dates = Calendrier.objects.select_related('oeuvre').all()
-    return render(request, 'calendar.html', {'dates': dates}, context_instance=RequestContext(request))
+def calendar(request, year = None, trim = None):
+    calendriers_menu = Calendrier.objects.select_related('oeuvre').all()[:6]
+    if year == None:
+        calendriers_principal = calendriers_menu
+    else:
+        calendriers_principal = [ calendrier for calendrier in calendriers_menu if calendrier.date.year == int(year) ]
+    
+    if trim != None:
+        trimestre = int(trim)
+        if trimestre == 1:
+            calendriers_principal = [ calendrier for calendrier in calendriers_principal if calendrier.date.month >= 1 and calendrier.date.month <= 3 ]
+        elif trimestre == 2:
+            calendriers_principal = [ calendrier for calendrier in calendriers_principal if calendrier.date.month >= 4 and calendrier.date.month <= 6 ]
+        elif trimestre == 3:
+            calendriers_principal = [ calendrier for calendrier in calendriers_principal if calendrier.date.month >= 7 and calendrier.date.month <= 9 ]
+        elif trimestre == 4:
+            calendriers_principal = [ calendrier for calendrier in calendriers_principal if calendrier.date.month >= 10 and calendrier.date.month <= 12 ]
+
+    return render(request, 'calendar.html', {'dates': calendriers_principal, 'calendriers_menu': calendriers_menu}, context_instance=RequestContext(request))
 
 def contacten(request):
     contacts = Contact.objects.filter(langue="en").all()
