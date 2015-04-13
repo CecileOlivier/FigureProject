@@ -9,7 +9,7 @@
 						{% regroup calendriers_menu by date.year as calendrier_list %}
 						{% for calendrier_group in calendrier_list %}
 							<li>{% url 'calendrier' calendrier_group.grouper as annee_url %}<a href="{{ annee_url }}" class="{% if annee_url == request.path %} active_link {% endif %} lienvisible">{{ calendrier_group.grouper }}</a></li>
-								<div id="annee" class="annee hide">
+								<div id="annee" class="{% if calendrier_url in request.path %} active {% endif %} annee hide">
 									<ul class="sous-menu-mois">
 										<li><a href="{% url 'calendrier' calendrier_group.grouper 1 %}">janv. > mars</a></li>
 										<li><a href="{% url 'calendrier' calendrier_group.grouper 2 %}">avr. > juin</a></li>
@@ -22,7 +22,7 @@
 					</div>
 				<li>{% url 'biographie' as biographie_url %}<a href="{{ biographie_url }}" class="{% if biographie_url == request.path %} active_link {% endif %}">biographie</a></li>
 				<li>{% url 'oeuvres' as oeuvres_url %}{% url 'oeuvre' as oeuvre_url %}<a href="{{ oeuvres_url }}" class="{% if oeuvres_url == request.path or oeuvre_url in request.path %} active_link {% endif %} lienvisible oeuvresmenu">œuvres</a></li>
-					<div id="oeuvres" class="oeuvres hide">
+					<div id="oeuvres" class="{% if oeuvres_url == request.path or oeuvre_url in request.path %} active {% endif %} oeuvres hide">
 						<ul class="sous-menu-oeuvres">
 							{% for oeuvre in oeuvres %}
 							<li><a href="{{ oeuvre.get_absolute_url }}" class="{% if oeuvre.get_absolute_url == request.path %} active_link {% endif %}">¬ {{ oeuvre.titre_oeuvre }}</a></li>

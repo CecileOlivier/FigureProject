@@ -949,6 +949,10 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	    border-bottom: 1px solid red;
 	}
 
+	.active {
+		margin-bottom:10px;
+	}
+
 	/* SOUS MENU OEUVRES */ 
 
 	nav ul.sous-menu-oeuvres {
@@ -1205,15 +1209,6 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		border-right: 1px solid #3D3D3F;
 	}
 
-	/*ul.dates div.img-oeuvre:after {
-		content: "";
-		display: inline-block;
-		position: absolute;
-		margin-left: -0.5em;
-		border-left: 1px solid #3D3D3F;
-		height: 350px;
-	}*/
-
 	ul.dates div.img-oeuvre > img {
 		height:auto;
 		width: 65%;
@@ -1226,24 +1221,6 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		width: auto;
 		height: 20%;
 	}
-
-	/*ul.dates li:nth-child(1):before {
-		content: "";
-		display: inline-block;
-		position: absolute;
-		margin-left: -0.5em;
-		border-left: 1px solid #3D3D3F;
-		height: 350px;
-	}*/
-
-	/*ul.dates li:after {
-		content: "";
-		display: inline-block;
-		position: absolute;
-		margin-left: -0.5em;
-		border-left: 1px solid #3D3D3F;
-		height: 350px;
-	}	*/
 
 	div.img-oeuvre:after {
 	    display: none;
