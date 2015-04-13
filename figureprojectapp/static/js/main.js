@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$(".lienvisible").click(function(event) {
+		$(".hide").hide();
 		$(event.currentTarget).show();
 	    var val_link = $(event.currentTarget).attr('href'); 
 	    console.log('clic sur '+val_link);
