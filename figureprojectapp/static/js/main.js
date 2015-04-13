@@ -26,7 +26,7 @@ $(document).ready(function() {
 		//$("div .annee").hide();
 		$(".lienvisible").click(function(event) {
 			$(event.currentTarget).show();
-			$("div .annee").show();
+			//$("div .annee").show();
 		    var val_link = $(event.currentTarget).attr('href'); 
 		    console.log('clic sur '+val_link);
 		    $(val_link).show();
@@ -48,7 +48,7 @@ $(document).ready(function() {
 		$("#note").removeClass("hide");
 		$("#menu-principal").removeClass("hide");
 		$("#oeuvres").removeClass("hide");
-		$("#calendrier").removeClass("hide");
+		//$("#calendrier").removeClass("hide");
 		$("#diffusion").addClass("hide");
 		$("a[href=#note] > h2").css("display", "none");
 		$(".hide").hide(); 
