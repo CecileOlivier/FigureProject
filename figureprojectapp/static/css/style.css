@@ -1514,6 +1514,18 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	}
 }
 
+/* *************************
+			DESKTOP
+			1280*1024			
+************************** */ 
+
+@media screen and (min-width : 1280px) and (min-height: 1024px) {
+
+	ul.dates {
+		margin-top:5%;
+	}
+
+}
 
 /* *************************
 			DESKTOP
@@ -1534,4 +1546,8 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	main.bio {
 		width:2000px;
+	}
+
+	ul.dates {
+		margin-top:5%;
 	}
