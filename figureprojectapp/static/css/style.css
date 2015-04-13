@@ -950,6 +950,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	}
 
 	.active {
+		margin-top:0.2em;
 		margin-bottom:10px;
 	}
 
@@ -957,7 +958,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	nav ul.sous-menu-oeuvres {
 		padding-left: 0;
-		padding-top:0.2em;
+		/*padding-top:0.2em;*/
 	}
 
 	nav ul.sous-menu-oeuvres a:after, nav li.langues a:after {
@@ -997,7 +998,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	nav ul.sous-menu-annee {
 		position: relative;
 		left: 0;
-		padding-top: 0.2em;
+		/*padding-top: 0.2em;*/
    		padding-bottom: 0;
 		width: auto;
 		/*display: block;*/
