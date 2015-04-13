@@ -1343,7 +1343,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	main.liens a h2:after {
 		content:'▼';
 		border-bottom: 1px solid #3E3D3F;
-		padding-left: 80%;
+		padding-left: 90%;
 		position:absolute;
 		display: block; 
 		color : #3E3D3F;
