@@ -4,12 +4,12 @@
 		<div class="menu"><a href="#menu-principal" class="lienvisible"></a></div>
 			<ul id="menu-principal" class="menu-principal hide">
 				<li>{% url 'calendrier' as calendrier_url %}<a href="{{ calendrier_url }}" class="{% if calendrier_url in request.path %} active_link {% endif %} calendriermenu lienvisible">calendrier</a></li>
-					<div id="calendrier" class="calendrier">
+					<div id="calendrier" class="calendrier {% if calendrier_url in request.path %} active {% endif %}">
 						<ul class="sous-menu-annee mobile">
 						{% regroup calendriers_menu by date.year as calendrier_list %}
 						{% for calendrier_group in calendrier_list %}
 							<li>{% url 'calendrier' calendrier_group.grouper as annee_url %}<a href="{{ annee_url }}" class="{% if annee_url == request.path %} active_link {% endif %} lienvisible">{{ calendrier_group.grouper }}</a></li>
-								<div id="annee" class="{% if calendrier_url in request.path %} active {% endif %} annee hide">
+								<div id="annee" class="{% if calendrier_url in request.path %} active {% endif %} {% if annee_url != request.path %} cachou {% endif %} annee">
 									<ul class="sous-menu-mois">
 										<li><a href="{% url 'calendrier' calendrier_group.grouper 1 %}">janv. > mars</a></li>
 										<li><a href="{% url 'calendrier' calendrier_group.grouper 2 %}">avr. > juin</a></li>

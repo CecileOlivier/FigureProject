@@ -950,8 +950,12 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	}
 
 	.active {
-		margin-top:0.2em;
-		margin-bottom:10px;
+		padding-top:0.2em;
+		margin-bottom:0.8em;
+	}
+
+	.cachou {
+		display: none;
 	}
 
 	/* SOUS MENU OEUVRES */ 
