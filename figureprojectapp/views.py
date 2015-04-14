@@ -12,7 +12,6 @@ def oeuvres(request):
     has_popped = request.session.get('has_popped', False)
     request.session['has_popped'] = True
     request.session.set_expiry(86400)
-
     oeuvres = Oeuvre.objects.filter(langue='fr').all()
     actu = Actualite.objects.filter(langue='fr').filter(statut_objet='actif').first()
     return render(request, 'index.html', {'oeuvres': oeuvres, 'actu':actu, 'has_popped': has_popped }, context_instance=RequestContext(request))
@@ -76,10 +75,9 @@ def work(request, slug):
     object_work = Oeuvre.objects.select_related().filter(langue="en").get(slug=slug)
     img_oeuvre = object_work.image_set.all()
     dates = object_work.calendrier_set.all()
-#    next_work = Oeuvre.objects.filter(id__gt=object_work.id).first()
-#    prev_work = Oeuvre.objects.filter(id__gt=object_work.id).first()
-#   1er slug : paramètre nomme, 2eme : variable fournie a def
-    return render(request, 'work.html', {'oeuvre': object_work, 'img_oeuvre':img_oeuvre, 'dates':dates}, context_instance=RequestContext(request))
+    next = Oeuvre.objects.filter(id__gt=object_work.id).first()
+    prev = Oeuvre.objects.filter(id__gt=object_work.id).first()
+    return render(request, 'work.html', {'oeuvre': object_work, 'img_oeuvre':img_oeuvre, 'dates':dates, 'next':next, 'prev':prev}, context_instance=RequestContext(request))
 
 def links(request):
     liens_partcult = Lien.objects.filter(domaine='Partenaires culturels')
