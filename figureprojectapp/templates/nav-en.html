@@ -3,12 +3,12 @@
 		<a href="{% url 'works' %}" class="retour"><img src="{% static "img/logo.png" %}" alt="" title="" class="logo"/></a>
 		<div class="menu"><a href="#menu-principal" class="lienvisible"></a></div>
 			<ul id="menu-principal" class="menu-principal hide">
-				<li>{% url 'calendar' as calendar_url %}<a href="{{ calendar_url }}" class="{% if calendar_url in request.path %} active_link {% endif %} calendriermenu lienvisible">calendar</a></li>
+				<li>{% url 'calendar' as calendar_url %}<a href="{{ calendar_url }}" class="{% if calendar_url in request.path %} active_link {% endif %} calendriermenu">calendar</a></li>
 					<div id="calendrier" class="calendrier {% if calendrier_url in request.path %} active {% endif %}">
 						<ul class="sous-menu-annee mobile">
 						{% regroup calendriers_menu by date.year as calendrier_list %}
 						{% for calendrier_group in calendrier_list %}
-							<li>{% url 'calendrier' calendrier_group.grouper as annee_url %}<a href="{{ annee_url }}" class="{% if annee_url == request.path %} active_link {% endif %} lienvisible">{{ calendrier_group.grouper }}</a></li>
+							<li>{% url 'calendrier' calendrier_group.grouper as annee_url %}<a href="{{ annee_url }}" class="{% if annee_url == request.path %} active_link {% endif %}">{{ calendrier_group.grouper }}</a></li>
 								<div id="annee" class="{% if calendrier_url in request.path %} active {% endif %} {% if annee_url != request.path %} cachou {% endif %} annee hide">
 									<ul class="sous-menu-mois">
 										<li><a href="{% url 'calendrier' calendrier_group.grouper 1 %}">janv. > mars</a></li>
@@ -21,7 +21,7 @@
 						</ul>
 					</div>
 				<li>{% url 'biography' as biography_url %}<a href="{{ biography_url }}" class="{% if biography_url == request.path %} active_link {% endif %}">biography</a></li>
-				<li>{% url 'works' as works_url %}{% url 'work' as work_url %}<a href="{{ works_url }}" class="{% if works_url == request.path or work_url in request.path %} active_link {% endif %} lienvisible oeuvresmenu">works</a></li>
+				<li>{% url 'works' as works_url %}{% url 'work' as work_url %}<a href="{{ works_url }}" class="{% if works_url == request.path or work_url in request.path %} active_link {% endif %} oeuvresmenu">works</a></li>
 					<div id="oeuvres" class="{% if oeuvres_url == request.path or oeuvre_url in request.path %} active {% endif %} oeuvres hide">
 						<ul class="sous-menu-oeuvres">
 							{% for oeuvre in oeuvres %}
