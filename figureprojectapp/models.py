@@ -90,7 +90,7 @@ class Projet(models.Model):
     image_titre_desktop = models.ImageField(upload_to='images_titre')
     image_titre_mobile = models.ImageField(upload_to='images_titre')
     note = models.TextField()
-    info = models.CharField(max_length=200, blank=True)
+    info = models.TextField(blank=True)
     url = models.URLField(blank=True)
     langue = models.ForeignKey('Langue')
 
