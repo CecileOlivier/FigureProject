@@ -25,7 +25,7 @@
 					<div id="oeuvres" class="{% if oeuvres_url == request.path or oeuvre_url in request.path %} active {% endif %} oeuvres hide">
 						<ul class="sous-menu-oeuvres">
 							{% for oeuvre in oeuvres %}
-							<li><a href="{{ oeuvre.get_absolute_url }}" class="{% if oeuvre.get_absolute_url == request.path %} active_link {% endif %}">¬ {{ oeuvre.titre_oeuvre }}</a></li>
+							<li><a href="{{ oeuvre.get_absolute_url }}" class="{% if oeuvre.get_absolute_url == request.path %} active_link {% endif %}">¬ {{ oeuvre.titre_oeuvre|safe }}</a></li>
 							{% endfor %}
 						</ul>
 					</div>
