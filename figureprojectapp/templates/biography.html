@@ -10,18 +10,9 @@
 		<link href="{% static "css/reset.css" %}" rel="stylesheet">
 		<link href="{% static "css/style.css" %}" rel="stylesheet">
 		<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
-		<script src="{% static "js/vendor/jquery.mousewheel.js" %}"></script>
+		<script src="{% static "js/vendor/jquery.mousewheel.min.js" %}"></script>
 		<script src="{% static "js/main.js" %}"></script>
-		<script>
-		$(document).ready(function() {
-
-			$('html, body, *').mousewheel(function(e, delta) {
-				this.scrollLeft -= (delta * 40);
-				e.preventDefault();
-			});
-
-		});
-		</script>
+		<script src="{% static "js/scroll.js" %}"></script>
 	</head>
 	<body>
 
