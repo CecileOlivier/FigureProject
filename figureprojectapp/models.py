@@ -17,8 +17,8 @@ class Biographie(models.Model):
 
 class Calendrier(models.Model):
     date = models.DateTimeField()
-    lieu = models.CharField(max_length=200)
-    cadre = models.CharField(max_length=200, blank=True)
+    lieu = models.TextField()
+    cadre = models.TextField(blank=True)
     url = models.CharField(max_length=200, blank=True)
     oeuvre = models.ForeignKey('Oeuvre', blank=True, null=True)
     atelier = models.ForeignKey('Atelier', blank=True, null=True)
@@ -63,7 +63,7 @@ class Oeuvre(models.Model):
         return '<img src="%s" width="auto" height="50"/>' % self.image_titre.url
     visuel.allow_tags = True
 
-    titre_oeuvre = models.CharField(max_length=200)
+    titre_oeuvre = models.TextField()
     note = models.TextField()
     mentions = models.TextField()
     distribution = models.TextField()
