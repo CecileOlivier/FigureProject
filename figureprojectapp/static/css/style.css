@@ -50,9 +50,16 @@ body {
 }
 
 /* *************************
-			MENU	 					
+			ACTU	 					
 ************************** */ 
 
+.dialog {
+	display: none;
+}
+
+/* *************************
+			MENU	 					
+************************** */ 
 nav {
 	width:100%; /* supprimer */
 }
@@ -950,8 +957,8 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	}
 
 	.active {
-		padding-top:0.2em;
-		margin-bottom:0.8em;
+		/*margin-top:-3em;*/
+		/*padding-bottom:0.2em;*/
 	}
 
 	.cachou {
@@ -1397,6 +1404,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	************************** */ 
 
 	.dialog {
+		display: block;
 		position: absolute;
 		z-index:0;
 		padding:0;
