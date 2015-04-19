@@ -32,19 +32,6 @@ $(document).ready(function() {
 		    $(val_link).show();
 		    console.log("a[href="+val_link+"]");
 		});
-		// jquery.mousewheel.min.js pour le scroll horizontal
-		$('html, body, *').on('mousewheel', function(e, delta) {
-			this.scrollLeft -= (delta * 40);
-			console.log('je fais qqchose');
-			e.preventDefault();
-		});
-		// custom scrollbar
-		$("#note").mCustomScrollbar({
-    		theme:"rounded-dark",
-    		scrollButtons:{
-     		 	enable: true
-    		}
-		});
 		$("#note").removeClass("hide");
 		$("#menu-principal").removeClass("hide");
 		$("#oeuvres").removeClass("hide");
