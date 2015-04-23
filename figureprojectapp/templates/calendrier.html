@@ -32,10 +32,10 @@
 					<p class="date"><span class="jour">{{ date.date|date:"j" }}</span><span class="mois">/{{ date.date|date:"b" }}</span></p>
 					<p class="heure">{{ date.date|date:"H" }}h{{ date.date|date:"i" }}</p>
 					<p class="lieu">
-					{{ date.lieu }}
+					{{ date.lieu|safe }}
 					</p>
 					<p class="evenement">
-					{{ date.cadre }}
+					{{ date.cadre|safe }}
 					</p>
 					<p class="lien"><a href="http://{{ date.url }}" target="_blank">{{ date.url }}</a></p>
 				</div>

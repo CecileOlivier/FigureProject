@@ -33,66 +33,15 @@
 					<p class="date"><span class="jour">{{ date.date|date:"j" }}</span><span class="mois">/{{ date.date|date:"b" }}</span></p>
 					<p class="heure">{{ date.date|date:"H" }}h{{ date.date|date:"i" }}</p>
 					<p class="lieu">
-					{{ date.lieu }}
-					<!-- css :after content ',' -->
+					{{ date.lieu|safe }}
 					</p>
 					<p class="evenement">
-					{{ date.cadre }}
-					<!-- balise strong à replacer -->
+					{{ date.cadre|safe }}
 					</p>
-					<p class="lien">{{ date.url }}</p>
+					<p class="lien"><a href="http://{{ date.url }}" target="_blank">{{ date.url }}</a></p>
 				</div>
 			</li>	
 		{% endfor %}
-			<!--<li>
-				<div class="img-oeuvre">
-					<img src="img/oeuvres/adieuetmerci.png" alt="" title="" class="oeuvres-typo"/>
-				</div>
-				<div class="description">
-					<p class="date"><span class="jour">28</span><span class="mois">/JANV</span></p>
-					<p class="heure">20h30</p>
-					<p class="lieu">Le Vivat,</p>
-					<p class="evenement">Scène Conventionnée d'Armentières dans le cadre du <strong>festival Vivat la danse !</strong></p>
-					<p class="lien">levivat.net</p>
-				</div>
-			</li>
-			<li>
-				<div class="img-oeuvre">
-					<img src="img/oeuvres/ecransomnambule.png" alt="" title="" class="oeuvres-typo"/>
-				</div>
-				<div class="description">
-					<p class="date"><span class="jour">6</span><span class="mois">/FEV</span></p>
-					<p class="heure">14h30</p>
-					<p class="lieu">Université Rennes 2,</p>
-					<p class="evenement">Bât. B amphi B4 Lamennais dans le cadre de <strong>Rejouer la performance</strong></p>
-					<p class="lien">museedeladanse.org</p>
-				</div>
-			</li>
-			<li>
-				<div class="img-oeuvre">
-					<img src="img/oeuvres/adieuetmerci.png" alt="" title="" class="oeuvres-typo"/>
-				</div>
-				<div class="description">
-					<p class="date"><span class="jour">28</span><span class="mois">/JANV</span></p>
-					<p class="heure">20h30</p>
-					<p class="lieu">Le Vivat,</p>
-					<p class="evenement">Scène Conventionnée d'Armentières dans le cadre du <strong>festival Vivat la danse !</strong></p>
-					<p class="lien">levivat.net</p>
-				</div>
-			</li>
-			<li>
-				<div class="img-oeuvre">
-					<img src="img/oeuvres/ecransomnambule.png" alt="" title="" class="oeuvres-typo"/>
-				</div>
-				<div class="description">
-					<p class="date"><span class="jour">6</span><span class="mois">/FEV</span></p>
-					<p class="heure">14h30</p>
-					<p class="lieu">Université Rennes 2,</p>
-					<p class="evenement">Bât. B amphi B4 Lamennais dans le cadre de <strong>Rejouer la performance</strong></p>
-					<p class="lien">museedeladanse.org</p>
-				</div>
-			</li>-->
-
 		</ul>
 	</main>
 
