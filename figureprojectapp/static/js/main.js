@@ -24,6 +24,13 @@ $(document).ready(function() {
 		console.log('grand');
 		// affichage du calendrier
 		//$("div .annee").hide();
+		var total = 0;
+		$('main.oeuvre').children().each(function() {
+			total += $(this).outerWidth();
+			console.log(total);
+		});
+		$("main.oeuvre").css("width", total+650);
+
 		$(".lienvisible").click(function(event) {
 			$(event.currentTarget).show();
 			//$("div .annee").show();
