@@ -28,7 +28,7 @@
 	<main class="oeuvre">
 		<img src="{{ oeuvre.image_titre.url }}" alt="{{ oeuvre.titre_oeuvre }}" title="" class="oeuvre-max" />
 		<div class="presentation">
-		<h1>{{ oeuvre.titre_oeuvre }}</h1>
+		<h1>{{ oeuvre.titre_oeuvre|safe }}</h1>
 		<p class="prec-suiv"> <a href="{{ prev.slug }}"><</a> <a href="{{ next.slug }}">></a> </p>
 			<section class="note inline">
 			<!-- ouvert par défaut en desktop avec disparition du titre -->
