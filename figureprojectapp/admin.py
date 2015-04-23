@@ -8,7 +8,7 @@ class BiographieAdmin(admin.ModelAdmin):
     list_display = ('titre', 'texte', 'langue')
     search_fields = ['titre', 'langue']
 
-class CalendrierAdmin(admin.ModelAdmin):
+class CalendrierAdmin(SummernoteModelAdmin):
     list_display = ('date', 'lieu', 'oeuvre', 'atelier')
     search_fields = ['lieu', 'oeuvre', 'atelier']
 
@@ -31,6 +31,9 @@ class OeuvreAdmin(SummernoteModelAdmin):
 class ActualiteAdmin(SummernoteModelAdmin):    
     list_display = ('titre', 'image')
 
+class ProjetAdmin(SummernoteModelAdmin):    
+    list_display = ('titre', 'langue')
+
 admin.site.register(Biographie, BiographieAdmin)
 admin.site.register(Calendrier, CalendrierAdmin)
 admin.site.register(Contact)
@@ -38,6 +41,6 @@ admin.site.register(Lien, LienAdmin)
 admin.site.register(Image, ImageAdmin)
 admin.site.register(Langue)
 admin.site.register(Oeuvre, OeuvreAdmin)
-admin.site.register(Projet)
+admin.site.register(Projet, ProjetAdmin)
 admin.site.register(Atelier)
 admin.site.register(Actualite, ActualiteAdmin)
