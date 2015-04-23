@@ -25,11 +25,25 @@ $(document).ready(function() {
 		// affichage du calendrier
 		//$("div .annee").hide();
 		var total = 0;
-		$('main.oeuvre').children().each(function() {
+		var img = $('img.oeuvre-max').width();
+		console.log('image ='+img);
+		var pres = $('.presentation').width();
+		console.log('presentation ='+pres);
+		var sousmenu = $('.sous-menu').width();
+		console.log('sousmenu ='+sousmenu);
+		var galerie = 0;
+		$('.oeuvre-mini').each(function() {
+			galerie += $(this).outerWidth();
+			console.log('galerie ='+galerie);
+		});
+		total = img+pres+sousmenu+galerie;
+		console.log('total ='+total);
+		$('main.oeuvre').css('width', total+150);
+		/*$('main.oeuvre').children().each(function() {
 			total += $(this).outerWidth();
 			console.log(total);
 		});
-		$("main.oeuvre").css("width", total+650);
+		$("main.oeuvre").css("width", total+650);*/
 
 		$(".lienvisible").click(function(event) {
 			$(event.currentTarget).show();

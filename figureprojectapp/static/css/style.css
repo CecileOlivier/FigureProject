@@ -260,11 +260,11 @@ section .hide {
 
 img.oeuvres-max {
 	width:82%;
-	margin:-1em;
+	margin-top:-1em;
 }
 
 img.oeuvre-max {
-	margin:-1em;
+	margin-top:-1em;
 }
 
 ul.oeuvres-typo {
@@ -1129,7 +1129,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		left: 25em;
 		/*width:150%;*/
         /*max-width:250%;*/
-        width: 5000px;
+        width: 1000px;
 	}
 
 	main.oeuvre img.oeuvre-max {
@@ -1255,7 +1255,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	main.extension {
 		position: absolute;
-		width:2700px;
+		width:2000px;
 		height:100%;
 		/*margin-top:-1em;*/
 		left: 25em;
@@ -1278,6 +1278,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		 -moz-column-count: 1;
 		display: inline-block;
 		width:35em;
+		height:34em;
 		vertical-align: middle;
 		padding-left:3em;
 	}
