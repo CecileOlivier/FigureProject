@@ -260,11 +260,11 @@ section .hide {
 
 img.oeuvres-max {
 	width:82%;
-	margin:-1px;
+	margin:-1em;
 }
 
 img.oeuvre-max {
-	margin:-1px;
+	margin:-1em;
 }
 
 ul.oeuvres-typo {
