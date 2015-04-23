@@ -5,9 +5,13 @@
 
 html {
     font-size: 62.5%;
+    margin:0;
+    padding:0;
 }
 body {
     font-size: 1em;
+    margin:0;
+    padding:0;
 }
 
 /* *************************
@@ -256,6 +260,10 @@ section .hide {
 
 img.oeuvres-max {
 	width:82%;
+	margin:-1px;
+}
+
+img.oeuvre-max {
 	margin:-1px;
 }
 
@@ -914,7 +922,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	nav {
 		position: absolute;
 		width: 20%;
-		top:18%;
+		/*top:18%;*/
 	}
 
 	nav a {
@@ -1051,7 +1059,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	img.oeuvres-max {
 		width:auto;
-		margin:-1px;
+		/*margin:-1px;*/
 	}
 
 	ul.oeuvres-photo {
@@ -1117,11 +1125,11 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	main.oeuvre {
 		position: absolute;
 		height:100%;
-		margin-top:-1em;
+		/*margin-top:-1em;*/
 		left: 25em;
-		width:150%;
-		max-width:250%;
-		width: 5000px;
+		/*width:150%;*/
+        /*max-width:250%;*/
+        width: 5000px;
 	}
 
 	main.oeuvre img.oeuvre-max {
@@ -1140,7 +1148,6 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		vertical-align: middle;
 		padding-left:2em;
 		padding-bottom:0.5%;
-		/*background-color: #E26D5A;*/
 	}
 
 	main.oeuvre .sous-menu {
@@ -1149,7 +1156,6 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		top: 12em;		
 		padding-left:3em;
 		height:55%;
-		/*background-color: #21A179;*/
 	}
 
 	main.oeuvre .sous-menu section {
@@ -1251,7 +1257,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		position: absolute;
 		width:2700px;
 		height:100%;
-		margin-top:-1em;
+		/*margin-top:-1em;*/
 		left: 25em;
 	}
 
@@ -1305,7 +1311,6 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		padding-left:3em;
 		vertical-align: middle;
 		height:55%;
-		/*background-color: #3F7CAC;*/
 	}
 
 	.galerie img {
@@ -1360,7 +1365,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		width:1800px;
 		padding-left: 0;
 		left:25em;
-		margin-top: -1em;
+		/*margin-top: -1em;*/
 	}
 
 	main.bio h1 {
