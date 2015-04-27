@@ -1129,7 +1129,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		left: 25em;
 		/*width:150%;*/
         /*max-width:250%;*/
-        width: 1000px;
+        width: 5000px;
 	}
 
 	main.oeuvre img.oeuvre-max {
@@ -1345,6 +1345,12 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 		margin-top:-34px;
 	}
 
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		main.liens {
+			width: 50%;
+		}
+	}
+
 	/* *************************
 			CONTACT	 					
 	************************** */ 
@@ -1507,6 +1513,10 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	ul.oeuvres-typo li {
 		width: 6em;
+	}
+
+	main.liens {
+		width:70%;
 	}
 }
 
