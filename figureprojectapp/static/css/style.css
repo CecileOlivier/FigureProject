@@ -927,6 +927,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	nav a {
 		font-size:1em;
+		margin-top: 10em;
 	}
 
 	nav ul {
@@ -1301,6 +1302,10 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	    -moz-column-width: 35em;
 	}
 
+	p.info {
+    	padding-bottom: 5em;
+	}
+
 
 	/* *************************
 			GALERIE IMG	 					
@@ -1411,6 +1416,10 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;	
 	}
 
+	main.bio section article:first {
+		background-color: pink;
+	}
+
 	/* *************************
 			ACTUALITE	 					
 	************************** */ 
@@ -1518,6 +1527,10 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	main.liens {
 		width:70%;
 	}
+
+	nav {
+		margin-top: 10em;
+	}
 }
 
 /* *************************
@@ -1530,6 +1543,10 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 	ul.dates {
 		margin-top:5%;
 	}
+
+	/*nav {
+		margin-top: 30em;
+	}*/
 
 }
 
