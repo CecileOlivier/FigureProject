@@ -70,6 +70,7 @@ nav {
 
 nav ul ul.sous-menu-oeuvres li a.active_link, ul.sous-menu-annee li a.active_link, .active_link {
 	color: #E1001A;
+	/*padding-bottom: 2em;*/
 }
 
 nav li a.active_link::after {
@@ -199,7 +200,7 @@ ul.sous-menu-mois {
 
 img.oeuvre-max {
 	width:94%;
-	padding-bottom: 1em;
+	/*padding-bottom: 1em;*/
 }
 
 img.oeuvre-mini {
@@ -221,8 +222,8 @@ a {
 	text-decoration: none;
 }
 
-a:active {
-	color:red;
+a.active {
+	color : #E1001A;
 }
 
 main.oeuvre a h2:after, main.liens a h2:after {
@@ -233,10 +234,6 @@ main.oeuvre a h2:after, main.liens a h2:after {
 	display: block; 
 	color : #3E3D3F;
 	margin-top:-34px;
-}
-
-a.active {
-	color : #E1001A;
 }
 
 main.oeuvre a.active h2:after, main.liens a.active h2:after {
@@ -264,6 +261,8 @@ img.oeuvres-max {
 }
 
 img.oeuvre-max {
+	margin:0;
+	padding:0;
 	margin-top:-1em;
 }
 
@@ -927,7 +926,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	nav a {
 		font-size:1em;
-		margin-top: 10em;
+		/*margin-top: 10em;*/
 	}
 
 	nav ul {
@@ -967,7 +966,7 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	.active {
 		/*margin-top:-3em;*/
-		/*padding-bottom:0.2em;*/
+		padding-bottom:0.1em;
 	}
 
 	.cachou {
@@ -1573,4 +1572,35 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	ul.dates {
 		margin-top:5%;
+	}
+
+	main.extension {
+		width: 2500px;
+	}
+
+}
+
+/* *************************
+			DESKTOP
+			2560*1440			
+************************** */ 
+
+@media only screen and (min-width : 2560px) {
+
+	html {
+		font-size: 64.5%;
+	}
+
+	body {
+    	font-size: 1.18em;
+    	display:inline-block;
+    	height:100%;
+	}
+
+	main.extension {
+		width:4000px;
+	}
+
+	nav {
+		top:50em;
 	}
