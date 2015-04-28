@@ -29,6 +29,7 @@
 							{% endfor %}
 						</ul>
 					</div>
+				
 				<li>{% url 'extensionsauvage' as extensionsauvage_url %}<a href="{{ extensionsauvage_url }}" class="{% if extensionsauvage_url == request.path %} active_link {% endif %}">extension sauvage </a></li>
 				<li>{% url 'contact' as contact_url %}<a href="{{ contact_url }}" class="{% if contact_url == request.path %} active_link {% endif %}">contact</a></li>
 				<li>{% url 'liens' as liens_url %}<a href="{{ liens_url }}" class="{% if liens_url == request.path %} active_link {% endif %}">liens</a></li>

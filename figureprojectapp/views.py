@@ -72,12 +72,13 @@ def works(request):
     return render(request, 'works.html', {'oeuvres': oeuvres}, context_instance=RequestContext(request))
 
 def work(request, slug):
+    oeuvres = Oeuvre.objects.filter(langue='en').all()
     object_work = Oeuvre.objects.select_related().filter(langue="en").get(slug=slug)
     img_oeuvre = object_work.image_set.all()
     dates = object_work.calendrier_set.all()
     next = Oeuvre.objects.filter(id__gt=object_work.id).first()
     prev = Oeuvre.objects.filter(id__gt=object_work.id).first()
-    return render(request, 'work.html', {'oeuvre': object_work, 'img_oeuvre':img_oeuvre, 'dates':dates, 'next':next, 'prev':prev}, context_instance=RequestContext(request))
+    return render(request, 'work.html', {'oeuvre': object_work, 'img_oeuvre':img_oeuvre, 'dates':dates, 'next':next, 'prev':prev, 'oeuvres':oeuvres}, context_instance=RequestContext(request))
 
 def links(request):
     liens_partcult = Lien.objects.filter(domaine='Partenaires culturels')
