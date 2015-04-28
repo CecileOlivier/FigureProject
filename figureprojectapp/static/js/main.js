@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	$("a[href=#menu-principal]").click(function(event) {
+			$("ul#menu-principal").toggle();
+	});
 	$(".lienvisible").click(function(event) {
 		$(".hide").hide();
 		$(event.currentTarget).show();
