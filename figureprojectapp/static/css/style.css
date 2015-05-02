@@ -263,7 +263,6 @@ img.oeuvres-max {
 img.oeuvre-max {
 	margin:0;
 	padding:0;
-	margin-top:-1em;
 }
 
 ul.oeuvres-typo {
@@ -893,7 +892,6 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	body {
     	font-size: 1.10em;
-    	display:inline-block;
     	height:100%;
 	}
 
