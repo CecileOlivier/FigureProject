@@ -119,3 +119,6 @@ def calendar(request, year = None, trim = None):
 def contacten(request):
     contacts = Contact.objects.filter(langue="en").all()
     return render(request, 'contacten.html', {'contacts': contacts}, context_instance=RequestContext(request))
+
+def error(request):
+    return render(request, 'error.html', context_instance=RequestContext(request))

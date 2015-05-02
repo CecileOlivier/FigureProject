@@ -13,3 +13,6 @@ urlpatterns = patterns('',
     url(r'^', include('figureprojectapp.urls')),
     url(r'^summernote/', include('django_summernote.urls')),
 ) + static.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'figureprojectapp.views.error'
+handler500 = 'figureprojectapp.views.error'
