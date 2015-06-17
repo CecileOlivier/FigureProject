@@ -60,6 +60,9 @@ body {
 .error {
 	color: #3E3D3F;
 	font-family: "Univers";
+	font-size:2em;
+	text-align: center;
+	padding-top:15em;
 }
 
 /* *************************
@@ -105,6 +108,14 @@ div.menu a {
 div.menu a:hover {
 	background-image: url('../icones/menu-fer.png');
 	background-repeat: no-repeat;
+}
+
+div.menu a.open {
+	background-image: url('../icones/menu-ouv.png');
+}
+
+div.menu a.close {
+	background-image: url('../icones/menu-fer.png');
 }
 
 img.logo {
@@ -1600,12 +1611,11 @@ div.partenaires-cult, div.partenaires-educ, div.artistes, div.liens-utiles {
 
 	body {
     	font-size: 1.18em;
-    	display:inline-block;
     	height:100%;
 	}
 
 	main.extension {
-		width:4000px;
+		width:5000px;
 	}
 
 	nav {

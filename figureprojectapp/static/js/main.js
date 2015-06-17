@@ -1,7 +1,6 @@
 $(document).ready(function() {
-	$("a[href=#menu-principal]").click(function(event) {
-			$("ul#menu-principal").toggle();
-	});
+	console.log('js actif');
+
 	$(".lienvisible").click(function(event) {
 		$(".hide").hide();
 		$(event.currentTarget).show();
@@ -12,22 +11,47 @@ $(document).ready(function() {
 	    $("a[href="+val_link+"]").addClass('active');
 	    console.log("a[href="+val_link+"]");
 	});
-    // media queries 
+    // MEDIA QUERIES
 	if ($(window).width() < 360) {
-		console.log('petit');
-		$(".hide").hide(); 
+		var isVisible = $( "ul#menu-principal" ).is( ":visible" );
+		var isHidden = $( "ul#menu-principal" ).is( ":hidden" );
+
+        $("menu-principal").hide(); 
+        $('div.menu a').css("background-image", "url('../static/icones/menu-ouv.png')");
+		$('.menu').click(function(){
+			$(".menu-principal").toggle();
+			$('div.menu a').css("background-image", "url('../static/icones/menu-fer.png')");
+		});
+		if ($( "ul#menu-principal:visible")) {
+	    	console.log('menu ouvert');
+	    }
+	    else if ($( "ul#menu-principal:hidden")) {
+			console.log('menu fermé');
+	    }
+
+		/*$("a[href=#menu-principal]").click(function(){
+        	$("ul#menu-principal").toggle();
+        	console.log('toogle');
+        	if ($( "ul#menu-principal:visible")) {
+	    		$('div.menu a').addClass('open');
+	    		$('div.menu a').removeClass('close');
+	    	}
+	    	else if ($( "ul#menu-principal:hidden")) {
+				$('div.menu a').removeClass('open');
+				$('div.menu a').addClass('close');
+	    	}
+        	//$('div.menu a').addClass('open');
+        	//$('div.menu a').removeClass('open');
+        	//$('div.menu a').css("background-image", "url('../icones/menu-ferm.png')");
+    	});*/
 	}
 	else if ($(window).width() < 1024) {
-		console.log('moyen');
 		$("#menu-principal").removeClass("hide");
 		$("#oeuvres").addClass("hide");
 		$(".hide").hide(); 
 	}
 	else {
-		console.log('grand');
-		// affichage du calendrier
-		//$("div .annee").hide();
-
+		// CALCUL DE LA TAILLE DES ÉLÉMENTS
 		$(window).load(function() {
 			console.log('window load')
 			var total = 0;
@@ -46,16 +70,9 @@ $(document).ready(function() {
 			console.log('total ='+total);
 			$('main.oeuvre').width(total + 150);
 		});
-		
-		/*$('main.oeuvre').children().each(function() {
-			total += $(this).outerWidth();
-			console.log(total);
-		});
-		$("main.oeuvre").css("width", total+650);*/
 
 		$(".lienvisible").click(function(event) {
 			$(event.currentTarget).show();
-			//$("div .annee").show();
 		    var val_link = $(event.currentTarget).attr('href'); 
 		    console.log('clic sur '+val_link);
 		    $(val_link).show();
@@ -70,4 +87,3 @@ $(document).ready(function() {
 		$(".hide").hide(); 
 	}
 });
-
