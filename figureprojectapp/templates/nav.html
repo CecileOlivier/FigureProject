@@ -1,8 +1,8 @@
 {% load staticfiles %}
 <nav>
 		<a href="{% url 'oeuvres' %}" class="retour"><img src="{% static "img/logo.png" %}" alt="" title="" class="logo"/></a>
-		<div class="menu"><a href="#menu-principal" class="lienvisible"></a></div>
-			<ul id="menu-principal" class="menu-principal hide">
+		<div class="menu"><a href="#menu-principal" class=""></a></div>
+			<ul id="menu-principal" class="menu-principal">
 				<li>{% url 'calendrier' as calendrier_url %}<a href="{{ calendrier_url }}" class="{% if calendrier_url in request.path %} active_link {% endif %} calendriermenu">calendrier</a></li>
 					<div id="calendrier" class="calendrier {% if calendrier_url in request.path %} active {% endif %}">
 						<ul class="sous-menu-annee mobile">
